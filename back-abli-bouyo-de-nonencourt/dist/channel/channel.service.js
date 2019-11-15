@@ -7,16 +7,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
-const channel_module_1 = require("./channel/channel.module");
-const user_module_1 = require("./user/user.module");
-let AppModule = class AppModule {
+let ChannelService = class ChannelService {
+    getHello() {
+        return 'Hello World channel!';
+    }
 };
-AppModule = __decorate([
-    common_1.Module({
-        imports: [
-            channel_module_1.ChannelModule, user_module_1.UserModule
-        ],
-    })
-], AppModule);
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+ChannelService = __decorate([
+    common_1.Injectable()
+], ChannelService);
+exports.ChannelService = ChannelService;
+//# sourceMappingURL=channel.service.js.map
