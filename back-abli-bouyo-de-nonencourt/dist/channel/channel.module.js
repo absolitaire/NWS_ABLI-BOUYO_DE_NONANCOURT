@@ -9,12 +9,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const channel_controller_1 = require("./channel.controller");
 const channel_service_1 = require("./channel.service");
+const channel_dao_1 = require("./dao/channel.dao");
+const mongoose_1 = require("@nestjs/mongoose");
+const channel_schema_1 = require("./schemas/channel.schema");
 let ChannelModule = class ChannelModule {
 };
 ChannelModule = __decorate([
     common_1.Module({
+        imports: [mongoose_1.MongooseModule.forFeature([{ name: 'Channel', schema: channel_schema_1.ChannelSchema }])],
         controllers: [channel_controller_1.ChannelController],
-        providers: [channel_service_1.ChannelService],
+        providers: [channel_service_1.ChannelService, channel_dao_1.ChannelDao],
     })
 ], ChannelModule);
 exports.ChannelModule = ChannelModule;
