@@ -8,8 +8,13 @@ const Config = require("config");
 const swagger_1 = require("@nestjs/swagger");
 const channel_module_1 = require("./channel/channel.module");
 const user_module_1 = require("./user/user.module");
+const people_module_1 = require("./people/people.module");
 async function bootstrap(config, swaggerConfig) {
     const app = await core_1.NestFactory.create(app_module_1.AppModule, new platform_fastify_1.FastifyAdapter({ logger: true }));
+    app.useGlobalPipes(new common_1.ValidationPipe({
+        whitelist: true,
+        forbidNonWhitelisted: true,
+    }));
     const options = new swagger_1.DocumentBuilder()
         .setTitle(swaggerConfig.title)
         .setDescription(swaggerConfig.description)
@@ -17,7 +22,7 @@ async function bootstrap(config, swaggerConfig) {
         .addTag(swaggerConfig.tag)
         .build();
     const swaggerDocument = swagger_1.SwaggerModule.createDocument(app, options, {
-        include: [channel_module_1.ChannelModule, user_module_1.UserModule],
+        include: [channel_module_1.ChannelModule, user_module_1.UserModule, people_module_1.PeopleModule],
     });
     swagger_1.SwaggerModule.setup(swaggerConfig.path, app, swaggerDocument);
     await app.listen(config.port, config.host);

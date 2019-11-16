@@ -90,6 +90,8 @@ export class ChannelService {
   create(channel: CreateChannelDto): Observable<ChannelEntity> {
     return this._addChannel(channel)
       .pipe(
+        // flatMap(_ => this._channelDao.createChannel(_)),
+
         flatMap(_ => this._channelDao.createChannel(_)),
         catchError(e =>
           e.code = 11000 ?
