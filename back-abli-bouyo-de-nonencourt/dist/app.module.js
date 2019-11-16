@@ -15,7 +15,7 @@ let AppModule = class AppModule {
 };
 AppModule = __decorate([
     common_1.Module({
-        imports: [mongoose_1.MongooseModule.forRoot(Config.get('mongodb.uri'), Config.get('mongodb.options')),
+        imports: [mongoose_1.MongooseModule.forRoot('mongodb://localhost/back', Config.get('mongodb.options')),
             channel_module_1.ChannelModule, user_module_1.UserModule],
     })
 ], AppModule);

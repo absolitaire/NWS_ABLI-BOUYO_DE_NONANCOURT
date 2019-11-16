@@ -19,6 +19,7 @@ const rxjs_1 = require("rxjs");
 const create_channel_dto_1 = require("./dto/create-channel.dto");
 const channel_entity_1 = require("./entities/channel.entity");
 const handler_params_1 = require("./validators/handler-params");
+const channel_interceptor_1 = require("./interceptors/channel.interceptor");
 let ChannelController = class ChannelController {
     constructor(_channelService) {
         this._channelService = _channelService;
@@ -77,6 +78,8 @@ __decorate([
 ChannelController = __decorate([
     swagger_1.ApiUseTags('back'),
     common_1.Controller('channel'),
+    common_1.UseInterceptors(common_1.ClassSerializerInterceptor),
+    common_1.UseInterceptors(channel_interceptor_1.ChannelInterceptor),
     __metadata("design:paramtypes", [channel_service_1.ChannelService])
 ], ChannelController);
 exports.ChannelController = ChannelController;

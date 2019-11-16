@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Body, ClassSerializerInterceptor, Controller, Get, Param, Post, UseInterceptors } from '@nestjs/common';
 import { ChannelService } from './channel.service';
 import {
   ApiBadRequestResponse, ApiConflictResponse, ApiCreatedResponse, ApiImplicitBody, ApiImplicitParam,
@@ -12,9 +12,12 @@ import { Observable } from 'rxjs';
 import { CreateChannelDto } from './dto/create-channel.dto';
 import { ChannelEntity } from './entities/channel.entity';
 import { HandlerParams } from './validators/handler-params';
+import { ChannelInterceptor } from './interceptors/channel.interceptor';
 
 @ApiUseTags('back')
 @Controller('channel')
+@UseInterceptors(ClassSerializerInterceptor)
+@UseInterceptors(ChannelInterceptor)
 export class ChannelController {
   constructor(private readonly _channelService: ChannelService) {}
   @Get('/mdr')

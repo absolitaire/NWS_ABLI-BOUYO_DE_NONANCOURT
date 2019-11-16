@@ -1761,36 +1761,56 @@
         "version": "a239eb984273d4efa8beddba9df412495f31599aeeff8f45a7c5348b955765aa",
         "signature": "608df4636636a9a5aaf60c32df39290c88266e27a10d237a28aebec487ca614d"
       },
+      "../node_modules/@types/bson/index.d.ts": {
+        "version": "64118c8a43189b10dfe9d96a9478bcf7cd5b01c9d0f7838ee1454ece8a687253",
+        "signature": "64118c8a43189b10dfe9d96a9478bcf7cd5b01c9d0f7838ee1454ece8a687253"
+      },
+      "../node_modules/@types/mongodb/index.d.ts": {
+        "version": "81a404cae978932b47d8660d7c737c663733934705bea86d28419f0a755adb70",
+        "signature": "81a404cae978932b47d8660d7c737c663733934705bea86d28419f0a755adb70"
+      },
+      "../node_modules/@types/mongoose/index.d.ts": {
+        "version": "b9119c66c285e8d20ed31ed949e8b9fccee90cbb7267eb86d3e9580f53cee35d",
+        "signature": "b9119c66c285e8d20ed31ed949e8b9fccee90cbb7267eb86d3e9580f53cee35d"
+      },
       "../src/channel/interfaces/channel.interface.ts": {
-        "version": "60f0abbf7c95c52138d5a51fd4f63f070aa79c95b3f454f9076a92b29edb67f8",
-        "signature": "9862ba39446eb9913e530258b6cbbd18adea9786b0231a4dcfd16a8f75637ce0"
+        "version": "abcd0367312d0d8bbc2b519425fd696c9d29618949938e2efbe3005702405c0f",
+        "signature": "8f294505322a5faa67b3c7e7e150a0f29ce40f5e2346562178363faef2cffd0e"
       },
       "../src/channel/dao/channel.dao.ts": {
-        "version": "9f33b39aaad63adf347bd70a3d384b66d3852210ba38ae52dd96300df4f05291",
+        "version": "0dc3f9f9d92430d8320ceaafa3a3c381ed3df967e327c00128317d9df268aff7",
         "signature": "cda922f2bc3279a3fffd6abd188404aeb98b81d8ff4f1d05c870f6ebf78cb021"
       },
       "../src/channel/channel.service.ts": {
-        "version": "4f3e58c28e4d6fa3a8f64f9a4c5d69c939a9e1fcd2333bd736b024b6bc7ea045",
-        "signature": "35483c4e550deda4e122c19f011b0c4fcee3c3daf688d17a57dacd3768473446"
+        "version": "a035d27bcd043f328d05e6f6a703aa259056542a8724e8e34de72b9119082c16",
+        "signature": "606d734e3eac827da43908a08858eda99f4dd6bbc4e933ce7bfd0d73eccb1f26"
       },
       "../src/channel/validators/handler-params.ts": {
         "version": "c2d5d2c2254acffe8012f86ffe9890242f5d997d203a4670c40993dbf47a3959",
         "signature": "0608f21bb8712c66fd2c1ee80afe3212b18e15197f4f88096448a5850beb5b24"
       },
+      "../node_modules/fastify/fastify.d.ts": {
+        "version": "c0d4e91100f5d26f2cd5f65939cf0c1653d7566a554f7599b3a532d9c84e7847",
+        "signature": "c0d4e91100f5d26f2cd5f65939cf0c1653d7566a554f7599b3a532d9c84e7847"
+      },
+      "../src/channel/interceptors/channel.interceptor.ts": {
+        "version": "44b86fb1dce3826701233d69b660165f8580c37eac26efd5953ccf3e11dc7fa9",
+        "signature": "5979d520d308aaa4f3318a388e2a12db743b258c31c63e78f05373b299588449"
+      },
       "../src/channel/channel.controller.ts": {
-        "version": "19857f6ea47880a732346f27a7b2a013ddaf77056504c3143090190e51e4d0b4",
+        "version": "5f9cbba705f122472ea07b4566f1bce0d0d9a5c79f3d9302b546aec4618191b9",
         "signature": "c53cc4b3d4ade5a3ac4279e8783fd34e5ccb141b723256238304988b2721903d"
       },
       "../src/channel/schemas/channel.schema.ts": {
         "version": "8868577dfa8de71e9ead6e350d9f0dc958a6f3a92586274475183a126f8ea8b4",
-        "signature": "bbbdb2f646c9a464abc32d1c9509ffe2d31d36b2954ae487de00738b84e01e64"
+        "signature": "65746ffc94fa08faef04ca2095b3a5ee66eaac53b61fc25cfd7187e1eec4ff69"
       },
       "../src/channel/channel.module.ts": {
-        "version": "6f657f601774d63995fde5f85a53c8a198545a44a4668f62bf0349e6df22eb1d",
+        "version": "4cb280c34f7ba800fee1437e8db1b92585bd1e9239b17a6a15d21af8d884127d",
         "signature": "53e3bf5767945909ee6d07cac58bc0ae49cb9ae908dd4ce3a27269bce6ee5aa3"
       },
       "../src/user/user.controller.ts": {
-        "version": "efa5fc8dd03af3bbd413b62720d8abd0321337176090ea1b11a01c4b43654cb5",
+        "version": "2b3c5c8a25a9c39010e52333d776736a03dbb31b42aab8c797caba5579dd1014",
         "signature": "190ebe988cb0002a58dfa4e7b206b50e5711d31e854fc018a4c3ef7bf179d757"
       },
       "../src/user/user.service.ts": {
@@ -1802,7 +1822,7 @@
         "signature": "482b8f0d35a3d453500a15b6c6057c1e4c40baa4329b39da9e1026d8e1de4329"
       },
       "../src/app.module.ts": {
-        "version": "eb6bec7b4f91f9bce15eab7c61b4c3cdbc27a7c7804bf7961ec3b7572ae929cc",
+        "version": "ea9cbf8f449795a9a4654068ee5ae93b3ea63e1bffde447158c6bf02cd062161",
         "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644"
       },
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts": {
@@ -1920,10 +1940,6 @@
       "../node_modules/@nestjs/core/index.d.ts": {
         "version": "2608cfd623840916e664e68c3dc5eb4347ccae822f808d899bf00e73cbab2bfe",
         "signature": "2608cfd623840916e664e68c3dc5eb4347ccae822f808d899bf00e73cbab2bfe"
-      },
-      "../node_modules/fastify/fastify.d.ts": {
-        "version": "c0d4e91100f5d26f2cd5f65939cf0c1653d7566a554f7599b3a532d9c84e7847",
-        "signature": "c0d4e91100f5d26f2cd5f65939cf0c1653d7566a554f7599b3a532d9c84e7847"
       },
       "../node_modules/@nestjs/platform-fastify/adapters/fastify-adapter.d.ts": {
         "version": "e815bcc479e9c4b5f9d0aab233197a52d763a284f1b602be857824c5071c7837",
@@ -5646,7 +5662,37 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../node_modules/@types/bson/index.d.ts": [
+        "../node_modules/@types/node/ts3.2/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/mongodb/index.d.ts": [
+        "../node_modules/@types/bson/index.d.ts",
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/tls.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/mongoose/index.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/mongodb/index.d.ts",
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/mongoose/index.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../src/channel/interfaces/channel.interface.ts": [
+        "../node_modules/@types/mongoose/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -5655,6 +5701,7 @@
       "../src/channel/dao/channel.dao.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/mongoose/index.d.ts",
+        "../node_modules/@types/mongoose/index.d.ts",
         "../src/channel/interfaces/channel.interface.ts",
         "../node_modules/rxjs/index.d.ts",
         "../node_modules/rxjs/operators/index.d.ts",
@@ -5671,6 +5718,7 @@
         "../node_modules/rxjs/operators/index.d.ts",
         "../src/channel/dto/create-channel.dto.ts",
         "../src/channel/dao/channel.dao.ts",
+        "../src/channel/interfaces/channel.interface.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -5678,6 +5726,27 @@
       ],
       "../src/channel/validators/handler-params.ts": [
         "../node_modules/class-validator/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/fastify/fastify.d.ts": [
+        "../node_modules/@types/node/http.d.ts",
+        "../node_modules/@types/node/http2.d.ts",
+        "../node_modules/@types/node/https.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/channel/interceptors/channel.interceptor.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/rxjs/index.d.ts",
+        "../node_modules/rxjs/operators/index.d.ts",
+        "../node_modules/@types/node/http.d.ts",
+        "../node_modules/fastify/fastify.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -5691,12 +5760,14 @@
         "../src/channel/dto/create-channel.dto.ts",
         "../src/channel/entities/channel.entity.ts",
         "../src/channel/validators/handler-params.ts",
+        "../src/channel/interceptors/channel.interceptor.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "../src/channel/schemas/channel.schema.ts": [
+        "../node_modules/@types/mongoose/index.d.ts",
         "../src/channel/interfaces/channel.interface.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -6004,16 +6075,6 @@
         "../node_modules/@nestjs/core/nest-factory.d.ts",
         "../node_modules/@nestjs/core/router/index.d.ts",
         "../node_modules/@nestjs/core/services/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/fastify/fastify.d.ts": [
-        "../node_modules/@types/node/http.d.ts",
-        "../node_modules/@types/node/http2.d.ts",
-        "../node_modules/@types/node/https.d.ts",
-        "../node_modules/@types/node/ts3.2/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -9870,6 +9931,38 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../node_modules/@types/bson/index.d.ts": [
+        "../node_modules/@types/node/ts3.2/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/mongodb/index.d.ts": [
+        "../node_modules/@types/bson/index.d.ts",
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/tls.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/mongoose/index.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/mongodb/index.d.ts",
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/mongoose/index.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/channel/interfaces/channel.interface.ts": [
+        "../node_modules/@types/mongoose/index.d.ts"
+      ],
       "../src/channel/dao/channel.dao.ts": [
         "../src/channel/interfaces/channel.interface.ts",
         "../node_modules/rxjs/index.d.ts",
@@ -9881,12 +9974,29 @@
         "../src/channel/entities/channel.entity.ts",
         "../src/channel/dto/create-channel.dto.ts"
       ],
+      "../node_modules/fastify/fastify.d.ts": [
+        "../node_modules/@types/node/http.d.ts",
+        "../node_modules/@types/node/http2.d.ts",
+        "../node_modules/@types/node/https.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/channel/interceptors/channel.interceptor.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/rxjs/index.d.ts"
+      ],
       "../src/channel/channel.controller.ts": [
         "../src/channel/channel.service.ts",
         "../node_modules/rxjs/index.d.ts",
         "../src/channel/entities/channel.entity.ts",
         "../src/channel/validators/handler-params.ts",
         "../src/channel/dto/create-channel.dto.ts"
+      ],
+      "../src/channel/schemas/channel.schema.ts": [
+        "../node_modules/@types/mongoose/index.d.ts"
       ],
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -10144,16 +10254,6 @@
         "../node_modules/@nestjs/core/nest-factory.d.ts",
         "../node_modules/@nestjs/core/router/index.d.ts",
         "../node_modules/@nestjs/core/services/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/fastify/fastify.d.ts": [
-        "../node_modules/@types/node/http.d.ts",
-        "../node_modules/@types/node/http2.d.ts",
-        "../node_modules/@types/node/https.d.ts",
-        "../node_modules/@types/node/ts3.2/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",

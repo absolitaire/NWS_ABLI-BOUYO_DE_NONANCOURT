@@ -1,14 +1,17 @@
 import { ConflictException, Injectable, NotFoundException, UnprocessableEntityException } from '@nestjs/common';
-import { Observable, of, throwError } from 'rxjs';
+import { from, Observable, of, throwError } from 'rxjs';
 import { ChannelEntity } from './entities/channel.entity';
-import { catchError, map, flatMap } from 'rxjs/operators';
+import { catchError, map, flatMap, find, tap } from 'rxjs/operators';
 import { CreateChannelDto } from './dto/create-channel.dto';
 import { ChannelDao } from './dao/channel.dao';
+import { Channel } from './interfaces/channel.interface';
 
 @Injectable()
 export class ChannelService {
 
+  private kkk: Channel[];
   constructor(private readonly _channelDao: ChannelDao) {
+    this.kkk = [];
   }
 
   getHello(): string {
@@ -27,6 +30,12 @@ export class ChannelService {
       );
   }
 
+ /* findAll(): Observable<ChannelEntity[] | void> {
+    return of(this.kkk)
+      .pipe(
+        map(_ => !!_ ? _.map(__ => new ChannelEntity(__)) : undefined),
+      );
+  }*/
   /**
    * Returns one person of the list matching id in parameter
    *
@@ -34,6 +43,17 @@ export class ChannelService {
    *
    * @returns {Observable<PersonEntity>}
    */
+/*  findOne(id: string): Observable<Channel> {
+    return from(this.kkk)
+      .pipe(
+        find(_ => _.id === id),
+        flatMap(_ =>
+          !!_ ?
+            of(_) :
+            throwError(new NotFoundException(`People with id '${id}' not found`)),
+        ),
+      );
+  }*/
   findOne(id: string): Observable<ChannelEntity> {
     return this._channelDao.findChannelById(id)
       .pipe(
@@ -53,6 +73,20 @@ export class ChannelService {
    *
    * @returns {Observable<ChannelEntity>}
    */
+
+/*  create(person: CreateChannelDto): Observable<Channel> {
+    return from(this.kkk)
+      .pipe(
+        find(_ => _.idChannel === person.idChannel),
+        flatMap(_ =>
+          !!_ ?
+            throwError(
+              new ConflictException(`People with lastname already exists`),
+            ) :
+            this._addChannel(person),
+        ),
+      );
+  }*/
   create(channel: CreateChannelDto): Observable<ChannelEntity> {
     return this._addChannel(channel)
       .pipe(
@@ -76,8 +110,21 @@ export class ChannelService {
    *
    * @private
    */
-  private _addChannel(channel: CreateChannelDto): Observable<CreateChannelDto> {
+  /*private _addChannel(channel: CreateChannelDto): Observable<CreateChannelDto> {
     return of(channel);
+  }*/
+  private _addChannel(channel: CreateChannelDto): Observable<Channel> {
+    return of(channel).pipe(
+      map(_ =>
+        Object.assign(_, {
+          id: this._createId(),
+        }) as Channel,
+      ),
+      tap(_ => this.kkk = this.kkk.concat(_)),
+    );
+  }
+  private _createId(): string {
+    return `${new Date().getTime()}`;
   }
   /**
    * Deletes one person in people list

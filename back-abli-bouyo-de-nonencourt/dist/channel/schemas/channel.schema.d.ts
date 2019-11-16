@@ -1,1 +1,2 @@
-export declare const ChannelSchema: any;
+import * as mongoose from 'mongoose';
+export declare const ChannelSchema: mongoose.Schema<any>;

@@ -18,7 +18,7 @@ ChannelModule = __decorate([
     common_1.Module({
         imports: [mongoose_1.MongooseModule.forFeature([{ name: 'Channel', schema: channel_schema_1.ChannelSchema }])],
         controllers: [channel_controller_1.ChannelController],
-        providers: [channel_service_1.ChannelService, channel_dao_1.ChannelDao],
+        providers: [channel_service_1.ChannelService, common_1.Logger, channel_dao_1.ChannelDao],
     })
 ], ChannelModule);
 exports.ChannelModule = ChannelModule;

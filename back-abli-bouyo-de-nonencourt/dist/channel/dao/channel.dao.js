@@ -11,7 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const mongoose_1 = require("@nestjs/mongoose");
@@ -42,7 +41,7 @@ let ChannelDao = class ChannelDao {
 ChannelDao = __decorate([
     common_1.Injectable(),
     __param(0, mongoose_1.InjectModel('Channel')),
-    __metadata("design:paramtypes", [typeof (_a = typeof mongoose_2.Model !== "undefined" && mongoose_2.Model) === "function" ? _a : Object])
+    __metadata("design:paramtypes", [mongoose_2.Model])
 ], ChannelDao);
 exports.ChannelDao = ChannelDao;
 //# sourceMappingURL=channel.dao.js.map

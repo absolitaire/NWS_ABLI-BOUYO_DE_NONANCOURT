@@ -13,10 +13,8 @@ export class ChannelDao {
    *
    * @param {Model<Channel>} _channelModel instance of the model representing a Channel
    */
-  // tslint:disable-next-line:variable-name
   constructor(@InjectModel('Channel') private readonly _channelModel: Model<Channel>) {
   }
-
   /**
    * Call mongoose method, call toJSON on each result and returns Person[] or undefined
    *
@@ -28,7 +26,12 @@ export class ChannelDao {
         map((docs: MongooseDocument[]) => (!!docs && docs.length > 0) ? docs.map(_ => _.toJSON()) : undefined),
       );
   }
-
+/*  findAllChannels(): Observable<Channel[] | void> {
+    return from(this._channelModel.find({}))
+      .pipe(
+        map((docs: MongooseDocument[]) => (!!docs && docs.length > 0) ? docs.map(_ => _.toJSON()) : ''undefined''),
+      );
+  }*/
   /**
    * Returns one person of the list matching id in parameter
    *

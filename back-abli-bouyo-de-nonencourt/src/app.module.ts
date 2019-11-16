@@ -5,7 +5,8 @@ import { UserModule } from './user/user.module';
 import * as Config from 'config';
 
 @Module({
-  imports: [ MongooseModule.forRoot(Config.get<string>('mongodb.uri'), Config.get<MongooseModuleOptions>('mongodb.options')),
+  // imports: [ MongooseModule.forRoot(Config.get<string>('mongodb.uri'), Config.get<MongooseModuleOptions>('mongodb.options')),
+  imports: [ MongooseModule.forRoot('mongodb://localhost/back', Config.get<MongooseModuleOptions>('mongodb.options')),
    ChannelModule, UserModule],
 })
 export class AppModule {}
