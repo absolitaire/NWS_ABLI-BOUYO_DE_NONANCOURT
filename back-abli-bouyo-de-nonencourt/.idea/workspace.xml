@@ -2,34 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cfa2c293-8079-428d-b3fc-8a5abfeb4f7d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/channel/interceptors/channel.interceptor.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Projet nws.odt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/default.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/default.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/app.module.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app.module.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/app.module.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app.module.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/channel/channel.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/channel.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/channel/channel.controller.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/channel.controller.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/channel/channel.module.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/channel.module.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/channel/channel.module.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/channel.module.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/channel/channel.service.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/channel.service.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/channel/channel.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/channel.service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/channel/channel.service.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/channel.service.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/channel/dao/channel.dao.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/dao/channel.dao.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/channel/dao/channel.dao.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/dao/channel.dao.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/channel/interfaces/channel.interface.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/interfaces/channel.interface.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/channel/schemas/channel.schema.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/schemas/channel.schema.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/main.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/tsconfig.build.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/dist/tsconfig.build.tsbuildinfo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/user/user.controller.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/user/user.controller.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/user/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/user/user.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/user/user.controller.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/user/user.controller.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/user/user.module.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/user/user.module.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/user/user.module.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/user/user.module.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/user/user.service.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/user/user.service.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/user/user.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/user/user.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/user/user.service.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/user/user.service.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.yarn-integrity" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.yarn-integrity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/fastify-swagger/static/favicon-16x16.png" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/fastify-swagger/static/favicon-16x16.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/fastify-swagger/static/favicon-32x32.png" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/fastify-swagger/static/favicon-32x32.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/channel/channel.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/channel/channel.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/channel/channel.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/channel/channel.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/channel/channel.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/channel/channel.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/channel/dao/channel.dao.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/channel/dao/channel.dao.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/channel/interfaces/channel.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/channel/interfaces/channel.interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/user/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/user.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/user.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/user.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/user.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,7 +37,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/channel" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/user/entities" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -55,15 +47,15 @@
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/channel" />
-      <recent name="$PROJECT_DIR$/src/channel/dto" />
-      <recent name="$PROJECT_DIR$/src/channel/dao" />
-      <recent name="$PROJECT_DIR$/src/interfaces" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/channel" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/user/entities" />
+      <recent name="$PROJECT_DIR$/src/user/dto" />
+      <recent name="$PROJECT_DIR$/src/user" />
+      <recent name="$PROJECT_DIR$/src/channel" />
+      <recent name="$PROJECT_DIR$/src/channel/dto" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -95,6 +87,7 @@
       <workItem from="1573859299297" duration="522000" />
       <workItem from="1573889704458" duration="512000" />
       <workItem from="1573890232059" duration="7098000" />
+      <workItem from="1573925088210" duration="7589000" />
     </task>
     <servers />
   </component>

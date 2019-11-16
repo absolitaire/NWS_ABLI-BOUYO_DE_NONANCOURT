@@ -1,0 +1,8 @@
+{
+  "name": "NWT_ABLI-BOUYO_DE_NONANCOURT",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/absolitaire/NWT_ABLI-BOUYO_DE_NONANCOURT.git",
+  "author": "ABLI-BOUYO Alexis <ablibouy1u@etu.univ-lorraine.fr>",
+  "license": "MIT"
+}
