@@ -2,8 +2,6 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {User} from "../shared/interfaces/user";
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {catchError} from "rxjs/operators";
-
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
