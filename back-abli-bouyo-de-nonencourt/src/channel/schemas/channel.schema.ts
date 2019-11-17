@@ -11,13 +11,13 @@ idChannel: {
 },
 description: {
   type: String,
-    maxlength: 100,
+    maxlength: 200,
 },
 name: {
   type: String,
     required: true,
     minlength: 1,
-    maxlength: 20,
+    maxlength: 30,
     trim: true,
 },
 }, {

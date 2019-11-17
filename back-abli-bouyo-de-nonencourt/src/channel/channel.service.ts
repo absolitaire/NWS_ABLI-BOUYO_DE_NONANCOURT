@@ -96,7 +96,7 @@ export class ChannelService {
         catchError(e =>
           e.code = 11000 ?
             throwError(
-              new ConflictException(`A channel with the id '${channel.idChannel}' already exists`),
+              new ConflictException(`A channel with the id '${channel.idChannel}' already exists`, e.message,)
             ) :
             throwError(new UnprocessableEntityException(e.message)),
         ),

@@ -8,7 +8,6 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { SwaggerConfig } from './interfaces/swagger-config.interface';
 import { ChannelModule } from './channel/channel.module';
 import { UserModule } from './user/user.module';
-import { PeopleModule } from './people/people.module';
 
 async function bootstrap(config: AppConfig, swaggerConfig: SwaggerConfig) {
   const app = await NestFactory.create(AppModule,
@@ -48,7 +47,7 @@ async function bootstrap(config: AppConfig, swaggerConfig: SwaggerConfig) {
 
   // create swagger document
   const swaggerDocument = SwaggerModule.createDocument(app, options, {
-    include: [ ChannelModule, UserModule, PeopleModule], //
+    include: [ ChannelModule, UserModule],
   });
 
   // setup swagger module

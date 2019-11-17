@@ -1,5 +1,6 @@
 import { Exclude, Expose, Type } from 'class-transformer';
 import { ApiModelProperty } from '@nestjs/swagger';
+import { AddressEntity } from './address.entity';
 
 @Exclude()
 export class UserEntity {
@@ -23,6 +24,24 @@ export class UserEntity {
   @Type(() => String)
   email: string;
 
+  @ApiModelProperty({ description: 'Firstname', example: 'Mclaughlin' })
+  @Expose()
+  @Type(() => String)
+  firstname: string;
+
+  @ApiModelProperty({ description: 'Lastname', example: 'Cochran' })
+  @Expose()
+  @Type(() => String)
+  lastname: string;
+
+  @ApiModelProperty({ description: 'Address' })  @Expose()
+  @Type(() => AddressEntity)
+  address: AddressEntity;
+
+  @ApiModelProperty({ description: 'Phone', example: '+33600000000', pattern: '/^(\+\d{11})$/' })
+  @Expose()
+  @Type(() => String)
+  phone: string;
   /**
    * Class constructor
    *

@@ -14,7 +14,7 @@ import { ChannelEntity } from './entities/channel.entity';
 import { HandlerParams } from './validators/handler-params';
 import { ChannelInterceptor } from './interceptors/channel.interceptor';
 
-@ApiUseTags('back')
+@ApiUseTags('back/channel')
 @Controller('channel')
 @UseInterceptors(ClassSerializerInterceptor)
 @UseInterceptors(ChannelInterceptor)

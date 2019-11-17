@@ -1782,7 +1782,7 @@
         "signature": "cda922f2bc3279a3fffd6abd188404aeb98b81d8ff4f1d05c870f6ebf78cb021"
       },
       "../src/channel/channel.service.ts": {
-        "version": "a6f32d4f00084cc87404adabb6b5292f876ca497db3f261f8278b2c05791d7c5",
+        "version": "bcf89bc2b63661370b97e89445b19819360289cfd1bb7af4ad3daecac927848c",
         "signature": "606d734e3eac827da43908a08858eda99f4dd6bbc4e933ce7bfd0d73eccb1f26"
       },
       "../src/channel/validators/handler-params.ts": {
@@ -1798,11 +1798,11 @@
         "signature": "5979d520d308aaa4f3318a388e2a12db743b258c31c63e78f05373b299588449"
       },
       "../src/channel/channel.controller.ts": {
-        "version": "5f9cbba705f122472ea07b4566f1bce0d0d9a5c79f3d9302b546aec4618191b9",
+        "version": "bb7fb215638a748a55e586aa25f9dc3a9d2d7664c958a6ba7087a99e5354862f",
         "signature": "c53cc4b3d4ade5a3ac4279e8783fd34e5ccb141b723256238304988b2721903d"
       },
       "../src/channel/schemas/channel.schema.ts": {
-        "version": "8868577dfa8de71e9ead6e350d9f0dc958a6f3a92586274475183a126f8ea8b4",
+        "version": "789619734833c5c905d366534a24f56d7291f9e680a875e2d9d19ea1e06573b1",
         "signature": "65746ffc94fa08faef04ca2095b3a5ee66eaac53b61fc25cfd7187e1eec4ff69"
       },
       "../src/channel/channel.module.ts": {
@@ -1813,17 +1813,25 @@
         "version": "c2d5d2c2254acffe8012f86ffe9890242f5d997d203a4670c40993dbf47a3959",
         "signature": "0608f21bb8712c66fd2c1ee80afe3212b18e15197f4f88096448a5850beb5b24"
       },
+      "../src/user/dto/address.dto.ts": {
+        "version": "13643b6a42b05b0e706f2e25cedcd53f5a09275cfd466ee52ce80169593a38f1",
+        "signature": "c45eccea6e61406c530906f1fdb8ea10368f7808d622611f6aa4cc08b86fc2c2"
+      },
       "../src/user/dto/create-user.dto.ts": {
-        "version": "800ac11cb87e33103dc6922e58ff44725cd30b161ff6a1e79a0c9532ed5ab8be",
-        "signature": "43a3776754bc62b341f81db060c7e55a26ba2b7fb4fa29c3a3ac65e7ab50cb70"
+        "version": "e5e16d43701e3f40e9bfa56b62f161794c42ded3f83d9759fbeabbf9a9b6b6ad",
+        "signature": "6892bf6271f580495c3f882b651296e10980017ba30a5becced48bf8cdbc8268"
+      },
+      "../src/user/entities/address.entity.ts": {
+        "version": "799753194e38b519fac0b39ef2d709fb4d9a1f01d751d82a835f02005ff1d11a",
+        "signature": "16f6067124f04f955e582c5175895b36534d553820f84594aa10e15e112f6eda"
       },
       "../src/user/entities/user.entity.ts": {
-        "version": "d0f79b8045b8e3826b3e7cf5756e5016bb497bed3b72ce4aec642f2b4a15fc9a",
-        "signature": "6ef9373de6a60ab8d90b48b0c3356bf87ef4ec85dfe8864a863ccf2289dad532"
+        "version": "f3358a00cb3620b0b490712611e8c0b87b1e0840be31fd429103a85c9a50ff46",
+        "signature": "3ff439ec3dd776040cb05301c0555d3fcd0a5767988448ec2cf2aae38f7f563c"
       },
       "../src/user/interfaces/user.interface.ts": {
-        "version": "70851c738ddc75e969815cf2649cb9960b418a3f1db1a3874c43832337eab8db",
-        "signature": "e072d515c17815b6656efb5e2097c5ab1ca7dc319687348358119673749a1277"
+        "version": "b96479e8aa24a2982a50f044ec1f8932c6435c8da631812cf64da05aa3f01e03",
+        "signature": "e7dff0f57a66ab276ca224f89f4c2ae0df8339f169ee362b3c9fe1972482af76"
       },
       "../src/user/dao/user.dao.ts": {
         "version": "a3abab6792efa43b1a047b79c4403b4d32ce821496c6a1a44e22b0f228701c5f",
@@ -1834,71 +1842,19 @@
         "signature": "d3b695773439c5a38e7858a7c69d4f827343f8d4fff187391b6280ac29d4590b"
       },
       "../src/user/user.controller.ts": {
-        "version": "65bb6bf477372777f3e819b3dc6274e4e41f311cc658b66e238fbadccf6a97c8",
+        "version": "10c361c59ccdd3862b87257e0fae1a7be7ebb121ce93c9eb7f80b20725e65e86",
         "signature": "8d0a727136f442cdc68ef21a070639171482f05fe68b2ff00434ade242bc1a3e"
       },
       "../src/user/schemas/user.schema.ts": {
-        "version": "48df0dcc9a35f89cc824db28084f3856a395b03693b9a79c6f4f380af54a8227",
+        "version": "e22ba6f13a532dfca1ab4acbd923122dd3fccb1b5f5fdfa25f563d14418329de",
         "signature": "1c21071f2c0d7d9779303a6a204301fb1576821e54fc756baf24e3e726ba2897"
       },
       "../src/user/user.module.ts": {
         "version": "c55965b6297d94123404a405f289686155d86f672b34f26087da38c59ce0041a",
         "signature": "482b8f0d35a3d453500a15b6c6057c1e4c40baa4329b39da9e1026d8e1de4329"
       },
-      "../src/people/dto/person-address.dto.ts": {
-        "version": "39428820b8d3bd8b82bf5900a375937b7772969077ee450e67320544c0ff516c",
-        "signature": "8142b3d49cb3e464189e7f6affae24fd893a595ec52f693a7cef91f8ab4e8b83"
-      },
-      "../src/people/dto/create-person.dto.ts": {
-        "version": "c042b65b48be0499bb3c1b4e24e1381a0ad199d88cedeb2e7ede77a00751b997",
-        "signature": "c73658c54cd8a6a6047b1365ab05de8961daceda076f794cde363f1cb7348615"
-      },
-      "../src/people/dto/update-person.dto.ts": {
-        "version": "35acd71f5aeb96b2e0ea84c4cd89df5378d2329782f1cadaa6ed50a8a8a292dc",
-        "signature": "8243ca4eb31bf0da0ae8f3b6a420d026df55eafee2858c3e64c3541e137254a8"
-      },
-      "../src/people/entities/person-address.entity.ts": {
-        "version": "b707247b7cdb8e09d4913fe26ecb1815d5a5ef1c225936f7e92973cb363913ec",
-        "signature": "335333cd901b9d8c40a5883929d87ff8e8c32fa90510055229be449cb88434a1"
-      },
-      "../src/people/entities/person.entity.ts": {
-        "version": "f8e0090354215cc56a3b040203b49023c81f2b1c0cbbffabe4dd43c63517ab0d",
-        "signature": "fcd1f3958a4d79394532628976743e996e1b2a894bc09af59f69420a3cd28d73"
-      },
-      "../src/people/interfaces/person.interface.ts": {
-        "version": "60a809e258d20e2301fb7b2e4d9f3b355955e8159e1302c405cb5205da296f3d",
-        "signature": "81e05326db39477afe4248b1d505b6ad5636a364a20b972d1caca70621acc8f2"
-      },
-      "../src/people/dao/people.dao.ts": {
-        "version": "487961000eb8f12c8ea1aaff228f4c2314617a09b3d5093a554bb09a814bc1df",
-        "signature": "8934ff102e11014412083133795e0a3841327a004f658bf1a6a05b9339d94f5d"
-      },
-      "../src/people/people.service.ts": {
-        "version": "11a5bc5c92e9777472467e5b6d1db74b17144c7742c48c0d2d28539e59fe85db",
-        "signature": "0b2cfd888bda80c36902a029f83b9d44b08b5ada8e86eb34dcab093ea3520504"
-      },
-      "../src/people/interceptors/people.interceptor.ts": {
-        "version": "9058e6831bd162fb9052040dcbdb9b187a9e348bc49e99e00140a601b6becff1",
-        "signature": "86e53856b025d7175e9cee94add8171ce268ff6d3bb0a8f47f2dcd38052b071d"
-      },
-      "../src/people/validators/handler-params.ts": {
-        "version": "c2d5d2c2254acffe8012f86ffe9890242f5d997d203a4670c40993dbf47a3959",
-        "signature": "0608f21bb8712c66fd2c1ee80afe3212b18e15197f4f88096448a5850beb5b24"
-      },
-      "../src/people/people.controller.ts": {
-        "version": "ce5867bcf938c8f5b8f349ce3ed516d449002fcf7116b11756f945f7c6f9cc07",
-        "signature": "5541cca1aeab477e9809c96930003785a05c7295ecd4943df40f8a2c08d22189"
-      },
-      "../src/people/schemas/person.schema.ts": {
-        "version": "d65c0b6d15ae7e1670504386d2b97d980b7f813b17cc2494ac29a3c5f6599101",
-        "signature": "a449ef91f33eb5989c302d9a794a043ea68bf00b264ec9db682c7f933dc3338c"
-      },
-      "../src/people/people.module.ts": {
-        "version": "f24d7db1395bc280a6c1f29e2cbf51064692866e1082de14c92a55bc1bb72099",
-        "signature": "ed58bd2fa5de5feae6c1f0907475612fdc81226da179445f884c0a33150af69e"
-      },
       "../src/app.module.ts": {
-        "version": "15cfd76d8d5522c214a226a2c0431f6dbb9612b06a93a9ec346ee5895b0cce97",
+        "version": "6199448264fcc3b10131dbd5e7765250a45fd444d80ecdc158919156c22ce82c",
         "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644"
       },
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts": {
@@ -2046,7 +2002,7 @@
         "signature": "211f1e624b0e7d0c6bb9f4b32212757f69617657b5a8ba5a08ae3829d8ceb097"
       },
       "../src/main.ts": {
-        "version": "d33f62245249333b187b8b487ab77065d626531c75da0890472e34b7f9598888",
+        "version": "276b3bece54075b17420d86ac9693009303dc10560fc62f64a5e8ab4cab01cb8",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
       },
       "../node_modules/@types/anymatch/index.d.ts": {
@@ -5841,8 +5797,26 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../src/user/dto/address.dto.ts": [
+        "../node_modules/class-validator/index.d.ts",
+        "../node_modules/@nestjs/swagger/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../src/user/dto/create-user.dto.ts": [
         "../node_modules/class-validator/index.d.ts",
+        "../node_modules/@nestjs/swagger/index.d.ts",
+        "../node_modules/class-transformer/index.d.ts",
+        "../src/user/dto/address.dto.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/user/entities/address.entity.ts": [
+        "../node_modules/class-transformer/index.d.ts",
         "../node_modules/@nestjs/swagger/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -5852,6 +5826,7 @@
       "../src/user/entities/user.entity.ts": [
         "../node_modules/class-transformer/index.d.ts",
         "../node_modules/@nestjs/swagger/index.d.ts",
+        "../src/user/entities/address.entity.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -5921,143 +5896,11 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../src/people/dto/person-address.dto.ts": [
-        "../node_modules/class-validator/index.d.ts",
-        "../node_modules/@nestjs/swagger/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/people/dto/create-person.dto.ts": [
-        "../src/people/dto/person-address.dto.ts",
-        "../node_modules/class-validator/index.d.ts",
-        "../node_modules/class-transformer/index.d.ts",
-        "../node_modules/@nestjs/swagger/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/people/dto/update-person.dto.ts": [
-        "../src/people/dto/person-address.dto.ts",
-        "../node_modules/class-validator/index.d.ts",
-        "../node_modules/class-transformer/index.d.ts",
-        "../node_modules/@nestjs/swagger/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/people/entities/person-address.entity.ts": [
-        "../node_modules/class-transformer/index.d.ts",
-        "../node_modules/@nestjs/swagger/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/people/entities/person.entity.ts": [
-        "../node_modules/class-transformer/index.d.ts",
-        "../src/people/entities/person-address.entity.ts",
-        "../node_modules/@nestjs/swagger/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/people/interfaces/person.interface.ts": [
-        "../node_modules/@types/mongoose/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/people/dao/people.dao.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@nestjs/mongoose/index.d.ts",
-        "../node_modules/@types/mongoose/index.d.ts",
-        "../src/people/interfaces/person.interface.ts",
-        "../node_modules/rxjs/index.d.ts",
-        "../node_modules/rxjs/operators/index.d.ts",
-        "../src/people/dto/update-person.dto.ts",
-        "../src/people/dto/create-person.dto.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/people/people.service.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/rxjs/index.d.ts",
-        "../node_modules/rxjs/operators/index.d.ts",
-        "../src/people/dto/create-person.dto.ts",
-        "../src/people/dto/update-person.dto.ts",
-        "../src/people/entities/person.entity.ts",
-        "../src/people/dao/people.dao.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/people/interceptors/people.interceptor.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/rxjs/index.d.ts",
-        "../node_modules/rxjs/operators/index.d.ts",
-        "../node_modules/@types/node/http.d.ts",
-        "../node_modules/fastify/fastify.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/people/validators/handler-params.ts": [
-        "../node_modules/class-validator/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/people/people.controller.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../src/people/people.service.ts",
-        "../src/people/interceptors/people.interceptor.ts",
-        "../node_modules/rxjs/index.d.ts",
-        "../src/people/dto/create-person.dto.ts",
-        "../src/people/dto/update-person.dto.ts",
-        "../src/people/validators/handler-params.ts",
-        "../src/people/entities/person.entity.ts",
-        "../node_modules/@nestjs/swagger/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/people/schemas/person.schema.ts": [
-        "../node_modules/@types/mongoose/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/people/people.module.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../src/people/people.controller.ts",
-        "../src/people/people.service.ts",
-        "../node_modules/@nestjs/mongoose/index.d.ts",
-        "../src/people/schemas/person.schema.ts",
-        "../src/people/dao/people.dao.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
       "../src/app.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/mongoose/index.d.ts",
         "../src/channel/channel.module.ts",
         "../src/user/user.module.ts",
-        "../src/people/people.module.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -6387,7 +6230,6 @@
         "../src/interfaces/swagger-config.interface.ts",
         "../src/channel/channel.module.ts",
         "../src/user/user.module.ts",
-        "../src/people/people.module.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -10187,6 +10029,12 @@
       "../src/channel/schemas/channel.schema.ts": [
         "../node_modules/@types/mongoose/index.d.ts"
       ],
+      "../src/user/dto/create-user.dto.ts": [
+        "../src/user/dto/address.dto.ts"
+      ],
+      "../src/user/entities/user.entity.ts": [
+        "../src/user/entities/address.entity.ts"
+      ],
       "../src/user/interfaces/user.interface.ts": [
         "../node_modules/@types/mongoose/index.d.ts"
       ],
@@ -10210,47 +10058,6 @@
         "../src/user/dto/create-user.dto.ts"
       ],
       "../src/user/schemas/user.schema.ts": [
-        "../node_modules/@types/mongoose/index.d.ts"
-      ],
-      "../src/people/dto/create-person.dto.ts": [
-        "../src/people/dto/person-address.dto.ts"
-      ],
-      "../src/people/dto/update-person.dto.ts": [
-        "../src/people/dto/person-address.dto.ts"
-      ],
-      "../src/people/entities/person.entity.ts": [
-        "../src/people/entities/person-address.entity.ts"
-      ],
-      "../src/people/interfaces/person.interface.ts": [
-        "../node_modules/@types/mongoose/index.d.ts"
-      ],
-      "../src/people/dao/people.dao.ts": [
-        "../node_modules/@types/mongoose/index.d.ts",
-        "../src/people/interfaces/person.interface.ts",
-        "../node_modules/rxjs/index.d.ts",
-        "../src/people/dto/create-person.dto.ts",
-        "../src/people/dto/update-person.dto.ts"
-      ],
-      "../src/people/people.service.ts": [
-        "../src/people/dao/people.dao.ts",
-        "../node_modules/rxjs/index.d.ts",
-        "../src/people/entities/person.entity.ts",
-        "../src/people/dto/create-person.dto.ts",
-        "../src/people/dto/update-person.dto.ts"
-      ],
-      "../src/people/interceptors/people.interceptor.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/rxjs/index.d.ts"
-      ],
-      "../src/people/people.controller.ts": [
-        "../src/people/people.service.ts",
-        "../node_modules/rxjs/index.d.ts",
-        "../src/people/entities/person.entity.ts",
-        "../src/people/validators/handler-params.ts",
-        "../src/people/dto/create-person.dto.ts",
-        "../src/people/dto/update-person.dto.ts"
-      ],
-      "../src/people/schemas/person.schema.ts": [
         "../node_modules/@types/mongoose/index.d.ts"
       ],
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts": [

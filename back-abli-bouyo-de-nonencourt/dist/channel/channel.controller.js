@@ -76,7 +76,7 @@ __decorate([
     __metadata("design:returntype", rxjs_1.Observable)
 ], ChannelController.prototype, "create", null);
 ChannelController = __decorate([
-    swagger_1.ApiUseTags('back'),
+    swagger_1.ApiUseTags('back/channel'),
     common_1.Controller('channel'),
     common_1.UseInterceptors(common_1.ClassSerializerInterceptor),
     common_1.UseInterceptors(channel_interceptor_1.ChannelInterceptor),

@@ -2,7 +2,7 @@ import { Exclude, Expose } from 'class-transformer';
 import { ApiModelProperty } from '@nestjs/swagger';
 
 @Exclude()
-export class PersonAddressEntity {
+export class AddressEntity {
   @ApiModelProperty({ description: 'Street', example: 'Jewel Street' })
   @Expose()
   street: string;

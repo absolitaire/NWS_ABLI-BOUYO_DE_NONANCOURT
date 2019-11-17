@@ -5,7 +5,7 @@ import {
   ApiNoContentResponse,
   ApiNotFoundResponse,
   ApiOkResponse,
-  ApiUnprocessableEntityResponse,
+  ApiUnprocessableEntityResponse, ApiUseTags,
 } from '@nestjs/swagger';
 import { Observable } from 'rxjs';
 import { HandlerParams } from './validators/handler-params';
@@ -13,6 +13,7 @@ import { CreateUserDto } from '../user/dto/create-user.dto';
 import { UserEntity } from '../user/entities/user.entity';
 import { UserService } from './user.service';
 
+@ApiUseTags('back/user')
 @Controller('user')
 export class UserController {
   /**

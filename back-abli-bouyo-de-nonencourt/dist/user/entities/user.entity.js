@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const class_transformer_1 = require("class-transformer");
 const swagger_1 = require("@nestjs/swagger");
+const address_entity_1 = require("./address.entity");
 let UserEntity = class UserEntity {
     constructor(partial) {
         Object.assign(this, partial);
@@ -40,6 +41,29 @@ __decorate([
     class_transformer_1.Type(() => String),
     __metadata("design:type", String)
 ], UserEntity.prototype, "email", void 0);
+__decorate([
+    swagger_1.ApiModelProperty({ description: 'Firstname', example: 'Mclaughlin' }),
+    class_transformer_1.Expose(),
+    class_transformer_1.Type(() => String),
+    __metadata("design:type", String)
+], UserEntity.prototype, "firstname", void 0);
+__decorate([
+    swagger_1.ApiModelProperty({ description: 'Lastname', example: 'Cochran' }),
+    class_transformer_1.Expose(),
+    class_transformer_1.Type(() => String),
+    __metadata("design:type", String)
+], UserEntity.prototype, "lastname", void 0);
+__decorate([
+    swagger_1.ApiModelProperty({ description: 'Address' }), class_transformer_1.Expose(),
+    class_transformer_1.Type(() => address_entity_1.AddressEntity),
+    __metadata("design:type", address_entity_1.AddressEntity)
+], UserEntity.prototype, "address", void 0);
+__decorate([
+    swagger_1.ApiModelProperty({ description: 'Phone', example: '+33600000000', pattern: '/^(\+\d{11})$/' }),
+    class_transformer_1.Expose(),
+    class_transformer_1.Type(() => String),
+    __metadata("design:type", String)
+], UserEntity.prototype, "phone", void 0);
 UserEntity = __decorate([
     class_transformer_1.Exclude(),
     __metadata("design:paramtypes", [Object])

@@ -35,7 +35,7 @@ let ChannelService = class ChannelService {
     create(channel) {
         return this._addChannel(channel)
             .pipe(operators_1.flatMap(_ => this._channelDao.createChannel(_)), operators_1.catchError(e => e.code = 11000 ?
-            rxjs_1.throwError(new common_1.ConflictException(`A channel with the id '${channel.idChannel}' already exists`)) :
+            rxjs_1.throwError(new common_1.ConflictException(`A channel with the id '${channel.idChannel}' already exists`, e.message)) :
             rxjs_1.throwError(new common_1.UnprocessableEntityException(e.message))), operators_1.map(_ => new channel_entity_1.ChannelEntity(_)));
     }
     _addChannel(channel) {
