@@ -18,9 +18,6 @@ let ChannelService = class ChannelService {
     constructor(_channelDao) {
         this._channelDao = _channelDao;
     }
-    getHello() {
-        return 'Hello World channel!';
-    }
     findAll() {
         return this._channelDao.findAllChannels()
             .pipe(operators_1.map(_ => !!_ ? _.map(__ => new channel_entity_1.ChannelEntity(__)) : undefined));
@@ -44,7 +41,13 @@ let ChannelService = class ChannelService {
         return this._channelDao.findChannelByIdAndRemove(id)
             .pipe(operators_1.catchError(e => rxjs_1.throwError(new common_1.NotFoundException(e.message))), operators_1.flatMap(_ => !!_ ?
             rxjs_1.of(undefined) :
-            rxjs_1.throwError(new common_1.NotFoundException(`Person with id '${id}' not found`))));
+            rxjs_1.throwError(new common_1.NotFoundException(`Channel with id '${id}' not found`))));
+    }
+    subscribe(sub) {
+        return this._channelDao.subscribe(sub)
+            .pipe(operators_1.catchError(e => rxjs_1.throwError(new common_1.NotFoundException(e.message))), operators_1.flatMap(_ => !!_ ?
+            rxjs_1.of(undefined) :
+            rxjs_1.throwError(new common_1.NotFoundException(`Channel with id '${sub.idChannel}' not found`))));
     }
 };
 ChannelService = __decorate([

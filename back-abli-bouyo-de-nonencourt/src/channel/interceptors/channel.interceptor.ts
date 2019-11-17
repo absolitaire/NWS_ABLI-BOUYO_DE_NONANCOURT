@@ -23,7 +23,7 @@ export class ChannelInterceptor implements NestInterceptor {
     const cls = context.getClass();
     const handler = context.getHandler();
     const response: FastifyReply<ServerResponse> = context.switchToHttp().getResponse<FastifyReply<ServerResponse>>();
-    const logCtx: string = `PeopleInterceptor => ${cls.name}.${handler.name}`;
+    const logCtx: string = `ChannelInterceptor => ${cls.name}.${handler.name}`;
 
     return next.handle()
       .pipe(

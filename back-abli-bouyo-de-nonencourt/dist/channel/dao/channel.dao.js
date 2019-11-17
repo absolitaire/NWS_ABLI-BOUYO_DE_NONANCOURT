@@ -18,8 +18,10 @@ const mongoose_2 = require("mongoose");
 const rxjs_1 = require("rxjs");
 const operators_1 = require("rxjs/operators");
 let ChannelDao = class ChannelDao {
-    constructor(_channelModel) {
+    constructor(_channelModel, _userIdModel, _logger) {
         this._channelModel = _channelModel;
+        this._userIdModel = _userIdModel;
+        this._logger = _logger;
     }
     findAllChannels() {
         return rxjs_1.from(this._channelModel.find({}))
@@ -37,11 +39,33 @@ let ChannelDao = class ChannelDao {
         return rxjs_1.from(this._channelModel.findByIdAndRemove(id))
             .pipe(operators_1.map((doc) => !!doc ? doc.toJSON() : undefined));
     }
+    subscribe(sub) {
+        this._logger.log(`AYYYYY2222 ${sub.idChannel}`);
+        return rxjs_1.from(this._channelModel.findById({ _id: sub.idChannel }, async (err, chan) => {
+            if (err) {
+                this._logger.log(err.message);
+                this._logger.log(`EN  VRAI CEST LA PANIQUE`);
+                return undefined;
+            }
+            let user = await this._userIdModel.findById({ _id: sub.idUser });
+            if (!!user) {
+                this._logger.log(`EN  VRAI CEST LA creation `);
+                user = await this._userIdModel.create({ _id: sub.idUser });
+            }
+            this._logger.log(`EN  VRAI CEST LA genendj `);
+            chan.usersSubscribed.push(user);
+            this._logger.log(`EN  VRAI CEST LA remontada `);
+        }))
+            .pipe(operators_1.map((doc) => !!doc ? doc.toJSON() : undefined));
+    }
 };
 ChannelDao = __decorate([
     common_1.Injectable(),
     __param(0, mongoose_1.InjectModel('Channel')),
-    __metadata("design:paramtypes", [mongoose_2.Model])
+    __param(1, mongoose_1.InjectModel('UserId')),
+    __metadata("design:paramtypes", [mongoose_2.Model,
+        mongoose_2.Model,
+        common_1.Logger])
 ], ChannelDao);
 exports.ChannelDao = ChannelDao;
 //# sourceMappingURL=channel.dao.js.map

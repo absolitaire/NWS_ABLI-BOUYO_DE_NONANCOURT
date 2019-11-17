@@ -1,6 +1,6 @@
 import { AddressEntity } from './address.entity';
 export declare class UserEntity {
-    id: string;
+    _id: string;
     login: string;
     password: string;
     email: string;

@@ -40,6 +40,12 @@ __decorate([
     class_transformer_1.Type(() => String),
     __metadata("design:type", String)
 ], ChannelEntity.prototype, "description", void 0);
+__decorate([
+    swagger_1.ApiModelProperty({ isArray: true, description: 'List of subscribed users', example: '[{\'id\':\'5763cd4dc378a38ecd387737\'}]' }),
+    class_transformer_1.Expose(),
+    class_transformer_1.Type(() => String),
+    __metadata("design:type", Array)
+], ChannelEntity.prototype, "usersSubscribed", void 0);
 ChannelEntity = __decorate([
     class_transformer_1.Exclude(),
     __metadata("design:paramtypes", [Object])

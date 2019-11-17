@@ -20,7 +20,7 @@ let ChannelInterceptor = class ChannelInterceptor {
         const cls = context.getClass();
         const handler = context.getHandler();
         const response = context.switchToHttp().getResponse();
-        const logCtx = `PeopleInterceptor => ${cls.name}.${handler.name}`;
+        const logCtx = `ChannelInterceptor => ${cls.name}.${handler.name}`;
         return next.handle()
             .pipe(operators_1.map(_ => rxjs_1.of(_)), operators_1.flatMap((obs) => rxjs_1.merge(obs
             .pipe(operators_1.filter(_ => !!_), operators_1.map(_ => _)), obs

@@ -22,7 +22,7 @@ __decorate([
     class_transformer_1.Expose(),
     class_transformer_1.Type(() => String),
     __metadata("design:type", String)
-], UserEntity.prototype, "id", void 0);
+], UserEntity.prototype, "_id", void 0);
 __decorate([
     swagger_1.ApiModelProperty({ description: 'login', example: 'francisdu55' }),
     class_transformer_1.Expose(),

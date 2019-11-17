@@ -16,7 +16,8 @@ let ChannelModule = class ChannelModule {
 };
 ChannelModule = __decorate([
     common_1.Module({
-        imports: [mongoose_1.MongooseModule.forFeature([{ name: 'Channel', schema: channel_schema_1.ChannelSchema }])],
+        imports: [mongoose_1.MongooseModule.forFeature([{ name: 'Channel', schema: channel_schema_1.ChannelSchema }]),
+            mongoose_1.MongooseModule.forFeature([{ name: 'UserId', schema: channel_schema_1.UserIdSchema }])],
         controllers: [channel_controller_1.ChannelController],
         providers: [channel_service_1.ChannelService, common_1.Logger, channel_dao_1.ChannelDao],
     })

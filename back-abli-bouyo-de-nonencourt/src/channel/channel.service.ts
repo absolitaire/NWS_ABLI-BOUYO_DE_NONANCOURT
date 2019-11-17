@@ -5,6 +5,8 @@ import { catchError, map, flatMap, find, tap } from 'rxjs/operators';
 import { CreateChannelDto } from './dto/create-channel.dto';
 import { ChannelDao } from './dao/channel.dao';
 import { Channel } from './interfaces/channel.interface';
+import { UserDto } from './dto/user.dto';
+import { SubscriptionDto } from './dto/subscription.dto';
 
 @Injectable()
 export class ChannelService {
@@ -25,11 +27,11 @@ export class ChannelService {
   }
 
   /**
-   * Returns one person of the list matching id in parameter
+   * Returns one channel of the list matching id in parameter
    *
-   * @param {string} id of the person
+   * @param {string} id of the channel
    *
-   * @returns {Observable<PersonEntity>}
+   * @returns {Observable<ChannelEntity>}
    */
 
   findOne(id: string): Observable<ChannelEntity> {
@@ -45,9 +47,9 @@ export class ChannelService {
   }
 
   /**
-   * Check if person already exists and add it in people list
+   * Check if channel already exists and add it in people list
    *
-   * @param person to create
+   * @param channel to create
    *
    * @returns {Observable<ChannelEntity>}
    */
@@ -86,7 +88,7 @@ export class ChannelService {
    * Delete one channel.
    * Called when a channel doesn't have any users subscribed anymore.
    *
-   * @param {string} id of the person to delete
+   * @param {string} id of the channel to delete
    *
    * @returns {Observable<void>}
    */
@@ -97,9 +99,42 @@ export class ChannelService {
         flatMap(_ =>
           !!_ ?
             of(undefined) :
-            throwError(new NotFoundException(`Person with id '${id}' not found`)),
+            throwError(new NotFoundException(`Channel with id '${id}' not found`)),
         ),
       );
   }
+  
+  /**
+   * Subscribe a user to a channel
+   *
+   * @param channel subscribed
+   * @param subscribing user
+   *
+   * @returns {Observable<ChannelEntity>}
+   */
 
+
+  subscribe(sub: SubscriptionDto): Observable<ChannelEntity> {
+
+    return this._channelDao.subscribe(sub)
+      .pipe(
+        catchError(e => throwError(new NotFoundException(e.message))),
+        flatMap(_ =>
+          !!_ ?
+            of(undefined) :
+            throwError(new NotFoundException(`Channel with id '${sub.idChannel}' not found`)),
+        ),
+      );
+  }
+/*  subscribe(sub: SubscriptionDto): Observable<ChannelEntity> {
+    return this._channelDao.subscribe(sub)
+      .pipe(
+        catchError(e => throwError(new NotFoundException(e.message))),
+        flatMap(_ =>
+          !!_ ?
+            of(undefined) :
+            throwError(new NotFoundException(`Channel with id '${sub.idChannel}' not found`)),
+        ),
+      );
+  }*/
 }
