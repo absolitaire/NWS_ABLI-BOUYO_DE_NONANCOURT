@@ -1,0 +1,31 @@
+.home-card {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+}
+
+mat-card-actions > button {
+  width: 100%;
+  margin-top: 20px;
+}
+
+
+.custom-mat-header {
+  width: 100%;
+  margin: auto;
+}
+
+.custom-mat-title {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: large;
+}
+
+.custom-mat-subtitle {
+  text-align: center;
+}
+
+
+
+

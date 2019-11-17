@@ -1,0 +1,22 @@
+<mat-card class="home-card">
+  <div class="custom-mat-header">
+    <div class="custom-mat-title">
+      Welcome to NWT
+    </div>
+    <div class="custom-mat-subtitle">
+      The easier way to stay up to date
+    </div>
+  </div>
+  <mat-card-content>
+    <p>
+
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-flat-button color="primary" [routerLink]="['/signup']">Sign up now !</button>
+    <br>
+    <button mat-flat-button color="accent" [routerLink]="['/login']">Already have an account ? Login here</button>
+  </mat-card-actions>
+</mat-card>
+
+<router-outlet></router-outlet>
