@@ -1,0 +1,18 @@
+.login-container{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 50px auto;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24), 0 0 2px rgba(0, 0, 0, 0.12);
+}
+
+.login-container > * {
+  margin: 15px;
+}
+
+.login-container > mat-toolbar {
+  margin: 0px;
+}
+
+
