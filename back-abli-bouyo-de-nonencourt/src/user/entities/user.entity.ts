@@ -7,7 +7,7 @@ export class UserEntity {
   @ApiModelProperty({ description: 'Unique identifier in the database', example: '5763cd4dc378a38ecd387737' })
   @Expose()
   @Type(() => String)
-  id: string;
+  _id: string;
 
   @ApiModelProperty({ description: 'login', example: 'francisdu55' })
   @Expose()

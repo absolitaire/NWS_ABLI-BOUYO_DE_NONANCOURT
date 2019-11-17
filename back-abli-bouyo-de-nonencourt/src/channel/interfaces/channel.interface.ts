@@ -1,7 +1,7 @@
 import { Document } from 'mongoose';
 
 export interface Channel extends Document {
-  id: string;
+  _id: string;
   idChannel: string;
   description: string;
   name: string;

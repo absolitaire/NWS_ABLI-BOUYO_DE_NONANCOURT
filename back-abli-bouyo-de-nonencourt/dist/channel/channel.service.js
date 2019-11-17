@@ -17,7 +17,6 @@ const channel_dao_1 = require("./dao/channel.dao");
 let ChannelService = class ChannelService {
     constructor(_channelDao) {
         this._channelDao = _channelDao;
-        this.kkk = [];
     }
     getHello() {
         return 'Hello World channel!';
@@ -39,12 +38,7 @@ let ChannelService = class ChannelService {
             rxjs_1.throwError(new common_1.UnprocessableEntityException(e.message))), operators_1.map(_ => new channel_entity_1.ChannelEntity(_)));
     }
     _addChannel(channel) {
-        return rxjs_1.of(channel).pipe(operators_1.map(_ => Object.assign(_, {
-            id: this._createId(),
-        })), operators_1.tap(_ => this.kkk = this.kkk.concat(_)));
-    }
-    _createId() {
-        return `${new Date().getTime()}`;
+        return rxjs_1.of(channel);
     }
     delete(id) {
         return this._channelDao.findChannelByIdAndRemove(id)

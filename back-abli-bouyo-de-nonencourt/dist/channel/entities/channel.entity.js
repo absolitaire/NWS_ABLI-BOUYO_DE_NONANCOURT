@@ -21,7 +21,7 @@ __decorate([
     class_transformer_1.Expose(),
     class_transformer_1.Type(() => String),
     __metadata("design:type", String)
-], ChannelEntity.prototype, "id", void 0);
+], ChannelEntity.prototype, "_id", void 0);
 __decorate([
     swagger_1.ApiModelProperty({ description: 'Unique identifier destined to be seen and used by the users', example: 'AbCd3' }),
     class_transformer_1.Expose(),

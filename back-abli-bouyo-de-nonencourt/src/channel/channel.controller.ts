@@ -20,10 +20,6 @@ import { ChannelInterceptor } from './interceptors/channel.interceptor';
 @UseInterceptors(ChannelInterceptor)
 export class ChannelController {
   constructor(private readonly _channelService: ChannelService) {}
-  @Get('/mdr')
-  getHello(@Param('id') params: string): string {
-    return this._channelService.getHello() + params;
-  }
 
   /**
    * Handler to answer to GET /people route

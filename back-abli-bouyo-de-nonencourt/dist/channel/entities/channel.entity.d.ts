@@ -1,5 +1,5 @@
 export declare class ChannelEntity {
-    id: string;
+    _id: string;
     idChannel: string;
     name: string;
     description: string;

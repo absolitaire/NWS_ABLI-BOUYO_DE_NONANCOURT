@@ -6,7 +6,7 @@ export class ChannelEntity {
   @ApiModelProperty({ description: 'Unique identifier in the database', example: '5763cd4dc378a38ecd387737' })
   @Expose()
   @Type(() => String)
-  id: string;
+  _id: string;
 
   @ApiModelProperty({ description: 'Unique identifier destined to be seen and used by the users', example: 'AbCd3' })
   @Expose()
