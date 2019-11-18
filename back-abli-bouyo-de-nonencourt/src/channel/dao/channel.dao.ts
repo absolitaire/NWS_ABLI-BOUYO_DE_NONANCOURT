@@ -1,12 +1,15 @@
-import { Injectable, Logger } from '@nestjs/common';
+import { ConflictException, Injectable, Logger, UnprocessableEntityException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model, MongooseDocument } from 'mongoose';
-import { Channel, UserId } from '../interfaces/channel.interface';
-import { from, Observable } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { Channel } from '../interfaces/channel.interface';
+import { from, Observable, of, throwError } from 'rxjs';
+import { catchError, flatMap, map, tap } from 'rxjs/operators';
 import { CreateChannelDto } from '../dto/create-channel.dto';
 import { UserDto } from '../dto/user.dto';
 import { SubscriptionDto } from '../dto/subscription.dto';
+import { CreateMessageDto } from '../dto/create-message.dto';
+import { Message } from '../interfaces/message.interface';
+import { MessageEntity } from '../entities/message.entity';
 
 @Injectable()
 export class ChannelDao {
@@ -16,7 +19,7 @@ export class ChannelDao {
    * @param {Model<Channel>} _channelModel instance of the model representing a Channel
    */
   constructor(@InjectModel('Channel') private readonly _channelModel: Model<Channel>,
-              @InjectModel('UserId') private readonly _userIdModel: Model<UserId>,
+              @InjectModel('Message') private readonly _messageModel: Model<Message>,
               private readonly _logger: Logger) {
   }
 
@@ -88,22 +91,97 @@ export class ChannelDao {
    * @return {Observable<Channel | void>}
    */
   subscribe(sub: SubscriptionDto): Observable<Channel | void> {
-    this._logger.log(`AYYYYY2222 ${sub.idChannel}`);
-    return from(this._channelModel.findOneAndUpdate({ _id: sub.idChannel, usersSubscribed:{$nin: sub.idUser } }, {$push: {usersSubscribed: sub.idUser}} ))
+    //this._logger.log(`AYYYYY2222 ${sub.idChannel}`);
+    return from(this._channelModel.findOneAndUpdate(
+      { _id: sub.idChannel, usersSubscribed:{$nin: sub.idUser } },
+      {$push: {usersSubscribed: sub.idUser}} ))
 
     .pipe(
       map((doc: MongooseDocument) => !!doc ? doc.toJSON() : undefined)
     );
-      // .pipe(
-      //
-      //
-      //   ,
-      //
-      //   this._logger.log(`EN  VRAI CEST LA FIN `),
-      //   return chan,
-      // )
-      //
   }
+
+  /**
+   * Delete a channel. Called only when a channel is empty
+   *
+   * @param {string} id
+   *
+   * @return {Observable<Channel | void>}
+   */
+  unsubscribe(sub: SubscriptionDto): Observable<Channel | void> {
+    return from(this._channelModel.findOneAndUpdate({ _id: sub.idChannel, usersSubscribed:{$in: sub.idUser } }, {$pull: {usersSubscribed: sub.idUser}} ))
+
+      .pipe(
+        map((doc: MongooseDocument) => !!doc ? doc.toJSON() : undefined)
+      );
+  }
+
+  /**
+   * Delete a channel. Called only when a channel is empty
+   *
+   * @param {string} id
+   *
+   * @return {Observable<Channel | void>}
+   */
+  existsWithId(id: string): Observable<boolean> {
+    return from(this._channelModel.exists({_id: id}));
+  }
+
+  /**
+   * Create a new Channel
+   *
+   * @param {Channel} person to create
+   *
+   * @return {Observable<CreateChannelDto>}
+   */
+  // createMessage(message: CreateMessageDto): Observable<Message> {
+  //   return from(this._messageModel.create(message))
+  //     .pipe(
+  //       map((doc: MongooseDocument) => doc.toJSON()),
+  //     );
+  // }
+
+  private _addDateToMessage(message: CreateMessageDto): Observable<CreateMessageDto> {
+    return of(message)
+      .pipe(
+        map(_ =>
+          Object.assign(_, {
+            date: Date.now(),
+          }),
+        ),
+      );
+  }
+  writeIntoChannel(message: CreateMessageDto): Observable<MessageEntity> {
+    return this._addDateToMessage(message)
+      .pipe(
+        flatMap(_ => this._messageModel.create(_)),
+        catchError(e =>
+          e.code = 11000 ?
+            throwError(
+              new ConflictException(`Message can't be created.`),
+            ) :
+            throwError(new UnprocessableEntityException(e.message)),
+        ),
+        map(_ => new MessageEntity(_)),
+      );
+  }
+
+/*  writeIntoChannel(message: CreateMessageDto): Observable<Message | void> {
+    return from(this._messageModel.create(this._addDateToMessage(message)))
+      .pipe(
+        map((doc: MongooseDocument) => doc.toJSON()),
+      );
+  }*/
+  // writeIntoChannel(message: CreateMessageDto, idMessage: string): Observable<Channel | void> {
+  //   const idChannel = message.idChannel;
+  //   delete message.idChannel;
+  //   const messageModel = this._channelModel.create(message);
+  //   return from(this._channelModel.findOneAndUpdate({ _id: idChannel, usersSubscribed:{$in: message.authorId} }, {$push: {messages: idMessage}} ))
+  //
+  //     .pipe(
+  //       map((doc: MongooseDocument) => !!doc ? doc.toJSON() : undefined)
+  //     );
+  // }
 }
 /*  subscribe(sub: SubscriptionDto): Observable<Channel | void> {
     this._logger.log(`AYYYYY2222 ${sub.idChannel}`);

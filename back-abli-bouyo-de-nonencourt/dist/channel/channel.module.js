@@ -12,14 +12,19 @@ const channel_service_1 = require("./channel.service");
 const channel_dao_1 = require("./dao/channel.dao");
 const mongoose_1 = require("@nestjs/mongoose");
 const channel_schema_1 = require("./schemas/channel.schema");
+const message_schema_1 = require("./schemas/message.schema");
+const user_dao_1 = require("../user/dao/user.dao");
+const user_schema_1 = require("../user/schemas/user.schema");
 let ChannelModule = class ChannelModule {
 };
 ChannelModule = __decorate([
     common_1.Module({
         imports: [mongoose_1.MongooseModule.forFeature([{ name: 'Channel', schema: channel_schema_1.ChannelSchema }]),
-            mongoose_1.MongooseModule.forFeature([{ name: 'UserId', schema: channel_schema_1.UserIdSchema }])],
+            mongoose_1.MongooseModule.forFeature([{ name: 'Message', schema: message_schema_1.MessageSchema },
+            ]),
+            mongoose_1.MongooseModule.forFeature([{ name: 'User', schema: user_schema_1.UserSchema }])],
         controllers: [channel_controller_1.ChannelController],
-        providers: [channel_service_1.ChannelService, common_1.Logger, channel_dao_1.ChannelDao],
+        providers: [channel_service_1.ChannelService, common_1.Logger, channel_dao_1.ChannelDao, user_dao_1.UserDao],
     })
 ], ChannelModule);
 exports.ChannelModule = ChannelModule;

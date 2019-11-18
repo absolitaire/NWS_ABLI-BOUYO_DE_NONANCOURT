@@ -2,29 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff0071d8-2ec9-4337-8a65-0002ece4c0fd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dist/channel/dto/subscription.dto.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/channel/dto/subscription.dto.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/channel/dto/subscription.dto.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/channel/dto/user.dto.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/channel/dto/user.dto.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/channel/dto/user.dto.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/channel/validators/subscription-params.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/channel/validators/subscription-params.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/channel/validators/subscription-params.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/user/dto/address.dto.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/user/dto/address.dto.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/user/dto/address.dto.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/user/dto/person-address.dto.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/user/dto/person-address.dto.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/user/dto/person-address.dto.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/user/entities/address.entity.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/user/entities/address.entity.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/user/entities/address.entity.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/channel/dto/subscription.dto.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/channel/dto/user.dto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/channel/dto/create-message.dto.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/channel/dto/create-message.dto.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/channel/dto/create-message.dto.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/channel/entities/message.entity.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/channel/entities/message.entity.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/channel/entities/message.entity.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/channel/interfaces/message.interface.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/channel/interfaces/message.interface.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/channel/interfaces/message.interface.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/channel/schemas/message.schema.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/channel/schemas/message.schema.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/channel/schemas/message.schema.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/channel/dto/create-message.dto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/channel/entities/message.entity.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/channel/interfaces/message.interface.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/channel/schemas/message.schema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projet nwt.odt" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet nwt.odt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/app.module.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app.module.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/app.module.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app.module.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/channel/channel.controller.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/channel.controller.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/channel/channel.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/channel.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/channel/channel.controller.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/channel.controller.js.map" afterDir="false" />
@@ -36,128 +31,30 @@
       <change beforePath="$PROJECT_DIR$/dist/channel/dao/channel.dao.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/dao/channel.dao.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/channel/dao/channel.dao.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/dao/channel.dao.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/channel/dao/channel.dao.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/dao/channel.dao.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/channel/entities/channel.entity.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/entities/channel.entity.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/channel/entities/channel.entity.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/entities/channel.entity.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/channel/entities/channel.entity.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/entities/channel.entity.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/channel/interceptors/channel.interceptor.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/interceptors/channel.interceptor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/channel/interceptors/channel.interceptor.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/interceptors/channel.interceptor.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/channel/interfaces/channel.interface.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/interfaces/channel.interface.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/channel/schemas/channel.schema.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/schemas/channel.schema.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/channel/schemas/channel.schema.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/schemas/channel.schema.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/channel/schemas/channel.schema.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/schemas/channel.schema.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/login/login.controller.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/login/login.controller.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/login/login.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/login/login.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/login/login.controller.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/login/login.controller.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/login/login.service.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/login/login.service.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/login/login.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/login/login.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/login/login.service.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/login/login.service.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/main.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/tsconfig.build.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/dist/tsconfig.build.tsbuildinfo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/user/dao/user.dao.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/user/dao/user.dao.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/user/dao/user.dao.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/user/dao/user.dao.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/user/dao/user.dao.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/user/dao/user.dao.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/user/dto/create-user.dto.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/user/dto/create-user.dto.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/user/dto/create-user.dto.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/user/dto/create-user.dto.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/user/dto/create-user.dto.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/user/dto/create-user.dto.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/user/entities/user.entity.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/user/entities/user.entity.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/user/entities/user.entity.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/user/entities/user.entity.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/user/entities/user.entity.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/user/entities/user.entity.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/user/interfaces/user.interface.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/user/interfaces/user.interface.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/user/schemas/user.schema.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/user/schemas/user.schema.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/user/schemas/user.schema.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/user/schemas/user.schema.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/user/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/user/user.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/user/user.controller.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/user/user.controller.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/user/user.service.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/user/user.service.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/user/user.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/user/user.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/user/user.service.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/user/user.service.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.yarn-integrity" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.yarn-integrity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fastify-swagger/static/favicon-16x16.png" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/fastify-swagger/static/favicon-16x16.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fastify-swagger/static/favicon-32x32.png" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/fastify-swagger/static/favicon-32x32.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/channel/channel.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/channel/channel.controller.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/channel/channel.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/channel/channel.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/channel/channel.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/channel/channel.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/channel/dao/channel.dao.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/channel/dao/channel.dao.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/channel/entities/channel.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/channel/entities/channel.entity.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/channel/interceptors/channel.interceptor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/channel/interceptors/channel.interceptor.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/channel/interfaces/channel.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/channel/interfaces/channel.interface.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/channel/schemas/channel.schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/channel/schemas/channel.schema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/people/dao/people.dao.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/people/dto/create-person.dto.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/people/dto/person-address.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/dto/address.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/people/dto/update-person.dto.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/people/entities/person-address.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/entities/address.entity.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/people/entities/person.entity.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/people/interceptors/people.interceptor.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/people/interfaces/person.interface.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/people/people.controller.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/people/people.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/people/people.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/people/schemas/person.schema.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/people/validators/handler-params.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/channel/validators/subscription-params.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/user/dao/user.dao.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/dao/user.dao.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/user/dto/create-user.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/dto/create-user.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/user/entities/user.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/entities/user.entity.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/user/interfaces/user.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/interfaces/user.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/user/schemas/user.schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/schemas/user.schema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/user/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/user.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/user/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/user.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tslint.json" beforeDir="false" afterPath="$PROJECT_DIR$/tslint.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front-abli-bouyo-de-nonancourt/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front-abli-bouyo-de-nonancourt/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front-abli-bouyo-de-nonancourt/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front-abli-bouyo-de-nonancourt/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front-abli-bouyo-de-nonancourt/src/app/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front-abli-bouyo-de-nonancourt/src/app/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front-abli-bouyo-de-nonancourt/src/app/shared/interfaces/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front-abli-bouyo-de-nonancourt/src/app/shared/interfaces/user.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front-abli-bouyo-de-nonancourt/src/app/shared/services/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front-abli-bouyo-de-nonancourt/src/app/shared/services/user.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front-abli-bouyo-de-nonancourt/src/app/signup/signup.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../front-abli-bouyo-de-nonancourt/src/app/signup/signup.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front-abli-bouyo-de-nonancourt/src/app/signup/signup.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../front-abli-bouyo-de-nonancourt/src/app/signup/signup.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front-abli-bouyo-de-nonancourt/src/app/signup/signup.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front-abli-bouyo-de-nonancourt/src/app/signup/signup.component.ts" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="TypeScript File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1Te5gFEvvfFtyrhjQ5dmIdPZ4yj" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.TypeScript" />
-    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/user/entities" />
-      <recent name="$PROJECT_DIR$/src/user/dto" />
-      <recent name="$PROJECT_DIR$/src/user" />
-      <recent name="$PROJECT_DIR$/src/channel" />
-      <recent name="$PROJECT_DIR$/src/channel/dto" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/channel" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -175,45 +72,6 @@
     <configuration />
   </component>
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="ff0071d8-2ec9-4337-8a65-0002ece4c0fd" name="Default Changelist" comment="" />
-      <created>1573807829755</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1573807829755</updated>
-      <workItem from="1573807830935" duration="10483000" />
-      <workItem from="1573835212158" duration="2428000" />
-      <workItem from="1573837731494" duration="11965000" />
-      <workItem from="1573858683839" duration="476000" />
-      <workItem from="1573859299297" duration="522000" />
-      <workItem from="1573889704458" duration="512000" />
-      <workItem from="1573890232059" duration="7098000" />
-      <workItem from="1573925088210" duration="9654000" />
-      <workItem from="1574000066709" duration="4998000" />
-      <workItem from="1574083587531" duration="5178000" />
-      <workItem from="1574089181480" duration="496000" />
-    </task>
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <ignored-roots>
-      <path value="$PROJECT_DIR$" />
-    </ignored-roots>
   </component>
 </project>

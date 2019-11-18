@@ -6,11 +6,3 @@ export interface Channel extends Document {
     name: string;
     usersSubscribed: string[];
 }
-export interface Message extends Document {
-    id: string;
-    idOfAuthor: string;
-    content: string;
-}
-export interface UserId extends Document {
-    _id: string;
-}

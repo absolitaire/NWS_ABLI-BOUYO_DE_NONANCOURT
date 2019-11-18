@@ -17,10 +17,11 @@ const mongoose_1 = require("@nestjs/mongoose");
 const mongoose_2 = require("mongoose");
 const rxjs_1 = require("rxjs");
 const operators_1 = require("rxjs/operators");
+const message_entity_1 = require("../entities/message.entity");
 let ChannelDao = class ChannelDao {
-    constructor(_channelModel, _userIdModel, _logger) {
+    constructor(_channelModel, _messageModel, _logger) {
         this._channelModel = _channelModel;
-        this._userIdModel = _userIdModel;
+        this._messageModel = _messageModel;
         this._logger = _logger;
     }
     findAllChannels() {
@@ -40,15 +41,33 @@ let ChannelDao = class ChannelDao {
             .pipe(operators_1.map((doc) => !!doc ? doc.toJSON() : undefined));
     }
     subscribe(sub) {
-        this._logger.log(`AYYYYY2222 ${sub.idChannel}`);
         return rxjs_1.from(this._channelModel.findOneAndUpdate({ _id: sub.idChannel, usersSubscribed: { $nin: sub.idUser } }, { $push: { usersSubscribed: sub.idUser } }))
             .pipe(operators_1.map((doc) => !!doc ? doc.toJSON() : undefined));
+    }
+    unsubscribe(sub) {
+        return rxjs_1.from(this._channelModel.findOneAndUpdate({ _id: sub.idChannel, usersSubscribed: { $in: sub.idUser } }, { $pull: { usersSubscribed: sub.idUser } }))
+            .pipe(operators_1.map((doc) => !!doc ? doc.toJSON() : undefined));
+    }
+    existsWithId(id) {
+        return rxjs_1.from(this._channelModel.exists({ _id: id }));
+    }
+    _addDateToMessage(message) {
+        return rxjs_1.of(message)
+            .pipe(operators_1.map(_ => Object.assign(_, {
+            date: Date.now(),
+        })));
+    }
+    writeIntoChannel(message) {
+        return this._addDateToMessage(message)
+            .pipe(operators_1.flatMap(_ => this._messageModel.create(_)), operators_1.catchError(e => e.code = 11000 ?
+            rxjs_1.throwError(new common_1.ConflictException(`Message can't be created.`)) :
+            rxjs_1.throwError(new common_1.UnprocessableEntityException(e.message))), operators_1.map(_ => new message_entity_1.MessageEntity(_)));
     }
 };
 ChannelDao = __decorate([
     common_1.Injectable(),
     __param(0, mongoose_1.InjectModel('Channel')),
-    __param(1, mongoose_1.InjectModel('UserId')),
+    __param(1, mongoose_1.InjectModel('Message')),
     __metadata("design:paramtypes", [mongoose_2.Model,
         mongoose_2.Model,
         common_1.Logger])

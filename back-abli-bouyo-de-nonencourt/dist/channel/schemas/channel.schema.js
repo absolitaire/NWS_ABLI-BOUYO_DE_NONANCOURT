@@ -29,8 +29,4 @@ exports.ChannelSchema = new mongoose.Schema({
     toJSON: { virtuals: true },
     versionKey: false,
 });
-exports.UserIdSchema = new mongoose.Schema({}, {
-    toJSON: { virtuals: true },
-    versionKey: false,
-});
 //# sourceMappingURL=channel.schema.js.map
