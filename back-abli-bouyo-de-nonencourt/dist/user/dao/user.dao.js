@@ -36,6 +36,10 @@ let UserDao = class UserDao {
         return rxjs_1.from(this._userModel.create(user))
             .pipe(operators_1.map((doc) => doc.toJSON()));
     }
+    findByIdAndUpdate(id, user) {
+        return rxjs_1.from(this._userModel.findByIdAndUpdate(id, user, { new: true }))
+            .pipe(operators_1.map((doc) => !!doc ? doc.toJSON() : undefined));
+    }
     findByIdAndRemove(id) {
         return rxjs_1.from(this._userModel.findByIdAndRemove(id))
             .pipe(operators_1.map((doc) => !!doc ? doc.toJSON() : undefined));

@@ -1,5 +1,5 @@
 import { AddressDto } from './address.dto';
-export declare class CreateUserDto {
+export declare class UpdateUserDto {
     login: string;
     password: string;
     email: string;

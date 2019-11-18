@@ -10,7 +10,6 @@ const common_1 = require("@nestjs/common");
 const auth_service_1 = require("./auth.service");
 const user_module_1 = require("../user/user.module");
 const passport_1 = require("@nestjs/passport");
-const local_strategy_1 = require("./local.strategy");
 const auth_controller_1 = require("./auth.controller");
 const user_service_1 = require("../user/user.service");
 const user_dao_1 = require("../user/dao/user.dao");
@@ -21,7 +20,7 @@ let AuthModule = class AuthModule {
 AuthModule = __decorate([
     common_1.Module({
         imports: [user_module_1.UserModule, passport_1.PassportModule, mongoose_1.MongooseModule.forFeature([{ name: 'User', schema: user_schema_1.UserSchema }])],
-        providers: [auth_service_1.AuthService, local_strategy_1.LocalStrategy, user_service_1.UserService, user_dao_1.UserDao, common_1.Logger],
+        providers: [auth_service_1.AuthService, user_service_1.UserService, user_dao_1.UserDao, common_1.Logger],
         controllers: [auth_controller_1.AuthController],
     })
 ], AuthModule);

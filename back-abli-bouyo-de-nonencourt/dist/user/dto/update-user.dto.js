@@ -13,38 +13,38 @@ const class_validator_1 = require("class-validator");
 const swagger_1 = require("@nestjs/swagger");
 const class_transformer_1 = require("class-transformer");
 const address_dto_1 = require("./address.dto");
-class CreateUserDto {
+class UpdateUserDto {
 }
 __decorate([
     swagger_1.ApiModelProperty({ description: 'Login', example: 'laughingman' }),
+    class_validator_1.IsOptional(),
     class_validator_1.IsString(),
-    class_validator_1.IsNotEmpty(),
     __metadata("design:type", String)
-], CreateUserDto.prototype, "login", void 0);
+], UpdateUserDto.prototype, "login", void 0);
 __decorate([
     swagger_1.ApiModelProperty({ description: 'Password', example: 'thebestpw' }),
+    class_validator_1.IsOptional(),
     class_validator_1.IsString(),
-    class_validator_1.IsNotEmpty(),
     __metadata("design:type", String)
-], CreateUserDto.prototype, "password", void 0);
+], UpdateUserDto.prototype, "password", void 0);
 __decorate([
     swagger_1.ApiModelProperty({ description: 'Email', example: 'Mclaughlin.Cochran@undefined.com' }),
+    class_validator_1.IsOptional(),
     class_validator_1.IsEmail(),
-    class_validator_1.IsNotEmpty(),
     __metadata("design:type", String)
-], CreateUserDto.prototype, "email", void 0);
+], UpdateUserDto.prototype, "email", void 0);
 __decorate([
     swagger_1.ApiModelProperty({ description: 'Firstname', example: 'Mclaughlin' }),
     class_validator_1.IsOptional(),
     class_validator_1.IsString(),
     __metadata("design:type", String)
-], CreateUserDto.prototype, "firstname", void 0);
+], UpdateUserDto.prototype, "firstname", void 0);
 __decorate([
     swagger_1.ApiModelProperty({ description: 'Lastname', example: 'Cochran' }),
     class_validator_1.IsOptional(),
     class_validator_1.IsString(),
     __metadata("design:type", String)
-], CreateUserDto.prototype, "lastname", void 0);
+], UpdateUserDto.prototype, "lastname", void 0);
 __decorate([
     swagger_1.ApiModelProperty({ description: 'Address' }),
     class_validator_1.IsOptional(),
@@ -52,18 +52,18 @@ __decorate([
     class_validator_1.ValidateNested(),
     class_transformer_1.Type(() => address_dto_1.AddressDto),
     __metadata("design:type", address_dto_1.AddressDto)
-], CreateUserDto.prototype, "address", void 0);
+], UpdateUserDto.prototype, "address", void 0);
 __decorate([
     swagger_1.ApiModelProperty({ description: 'Phone', example: '+33600000000', pattern: '/^(\+\d{11})$/' }),
     class_validator_1.IsOptional(),
     class_validator_1.IsPhoneNumber('FR'),
     __metadata("design:type", String)
-], CreateUserDto.prototype, "phone", void 0);
+], UpdateUserDto.prototype, "phone", void 0);
 __decorate([
     swagger_1.ApiModelProperty({ description: 'Url of the profile picture', example: 'https://icon-library.net/images/default-profile-icon/default-profile-icon-24.jpg' }),
     class_validator_1.IsOptional(),
     class_validator_1.IsUrl(),
     __metadata("design:type", String)
-], CreateUserDto.prototype, "picture", void 0);
-exports.CreateUserDto = CreateUserDto;
-//# sourceMappingURL=create-user.dto.js.map
+], UpdateUserDto.prototype, "picture", void 0);
+exports.UpdateUserDto = UpdateUserDto;
+//# sourceMappingURL=update-user.dto.js.map

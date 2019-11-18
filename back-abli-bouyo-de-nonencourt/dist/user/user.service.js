@@ -46,6 +46,22 @@ let UserService = class UserService {
             rxjs_1.of(undefined) :
             rxjs_1.throwError(new common_1.NotFoundException(`User with id '${id}' not found`))));
     }
+    update(id, user) {
+        return this._userDao.findByIdAndUpdate(id, user)
+            .pipe(operators_1.catchError(e => e.code = 11000 ?
+            rxjs_1.throwError(new common_1.ConflictException(`User already exists`)) :
+            rxjs_1.throwError(new common_1.UnprocessableEntityException(e.message))), operators_1.flatMap(_ => !!_ ?
+            rxjs_1.of(new user_entity_1.UserEntity((_))) :
+            rxjs_1.throwError(new common_1.NotFoundException(`User with id '${id}' not found`))));
+    }
+    tryToUpdate(id, user) {
+        if (!!user.login) {
+            return this._userDao.findByLogin(user.login)
+                .pipe(operators_1.catchError(e => rxjs_1.throwError(new common_1.NotFoundException(e.message))), operators_1.flatMap(_ => !!_ ?
+                rxjs_1.throwError(new common_1.ConflictException(`User with login '${user.login}' doesn't exist`)) :
+                this.update(id, user)));
+        }
+    }
     _addUser(user) {
         return rxjs_1.of(user);
     }

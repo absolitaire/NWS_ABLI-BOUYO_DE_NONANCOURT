@@ -19,6 +19,7 @@ const handler_params_1 = require("./validators/handler-params");
 const create_user_dto_1 = require("../user/dto/create-user.dto");
 const user_entity_1 = require("../user/entities/user.entity");
 const user_service_1 = require("./user.service");
+const update_user_dto_1 = require("./dto/update-user.dto");
 let UserController = class UserController {
     constructor(_userService) {
         this._userService = _userService;
@@ -34,6 +35,9 @@ let UserController = class UserController {
     }
     delete(params) {
         return this._userService.delete(params.id);
+    }
+    update(params, updateUserDto) {
+        return this._userService.tryToUpdate(params.id, updateUserDto);
     }
 };
 __decorate([
@@ -80,6 +84,19 @@ __decorate([
     __metadata("design:paramtypes", [handler_params_1.HandlerParams]),
     __metadata("design:returntype", rxjs_1.Observable)
 ], UserController.prototype, "delete", null);
+__decorate([
+    swagger_1.ApiOkResponse({ description: 'The user has been successfully updated', type: user_entity_1.UserEntity }),
+    swagger_1.ApiNotFoundResponse({ description: 'User with the given "id" doesn\'t exist in the database' }),
+    swagger_1.ApiBadRequestResponse({ description: 'Parameter and/or payload provided are not good' }),
+    swagger_1.ApiUnprocessableEntityResponse({ description: 'The request can\'t be performed in the database' }),
+    swagger_1.ApiImplicitParam({ name: 'id', description: 'Unique identifier of the user in the database', type: String }),
+    swagger_1.ApiImplicitBody({ name: 'UpdateUserDto', description: 'Payload to update a user', type: update_user_dto_1.UpdateUserDto }),
+    common_1.Put(':id'),
+    __param(0, common_1.Param()), __param(1, common_1.Body()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [handler_params_1.HandlerParams, update_user_dto_1.UpdateUserDto]),
+    __metadata("design:returntype", rxjs_1.Observable)
+], UserController.prototype, "update", null);
 UserController = __decorate([
     swagger_1.ApiUseTags('back/user'),
     common_1.Controller('user'),

@@ -4,20 +4,20 @@ import { Type } from 'class-transformer';
 import { AddressDto } from './address.dto';
 
 
-export class CreateUserDto {
+export class UpdateUserDto {
   @ApiModelProperty({ description: 'Login', example: 'laughingman' })
+  @IsOptional()
   @IsString()
-  @IsNotEmpty()
   login: string;
 
   @ApiModelProperty({ description: 'Password', example: 'thebestpw' })
+  @IsOptional()
   @IsString()
-  @IsNotEmpty()
   password: string;
 
   @ApiModelProperty({ description: 'Email', example: 'Mclaughlin.Cochran@undefined.com' })
+  @IsOptional()
   @IsEmail()
-  @IsNotEmpty()
   email: string;
 
   @ApiModelProperty({ description: 'Firstname', example: 'Mclaughlin' })

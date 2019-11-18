@@ -5,6 +5,7 @@ import { from, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { User } from '../interfaces/user.interface';
 import { CreateUserDto } from '../dto/create-user.dto';
+import { UpdateUserDto } from '../dto/update-user.dto';
 
 @Injectable()
 export class UserDao {
@@ -68,12 +69,12 @@ export class UserDao {
    *
    * @return {Observable<User | void>}
    */
-  // findByIdAndUpdate(id: string, user: UpdateUserDto): Observable<User | void> {
-  //   return from(this._userModel.findByIdAndUpdate(id, user, { new: true }))
-  //     .pipe(
-  //       map((doc: MongooseDocument) => !!doc ? doc.toJSON() : undefined),
-  //     );
-  // }
+  findByIdAndUpdate(id: string, user: UpdateUserDto): Observable<User | void> {
+    return from(this._userModel.findByIdAndUpdate(id, user, { new: true }))
+      .pipe(
+        map((doc: MongooseDocument) => !!doc ? doc.toJSON() : undefined),
+      );
+  }
 
   /**
    * Delete a user in people list
