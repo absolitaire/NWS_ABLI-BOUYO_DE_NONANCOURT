@@ -30,7 +30,7 @@ __decorate([
     __metadata("design:type", String)
 ], UserEntity.prototype, "login", void 0);
 __decorate([
-    swagger_1.ApiModelProperty({ description: 'Firstname', example: 'Mclaughlin' }),
+    swagger_1.ApiModelProperty({ description: 'password', example: 'password123' }),
     class_transformer_1.Expose(),
     class_transformer_1.Type(() => String),
     __metadata("design:type", String)

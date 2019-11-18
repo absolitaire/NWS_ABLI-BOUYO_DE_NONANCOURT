@@ -8,27 +8,11 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { SwaggerConfig } from './interfaces/swagger-config.interface';
 import { ChannelModule } from './channel/channel.module';
 import { UserModule } from './user/user.module';
+import { AuthModule } from './auth/auth.module';
 
 async function bootstrap(config: AppConfig, swaggerConfig: SwaggerConfig) {
   const app = await NestFactory.create(AppModule,
     new FastifyAdapter({logger: true}));
-
- /* const passport = require('passport');
-  const LocalStrategy = require('passport-local').Strategy;
-  passport.use(new LocalStrategy(
-    (username, password, done) => {
-      User.findOne({ username: username }, (err, user) => {
-        if (err) { return done(err); }
-        if (!user) {
-          return done(null, false, { message: 'Incorrect username.' });
-        }
-        if (!user.validPassword(password)) {
-          return done(null, false, { message: 'Incorrect password.' });
-        }
-        return done(null, user);
-      });
-    }
-  ));*/
 
   // use global pipe validation
   app.useGlobalPipes(
@@ -47,7 +31,7 @@ async function bootstrap(config: AppConfig, swaggerConfig: SwaggerConfig) {
 
   // create swagger document
   const swaggerDocument = SwaggerModule.createDocument(app, options, {
-    include: [ ChannelModule, UserModule],
+    include: [ ChannelModule, UserModule, AuthModule],
   });
 
   // setup swagger module
@@ -55,6 +39,7 @@ async function bootstrap(config: AppConfig, swaggerConfig: SwaggerConfig) {
 
   // launch server
   await app.listen(config.port, config.host);
+  app.enableCors();
   Logger.log(`Application served at http://${config.host}:${config.port}`, 'bootstrap');
 
 }

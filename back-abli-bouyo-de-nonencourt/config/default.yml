@@ -1,6 +1,14 @@
 server:
   host: 0.0.0.0
   port: 3000
+  options:
+    connections:
+      routes:
+        cors:
+          origin:
+            - 'http://localhost:4200'
+            - 'http://0.0.0.0:4200'
+            - 'http://127.0.0.1:4200'
 swagger:
   title: NWT_Abli-Bouyo_De_Nonencourt
   description: Description de l'API back-end du projet

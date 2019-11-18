@@ -34,6 +34,7 @@ export class UserController {
   findAll(): Observable<UserEntity[] | void> {
     return this._userService.findAll();
   }
+
   /**
    * Handler to answer to GET /user/:id route
    *

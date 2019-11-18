@@ -28,6 +28,12 @@ let UserService = class UserService {
             rxjs_1.of(new user_entity_1.UserEntity(_)) :
             rxjs_1.throwError(new common_1.NotFoundException(`User with id '${id}' not found`))));
     }
+    findByLogin(loginUser) {
+        return this._userDao.findByLogin(loginUser)
+            .pipe(operators_1.catchError(e => rxjs_1.throwError(new common_1.UnprocessableEntityException(e.message))), operators_1.flatMap(_ => !!_ ?
+            rxjs_1.of(new user_entity_1.UserEntity(_)) :
+            rxjs_1.throwError(new common_1.NotFoundException(`User with login '${loginUser}' not found`))));
+    }
     create(user) {
         return this._addUser(user)
             .pipe(operators_1.flatMap(_ => this._userDao.create(_)), operators_1.catchError(e => e.code = 11000 ?

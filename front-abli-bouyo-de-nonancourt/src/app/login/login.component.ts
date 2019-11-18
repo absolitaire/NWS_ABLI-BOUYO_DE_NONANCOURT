@@ -31,16 +31,8 @@ export class LoginComponent implements OnInit, OnChanges  {
     } else {
       this._model = {
         login: '',
-        firstname: '',
-        lastname: '',
+        password: '',
         email: '',
-        phone: '',
-        address: {
-          postalCode: '',
-          street: '',
-          city: ''
-        },
-        photo: '',
       };
     }
   }

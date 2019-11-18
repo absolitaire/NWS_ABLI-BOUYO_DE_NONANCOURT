@@ -14,7 +14,7 @@ export class UserEntity {
   @Type(() => String)
   login: string;
 
-  @ApiModelProperty({ description: 'Firstname', example: 'Mclaughlin' })
+  @ApiModelProperty({ description: 'password', example: 'password123' })
   @Expose()
   @Type(() => String)
   password: string;
