@@ -26,6 +26,7 @@ async function bootstrap(config, swaggerConfig) {
     });
     swagger_1.SwaggerModule.setup(swaggerConfig.path, app, swaggerDocument);
     await app.listen(config.port, config.host);
+    app.enableCors();
     common_1.Logger.log(`Application served at http://${config.host}:${config.port}`, 'bootstrap');
 }
 bootstrap(Config.get('server'), Config.get('swagger'));

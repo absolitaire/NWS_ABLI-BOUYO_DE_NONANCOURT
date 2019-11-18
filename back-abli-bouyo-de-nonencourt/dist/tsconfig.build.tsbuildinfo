@@ -1826,8 +1826,8 @@
         "signature": "e072d515c17815b6656efb5e2097c5ab1ca7dc319687348358119673749a1277"
       },
       "../src/user/dao/user.dao.ts": {
-        "version": "a3abab6792efa43b1a047b79c4403b4d32ce821496c6a1a44e22b0f228701c5f",
-        "signature": "a68baa464f1bd0bda0b0fc2eb36a1d9a823d605de8bf00e011e0beb365c19b99"
+        "version": "703cf67408bdcbf66e2814515ca625e819ca5bf961d9972fecb9aafd9b6dc245",
+        "signature": "d8a8c44fdeb64d0cae3077e5edef0f96f4b25dc0d1da7fc0d90a94e562ae15c8"
       },
       "../src/user/user.service.ts": {
         "version": "660a68e04eed2f87f8fab1e0f08ef2ee5104b7eda65356c7e44be6ff6400ecce",
@@ -2046,7 +2046,7 @@
         "signature": "211f1e624b0e7d0c6bb9f4b32212757f69617657b5a8ba5a08ae3829d8ceb097"
       },
       "../src/main.ts": {
-        "version": "d33f62245249333b187b8b487ab77065d626531c75da0890472e34b7f9598888",
+        "version": "e800b9302d9b0cf70e5147c289015d85be4fdd1312c186f32786aa667763cc33",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
       },
       "../node_modules/@types/anymatch/index.d.ts": {
