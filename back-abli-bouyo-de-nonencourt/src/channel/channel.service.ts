@@ -113,8 +113,48 @@ export class ChannelService {
    * @returns {Observable<ChannelEntity>}
    */
 
+  // subscribe(sub: SubscriptionDto): Observable<Channel|void> {
+  //   return from(this._channelDao.findChannelById(sub.idChannel))
+  //   .pipe(
+  //     find(_ =>  _.usersSubscribed === sub.idUser ),
+  //     flatMap(_ =>
+  //       !!_ ?
+  //         this._channelDao.subscribe(sub)
+  //         :
+  //         throwError(new ConflictException(`People with lastname '${person.lastname}` ))
+  //     ),
+  //   );
+  //
+  //
+  // }
+/*  subscribe(sub: SubscriptionDto): Observable<ChannelEntity> {
 
-  subscribe(sub: SubscriptionDto): Observable<ChannelEntity> {
+    return this._channelDao.findChannelById(sub.idChannel).pipe(
+      catchError(e => throwError(new NotFoundException(e.message))),
+      flatMap(_ => {
+        if(!!_){
+          return of(undefined)
+        }else{
+         return this._channelDao.subscribe(sub)
+           .pipe(
+             catchError(e => throwError(new NotFoundException(e.message))),
+             flatMap(_ =>
+               !!_ ?
+                 of(undefined) :
+                 throwError(new NotFoundException(`Channel with id '${sub.idChannel}' not found`)),
+             ),
+           );
+        }
+      }
+
+
+
+      ),
+    )
+
+
+  }*/
+  subscribe(sub: SubscriptionDto): Observable<ChannelEntity> {// fonctionne
 
     return this._channelDao.subscribe(sub)
       .pipe(
@@ -126,6 +166,7 @@ export class ChannelService {
         ),
       );
   }
+
 /*  subscribe(sub: SubscriptionDto): Observable<ChannelEntity> {
     return this._channelDao.subscribe(sub)
       .pipe(

@@ -27,7 +27,7 @@ export class ChannelEntity {
   @ApiModelProperty({ isArray: true, description: 'List of subscribed users', example: '[{\'id\':\'5763cd4dc378a38ecd387737\'}]' })
   @Expose()
   @Type(() => String)
-  usersSubscribed: UserDto[];
+  usersSubscribed: String[];
   /**
    * Class constructor
    *

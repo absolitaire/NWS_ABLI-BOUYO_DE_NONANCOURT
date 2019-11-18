@@ -41,21 +41,7 @@ let ChannelDao = class ChannelDao {
     }
     subscribe(sub) {
         this._logger.log(`AYYYYY2222 ${sub.idChannel}`);
-        return rxjs_1.from(this._channelModel.findById({ _id: sub.idChannel }, async (err, chan) => {
-            if (err) {
-                this._logger.log(err.message);
-                this._logger.log(`EN  VRAI CEST LA PANIQUE`);
-                return undefined;
-            }
-            let user = await this._userIdModel.findById({ _id: sub.idUser });
-            if (!!user) {
-                this._logger.log(`EN  VRAI CEST LA creation `);
-                user = await this._userIdModel.create({ _id: sub.idUser });
-            }
-            this._logger.log(`EN  VRAI CEST LA genendj `);
-            chan.usersSubscribed.push(user);
-            this._logger.log(`EN  VRAI CEST LA remontada `);
-        }))
+        return rxjs_1.from(this._channelModel.findOneAndUpdate({ _id: sub.idChannel, usersSubscribed: { $nin: sub.idUser } }, { $push: { usersSubscribed: sub.idUser } }))
             .pipe(operators_1.map((doc) => !!doc ? doc.toJSON() : undefined));
     }
 };

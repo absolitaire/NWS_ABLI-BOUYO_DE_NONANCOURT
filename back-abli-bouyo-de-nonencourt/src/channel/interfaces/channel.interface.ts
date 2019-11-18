@@ -6,7 +6,7 @@ export interface Channel extends Document {
   idChannel: string;
   description: string;
   name: string;
-  usersSubscribed: UserId[];
+  usersSubscribed: string[];
 }
 
 export interface Message extends Document {

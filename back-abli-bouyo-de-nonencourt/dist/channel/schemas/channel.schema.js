@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose = require("mongoose");
+const mongoose_1 = require("mongoose");
 exports.ChannelSchema = new mongoose.Schema({
     idChannel: {
         type: String,
@@ -20,6 +21,10 @@ exports.ChannelSchema = new mongoose.Schema({
         maxlength: 30,
         trim: true,
     },
+    usersSubscribed: [{
+            type: mongoose_1.Schema.Types.ObjectId,
+            ref: 'User',
+        }],
 }, {
     toJSON: { virtuals: true },
     versionKey: false,

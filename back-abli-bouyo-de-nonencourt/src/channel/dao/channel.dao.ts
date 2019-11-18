@@ -19,6 +19,7 @@ export class ChannelDao {
               @InjectModel('UserId') private readonly _userIdModel: Model<UserId>,
               private readonly _logger: Logger) {
   }
+
   /**
    * Call mongoose method, call toJSON on each result and returns Person[] or undefined
    *
@@ -30,12 +31,13 @@ export class ChannelDao {
         map((docs: MongooseDocument[]) => (!!docs && docs.length > 0) ? docs.map(_ => _.toJSON()) : undefined),
       );
   }
-/*  findAllChannels(): Observable<Channel[] | void> {
-    return from(this._channelModel.find({}))
-      .pipe(
-        map((docs: MongooseDocument[]) => (!!docs && docs.length > 0) ? docs.map(_ => _.toJSON()) : ''undefined''),
-      );
-  }*/
+
+  /*  findAllChannels(): Observable<Channel[] | void> {
+      return from(this._channelModel.find({}))
+        .pipe(
+          map((docs: MongooseDocument[]) => (!!docs && docs.length > 0) ? docs.map(_ => _.toJSON()) : ''undefined''),
+        );
+    }*/
   /**
    * Returns one person of the list matching id in parameter
    *
@@ -87,25 +89,49 @@ export class ChannelDao {
    */
   subscribe(sub: SubscriptionDto): Observable<Channel | void> {
     this._logger.log(`AYYYYY2222 ${sub.idChannel}`);
-    return from(this._channelModel.findById({_id: sub.idChannel},
-      async (err, chan) => {
-        if (err) {this._logger.log(err.message);
+    return from(this._channelModel.findOneAndUpdate({ _id: sub.idChannel, usersSubscribed:{$nin: sub.idUser } }, {$push: {usersSubscribed: sub.idUser}} ))
+
+    .pipe(
+      map((doc: MongooseDocument) => !!doc ? doc.toJSON() : undefined)
+    );
+      // .pipe(
+      //
+      //
+      //   ,
+      //
+      //   this._logger.log(`EN  VRAI CEST LA FIN `),
+      //   return chan,
+      // )
+      //
+  }
+}
+/*  subscribe(sub: SubscriptionDto): Observable<Channel | void> {
+    this._logger.log(`AYYYYY2222 ${sub.idChannel}`);
+    return from(this._channelModel.findById({ _id: sub.idChannel },
+      (err, chan) => {
+        if (err) {
+          this._logger.log(err.message);
           this._logger.log(`EN  VRAI CEST LA PANIQUE`);
-          return undefined; }
-        let user = await this._userIdModel.findById(sub.idUser)
-        if(!!user){
+          return undefined;
+        }
+        this._logger.log(`EN  VRAI CEST LA genendj ${chan.usersSubscribed} lel`);
+
+        if(chan.usersSubscribed === undefined){
           this._logger.log(`EN  VRAI CEST LA creation `);
-          user = await this._userIdModel.create({ _id: sub.idUser});
+          chan.usersSubscribed = [sub.idUser];
+        }else{
+          this._logger.log(`EN  VRAI CEST LA remontada `);
+          chan.usersSubscribed.push(sub.idUser);
         }
 
-        this._logger.log(`EN  VRAI CEST LA genendj `);
-        chan.usersSubscribed.push(user);
-        this._logger.log(`EN  VRAI CEST LA remontada `);
+        this._logger.log(`EN  VRAI CEST LA FIN `);
+        return chan.save();
       }))
       .pipe(
         map((doc: MongooseDocument) => !!doc ? doc.toJSON() : undefined)
       );
   }
+}*/
 /*  subscribe(sub: SubscriptionDto): Observable<Channel | void> {
     this._logger.log(`AYYYYY2222 ${sub.idChannel}`);
     return from(this._channelModel.findById({_id: sub.idChannel},

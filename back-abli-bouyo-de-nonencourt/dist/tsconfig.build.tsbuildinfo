@@ -1346,8 +1346,8 @@
         "signature": "e4da89610a69296e5736c787cb8918a0b4ac34c6b13cf0f6b62e9688e8dc1bd6"
       },
       "../src/channel/entities/channel.entity.ts": {
-        "version": "a2f54d948cb95c6c25519e5a3f51ee81f8e8346d40298e36a4ef60ce3c942890",
-        "signature": "f32cc29b6d51117b287898698c1f5d6fe235b12012f4ce929b28e64fe01cdc6a"
+        "version": "2e351d53a52e182ed6754222529a0909ebac8a7eb9b545ce73d7f7e55507cfa8",
+        "signature": "ac795da64f17621e776c4150c2db6c68869beed77daa2f93f8ee704487d30d70"
       },
       "../node_modules/rxjs/internal/operators/audit.d.ts": {
         "version": "fe936a68d281ccc2060f8c3de69a0682a807c8fd1b8abccc0a91b83195ca0f94",
@@ -1778,19 +1778,19 @@
         "signature": "b9119c66c285e8d20ed31ed949e8b9fccee90cbb7267eb86d3e9580f53cee35d"
       },
       "../src/channel/interfaces/channel.interface.ts": {
-        "version": "a70b2ee3b1d52f69222e1741e384f36b9a6bba4fd16d970c6bc9eef1ff4a5755",
-        "signature": "d53b2e304ad43762d80c57af38435578380c1c644273ee5b1c297da3170e5a48"
+        "version": "c0b5d7109abfedb928875d88ac1a7fe5c15ac2e1184274e1170763191c6e4a5f",
+        "signature": "396b1ad4d9ea76238580b80c7d9fad1d39fa016efbd4f6ec7ecc8762b7cc0c48"
       },
       "../src/channel/dto/subscription.dto.ts": {
         "version": "199abce281eea55b1bbc9de73196c3b397c6c0634dcbd52ccbfadd68079ce1c6",
         "signature": "00f6b9dd4ef5c1b3f852762d51a03b2f5b9f7a4249a1173e7d0b313d46514061"
       },
       "../src/channel/dao/channel.dao.ts": {
-        "version": "21071eeedead071e4c8290b095de631f54970dd50808f93b7f82e53520ca189c",
+        "version": "b3d2ff49618e4f211791f471ca1d1b53a1e1cd79377b1ca7db4246c5fa52e02d",
         "signature": "6772fa530af42228cc86598cc95df32574f567fd44fe85b2cbdd606f35c2139d"
       },
       "../src/channel/channel.service.ts": {
-        "version": "8609336e936819e920c0636db0db9c47874fcbaec4d8bd5a600e46e356cb6a34",
+        "version": "7e37d8967fd65e10e926f6ad64d0eb2cc101e42d91c7f989a85b30c20711ed29",
         "signature": "7590b92cb7b4488ee9d4f99a273c8286f320e2d0442060342255d6d05751264f"
       },
       "../src/channel/validators/handler-params.ts": {
@@ -1810,7 +1810,7 @@
         "signature": "66470363bcc921bfdfa9037c8217ad81bbb02639425fa995f918fb3abdd68014"
       },
       "../src/channel/schemas/channel.schema.ts": {
-        "version": "ef1c1282095b9c5d789b6ceb7966fd9dd3ac3b608cbb693ae3f87041997c7278",
+        "version": "2189d2b52209d5b656636606d35eb781b148c10399cb533851cf580a688cd235",
         "signature": "46464ca81ff95aa745bbb3f58158b4ebee3e9884e4763b256f590fb28632a583"
       },
       "../src/channel/channel.module.ts": {
@@ -9113,9 +9113,6 @@
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/channel/entities/channel.entity.ts": [
-        "../src/channel/dto/user.dto.ts"
       ],
       "../node_modules/rxjs/internal/operators/audit.d.ts": [
         "../node_modules/rxjs/internal/types.d.ts",

@@ -1,5 +1,6 @@
 import * as mongoose from 'mongoose';
 import { Message } from '../interfaces/channel.interface';
+import { Schema } from 'mongoose';
 
 export const ChannelSchema = new mongoose.Schema({
 idChannel: {
@@ -20,6 +21,10 @@ name: {
     maxlength: 30,
     trim: true,
 },
+  usersSubscribed: [{
+     type: Schema.Types.ObjectId,
+    ref: 'User',
+  }],
 }, {
   toJSON: { virtuals: true },
   versionKey: false,
