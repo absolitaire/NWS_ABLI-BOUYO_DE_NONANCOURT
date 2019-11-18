@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, Validators} from "@angular/forms";
 import {User} from "../shared/interfaces/user";
 import { UserService } from '../shared/services/user.service';
 import { Router } from '@angular/router';
+import {CustomValidators} from "./custom-validators";
 
 @Component({
   selector: 'app-signup',
@@ -11,9 +12,10 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
 
-  private readonly _form: FormGroup;
+  private  _form: FormGroup;
 
   constructor(private _userService: UserService, private router: Router) {
+
     this._form = this._buildForm();
   }
 
@@ -37,19 +39,21 @@ export class SignupComponent implements OnInit {
 
 
   private _buildForm(): FormGroup {
-    return new FormGroup({
-      login: new FormControl('', Validators.compose([
-        Validators.required, Validators.minLength(2)
-      ])),
-      password: new FormControl('', Validators.compose([
-        Validators.required, Validators.minLength(2)
-      ])),
-      passwordconfirm: new FormControl('', Validators.compose([
-        Validators.required, Validators.minLength(2)
-      ])),
-      email: new FormControl('', Validators.compose([
-        Validators.required, Validators.email
-      ]))
-    });
+      return new FormGroup({
+        login: new FormControl('', Validators.compose([
+          Validators.required, Validators.minLength(2)
+        ])),
+        password: new FormControl('', Validators.compose([
+          Validators.required, Validators.minLength(2)
+        ])),
+        passwordconfirm: new FormControl('', Validators.compose([
+          Validators.required, Validators.minLength(2)
+        ])),
+        email: new FormControl('', Validators.compose([
+          Validators.required, Validators.minLength(2)
+        ])),
+      });
   }
+
+
 }

@@ -1,7 +1,7 @@
-
-import { Controller, Post, UseGuards, Logger, UnauthorizedException, Param, Body } from '@nestjs/common';
+import { Controller, Post, UseGuards, Logger, UnauthorizedException, Param, Body, Get , Request} from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { HandlerParams } from './validator/handler-params';
+import { AuthGuard } from '@nestjs/passport';
 
 @Controller('auth')
 export class AuthController {
@@ -10,10 +10,20 @@ export class AuthController {
 
   @Post('login')
   async login(@Body() body: HandlerParams) {
-    const user = await this._authService.validateUser(body.login, body.password);
+
+    const user = await this._authService.validateUser(body['login'], body['password']);
     if (!user) {
       throw new UnauthorizedException();
     }
-    return user;
+    // Authentification
+    return this._authService.login(user);
   }
+
+  @UseGuards(AuthGuard('jwt'))
+  @Get('profile')
+  getProfile(@Request() req) {
+    return req.user;
+  }
+
+
 }
