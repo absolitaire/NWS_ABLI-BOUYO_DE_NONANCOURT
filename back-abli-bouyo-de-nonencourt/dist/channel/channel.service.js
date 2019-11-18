@@ -14,9 +14,11 @@ const rxjs_1 = require("rxjs");
 const channel_entity_1 = require("./entities/channel.entity");
 const operators_1 = require("rxjs/operators");
 const channel_dao_1 = require("./dao/channel.dao");
+const user_dao_1 = require("../user/dao/user.dao");
 let ChannelService = class ChannelService {
-    constructor(_channelDao) {
+    constructor(_channelDao, _userDao) {
         this._channelDao = _channelDao;
+        this._userDao = _userDao;
     }
     findAll() {
         return this._channelDao.findAllChannels()
@@ -65,10 +67,22 @@ let ChannelService = class ChannelService {
             rxjs_1.throwError(new common_1.NotFoundException(`Channel with id '${sub.idChannel}' not found.`));
         }
     }
+    writeIntoChannel(message) {
+        return this._channelDao.writeIntoChannel(message)
+            .pipe(operators_1.catchError(e => rxjs_1.throwError(new common_1.NotFoundException(e.message))), operators_1.flatMap(_ => !!_ ?
+            rxjs_1.of(undefined) :
+            rxjs_1.throwError(new common_1.ConflictException(`Channel with id '${message.idChannel}' doesn't exist`))));
+    }
+    tryToWriteIntoChannel(message) {
+        return this._userDao.findById(message.idUser)
+            .pipe(operators_1.catchError(e => rxjs_1.throwError(new common_1.NotFoundException(e.message))), operators_1.flatMap(_ => !!_ ?
+            this.writeIntoChannel(message) :
+            rxjs_1.throwError(new common_1.ConflictException(`User with id '${message.idUser}' doesn't exist`))));
+    }
 };
 ChannelService = __decorate([
     common_1.Injectable(),
-    __metadata("design:paramtypes", [channel_dao_1.ChannelDao])
+    __metadata("design:paramtypes", [channel_dao_1.ChannelDao, user_dao_1.UserDao])
 ], ChannelService);
 exports.ChannelService = ChannelService;
 //# sourceMappingURL=channel.service.js.map

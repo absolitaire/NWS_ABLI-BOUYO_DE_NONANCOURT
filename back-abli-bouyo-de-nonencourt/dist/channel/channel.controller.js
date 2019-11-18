@@ -21,6 +21,7 @@ const channel_entity_1 = require("./entities/channel.entity");
 const handler_params_1 = require("./validators/handler-params");
 const channel_interceptor_1 = require("./interceptors/channel.interceptor");
 const subscription_dto_1 = require("./dto/subscription.dto");
+const create_message_dto_1 = require("./dto/create-message.dto");
 let ChannelController = class ChannelController {
     constructor(_channelService, _logger) {
         this._channelService = _channelService;
@@ -42,6 +43,9 @@ let ChannelController = class ChannelController {
     }
     unsubscribeAccountToChannel(sub) {
         return this._channelService.unsubscribe(sub);
+    }
+    writeIntoChannel(message) {
+        return this._channelService.tryToWriteIntoChannel(message);
     }
 };
 __decorate([
@@ -87,8 +91,8 @@ __decorate([
     __metadata("design:returntype", rxjs_1.Observable)
 ], ChannelController.prototype, "subscribeAccountToChannel", null);
 __decorate([
-    swagger_1.ApiCreatedResponse({ description: 'The user has been subscribed' }),
-    swagger_1.ApiConflictResponse({ description: 'The user is already subscribed' }),
+    swagger_1.ApiNoContentResponse({ description: 'The user has been successfully unsubscribed' }),
+    swagger_1.ApiNotFoundResponse({ description: 'The user or the channel doesn\'t exist ' }),
     swagger_1.ApiBadRequestResponse({ description: 'Payload provided is not good' }),
     swagger_1.ApiUnprocessableEntityResponse({ description: 'The request can\'t be performed in the database' }),
     common_1.Delete('unsubscribe'),
@@ -97,6 +101,17 @@ __decorate([
     __metadata("design:paramtypes", [subscription_dto_1.SubscriptionDto]),
     __metadata("design:returntype", rxjs_1.Observable)
 ], ChannelController.prototype, "unsubscribeAccountToChannel", null);
+__decorate([
+    swagger_1.ApiCreatedResponse({ description: 'The user has been subscribed' }),
+    swagger_1.ApiConflictResponse({ description: 'The user is already subscribed' }),
+    swagger_1.ApiBadRequestResponse({ description: 'Payload provided is not good' }),
+    swagger_1.ApiUnprocessableEntityResponse({ description: 'The request can\'t be performed in the database' }),
+    common_1.Post('write'),
+    __param(0, common_1.Body()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [create_message_dto_1.CreateMessageDto]),
+    __metadata("design:returntype", rxjs_1.Observable)
+], ChannelController.prototype, "writeIntoChannel", null);
 ChannelController = __decorate([
     swagger_1.ApiUseTags('back/channel'),
     common_1.Controller('channel'),

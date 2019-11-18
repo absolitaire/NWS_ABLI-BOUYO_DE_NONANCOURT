@@ -7,11 +7,13 @@ import { ChannelDao } from './dao/channel.dao';
 import { Channel } from './interfaces/channel.interface';
 import { UserDto } from './dto/user.dto';
 import { SubscriptionDto } from './dto/subscription.dto';
+import { CreateMessageDto } from './dto/create-message.dto';
+import { UserDao } from '../user/dao/user.dao';
 
 @Injectable()
 export class ChannelService {
 
-  constructor(private readonly _channelDao: ChannelDao) {
+  constructor(private readonly _channelDao: ChannelDao, private readonly _userDao: UserDao) {
   }
 
   /**
@@ -227,7 +229,49 @@ export class ChannelService {
     }
 
   }
+  writeIntoChannel(message: CreateMessageDto): Observable<ChannelEntity> {
+      return this._channelDao.writeIntoChannel(message)
+        .pipe(
+          catchError(e => throwError(new NotFoundException(e.message))),
+          flatMap(_ =>
+            !!_ ?
+              of(undefined) :
+              // throwError(new NotFoundException(`Channel with id '${sub.idChannel}' not found`)),
+              // throwError(new ConflictException(`User'${sub.idUser}' is already subscribed to the channel '${sub.idChannel}'`)),
+              throwError(new ConflictException(`Channel with id '${message.idChannel}' doesn't exist`)),
+          ),
+        );
+    }
 
+    tryToWriteIntoChannel(message: CreateMessageDto): Observable<ChannelEntity> {
+      //return this._channelDao.findChannelById(message.idChannel)
+       return this._userDao.findById(message.idUser)
+        .pipe(
+          catchError(e => throwError(new NotFoundException(e.message))),
+          flatMap(_ =>
+            !!_ ?
+              this.writeIntoChannel(message):
+              // throwError(new NotFoundException(`Channel with id '${sub.idChannel}' not found`)),
+              // throwError(new ConflictException(`User'${sub.idUser}' is already subscribed to the channel '${sub.idChannel}'`)),
+             // throwError(new ConflictException(`Channel with id '${message.idChannel}' doesn't exist`)),
+            throwError(new ConflictException(`User with id '${message.idUser}' doesn't exist`)),
+          ),
+        );
 
+    }
+  //
+  // writeIntoChannel(message: CreateMessageDto): Observable<ChannelEntity> { Fonctionne mais verifie pas l'idUser
+  //     return this._channelDao.writeIntoChannel(message)
+  //       .pipe(
+  //         catchError(e => throwError(new NotFoundException(e.message))),
+  //         flatMap(_ =>
+  //           !!_ ?
+  //             of(undefined) :
+  //             // throwError(new NotFoundException(`Channel with id '${sub.idChannel}' not found`)),
+  //             // throwError(new ConflictException(`User'${sub.idUser}' is already subscribed to the channel '${sub.idChannel}'`)),
+  //             throwError(new ConflictException(`Channel with id '${message.idChannel}' doesn't exist`)),
+  //         ),
+  //       );
+  //   }
 
 }

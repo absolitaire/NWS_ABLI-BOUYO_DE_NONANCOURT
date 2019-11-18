@@ -5,6 +5,7 @@ import { CreateChannelDto } from './dto/create-channel.dto';
 import { ChannelEntity } from './entities/channel.entity';
 import { HandlerParams } from './validators/handler-params';
 import { SubscriptionDto } from './dto/subscription.dto';
+import { CreateMessageDto } from './dto/create-message.dto';
 export declare class ChannelController {
     private readonly _channelService;
     private readonly _logger;
@@ -14,4 +15,5 @@ export declare class ChannelController {
     create(createChannelDto: CreateChannelDto): Observable<ChannelEntity>;
     subscribeAccountToChannel(sub: SubscriptionDto): Observable<ChannelEntity>;
     unsubscribeAccountToChannel(sub: SubscriptionDto): Observable<ChannelEntity>;
+    writeIntoChannel(message: CreateMessageDto): Observable<ChannelEntity>;
 }

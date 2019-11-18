@@ -2,21 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cfa2c293-8079-428d-b3fc-8a5abfeb4f7d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/channel/dto/create-message.dto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/channel/entities/message.entity.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/channel/interfaces/message.interface.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/channel/schemas/message.schema.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet nwt.odt" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet nwt.odt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/channel/channel.controller.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/channel.controller.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/channel/channel.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/channel.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/channel/channel.controller.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/channel.controller.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/channel/channel.module.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/channel.module.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/channel/channel.module.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/channel.module.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/channel/channel.service.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/channel.service.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/channel/channel.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/channel.service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/channel/channel.service.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/channel.service.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/channel/dao/channel.dao.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/dao/channel.dao.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/channel/dao/channel.dao.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/dao/channel.dao.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/channel/dao/channel.dao.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/dao/channel.dao.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/channel/interfaces/channel.interface.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/interfaces/channel.interface.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/channel/schemas/channel.schema.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/schemas/channel.schema.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/channel/schemas/channel.schema.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/schemas/channel.schema.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/channel/schemas/channel.schema.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/schemas/channel.schema.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/tsconfig.build.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/dist/tsconfig.build.tsbuildinfo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/channel/channel.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/channel/channel.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/channel/channel.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/channel/channel.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/channel/channel.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/channel/channel.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/channel/dao/channel.dao.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/channel/dao/channel.dao.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/channel/interfaces/channel.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/channel/interfaces/channel.interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/channel/schemas/channel.schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/channel/schemas/channel.schema.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +44,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/channel/schemas" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -41,15 +54,15 @@
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/channel/dto" />
-      <recent name="$PROJECT_DIR$/src/channel/validators" />
-      <recent name="$PROJECT_DIR$/src/user/entities" />
-      <recent name="$PROJECT_DIR$/src/user/dto" />
-      <recent name="$PROJECT_DIR$/src/user" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/channel" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/channel/schemas" />
+      <recent name="$PROJECT_DIR$/src/channel/dto" />
+      <recent name="$PROJECT_DIR$/src/channel/interfaces" />
+      <recent name="$PROJECT_DIR$/src/channel/entities" />
+      <recent name="$PROJECT_DIR$/src/channel/validators" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -83,7 +96,7 @@
       <workItem from="1573890232059" duration="7098000" />
       <workItem from="1573925088210" duration="9654000" />
       <workItem from="1574000066709" duration="26536000" />
-      <workItem from="1574061651609" duration="4778000" />
+      <workItem from="1574061651609" duration="18801000" />
     </task>
     <servers />
   </component>
