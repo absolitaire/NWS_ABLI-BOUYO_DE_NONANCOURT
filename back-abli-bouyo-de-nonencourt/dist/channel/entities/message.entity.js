@@ -33,7 +33,7 @@ __decorate([
     class_transformer_1.Expose(),
     class_transformer_1.Type(() => String),
     __metadata("design:type", String)
-], MessageEntity.prototype, "authorId", void 0);
+], MessageEntity.prototype, "idUser", void 0);
 __decorate([
     swagger_1.ApiModelProperty({ description: 'Date of the message', example: '101343600000' }),
     class_transformer_1.Expose(),

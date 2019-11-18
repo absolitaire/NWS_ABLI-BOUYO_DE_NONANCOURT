@@ -10,6 +10,7 @@ import { SubscriptionDto } from '../dto/subscription.dto';
 import { CreateMessageDto } from '../dto/create-message.dto';
 import { Message } from '../interfaces/message.interface';
 import { MessageEntity } from '../entities/message.entity';
+import { FindMessagesDto } from '../dto/find-messages.dto';
 
 @Injectable()
 export class ChannelDao {
@@ -55,6 +56,13 @@ export class ChannelDao {
       );
   }
 
+
+  findMessagesOnChannel(params: FindMessagesDto): Observable<Message[] | void> {
+    return from(this._messageModel.find({idChannel: params.idChannel}))
+      .pipe(
+        map((docs: MongooseDocument[]) => (!!docs && docs.length > 0) ? docs.map(_ => _.toJSON()) : undefined),
+      );
+  }
   /**
    * Create a new Channel
    *

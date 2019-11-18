@@ -1794,12 +1794,16 @@
         "signature": "582dc26e730ea94266c1a0a2c22b43b191071dbc410bffe8ebde351dc404fb2c"
       },
       "../src/channel/entities/message.entity.ts": {
-        "version": "ffe90eef9cc221c13be02ee9ff62fad9d2f7adaad495e4a5c4a9e9e0db2b0634",
-        "signature": "563729313cd121d6446d574680b11ab773f53941a100961cdf43dee94a97b795"
+        "version": "687f069138972cd3b6d840530f14a205c59ca467d6b401965f64a7a3824f4cc4",
+        "signature": "0f611da840eb9bbcfdfd1609c777a2b6520f774fb3796b83caf508cf90675a07"
+      },
+      "../src/channel/dto/find-messages.dto.ts": {
+        "version": "a70d5d1cfeb8e95895b3e3df53c4aabc1420c6f6ef3b562a3b01efed3a6c27a1",
+        "signature": "72384690711eb4f299b6c974f1fc994acb293e69c60f5a7792a5e2cb0af0eff7"
       },
       "../src/channel/dao/channel.dao.ts": {
-        "version": "f757083342773788a49ad9b9da7581514da1ff9aedbdc66b3fbb9880c3524fe1",
-        "signature": "81febb2c4e62efe0cc38ab5741cf6006723647ac7a09a1f14c0641fcc866168d"
+        "version": "8f973940bb65c9df829f2116b546dbd64f932cbdc2ccf975ec800462b22df371",
+        "signature": "2ae8213193b7ccdf2c9c1f5d34b563cd492de94049f674500d2968c7fc3575de"
       },
       "../src/user/interfaces/user.interface.ts": {
         "version": "7e872739154635418d3a1292721c00b02d8bf9395a539d9fceea9ede87e909e6",
@@ -1822,8 +1826,8 @@
         "signature": "7730fad0ee9e8c6e52f3f62a2500ee34679acadffa7f5606ba9baeaa0b197e2e"
       },
       "../src/channel/channel.service.ts": {
-        "version": "c573b390695c5145f5b5f406c65d301159468ae97f7e479dd55730c188e41637",
-        "signature": "e5237a1de39c28ac303a98edf41e573a02095782c46d64f225f7fd99d1a68c69"
+        "version": "e34635eb109b94da7b3671bce65d7a4827882a048d0ef24fd410c4b4ca660246",
+        "signature": "0258e22c170b8ed81bf0295633f5d89df0b58e6c4e4b0719bc06c2e28e6b8d48"
       },
       "../src/channel/validators/handler-params.ts": {
         "version": "c2d5d2c2254acffe8012f86ffe9890242f5d997d203a4670c40993dbf47a3959",
@@ -1837,9 +1841,13 @@
         "version": "abf1fdb63013d4cbafdc7c48e31711e392afaa580d7e02498bf654393cd6f179",
         "signature": "5979d520d308aaa4f3318a388e2a12db743b258c31c63e78f05373b299588449"
       },
+      "../src/channel/validators/find-messages-params.ts": {
+        "version": "a36c89d96e3ceb95b98f58f2423b7b0d39bb3b85bbd76962f3d6b627fc0237c5",
+        "signature": "56aecf5b6a81e48e08fa871006562d91382cf1c5c9f4b82689808c91cc06bdd3"
+      },
       "../src/channel/channel.controller.ts": {
-        "version": "dc621e033619d38108e4ac73b45f537b655db22a2ef3eacc6332660a11daf0b5",
-        "signature": "336c024dbdd274b5c3fefabb48bcb42f83e5bd3621a5df453b8bd917e3674398"
+        "version": "fa776b7e19c7ec6d8429f43d95e92570102d3d94a9e17f6c147fef62a3d1bfea",
+        "signature": "fbe1ddde87cdab349f8ce21bb732667001b2ca7b03d1092c527a95d1cdbee38e"
       },
       "../src/channel/schemas/channel.schema.ts": {
         "version": "fa638fa6691be4d1c11efbbdf74a122be3130ec2234eb0aa274b8cd0565dcbdd",
@@ -5884,6 +5892,14 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../src/channel/dto/find-messages.dto.ts": [
+        "../node_modules/class-validator/index.d.ts",
+        "../node_modules/@nestjs/swagger/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../src/channel/dao/channel.dao.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/mongoose/index.d.ts",
@@ -5897,6 +5913,7 @@
         "../src/channel/dto/create-message.dto.ts",
         "../src/channel/interfaces/message.interface.ts",
         "../src/channel/entities/message.entity.ts",
+        "../src/channel/dto/find-messages.dto.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -5963,6 +5980,8 @@
         "../src/channel/dto/subscription.dto.ts",
         "../src/channel/dto/create-message.dto.ts",
         "../src/user/dao/user.dao.ts",
+        "../src/channel/entities/message.entity.ts",
+        "../src/channel/dto/find-messages.dto.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -5996,6 +6015,14 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../src/channel/validators/find-messages-params.ts": [
+        "../node_modules/class-validator/index.d.ts",
+        "../node_modules/@nestjs/swagger/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../src/channel/channel.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/channel/channel.service.ts",
@@ -6008,6 +6035,9 @@
         "../src/channel/dto/subscription.dto.ts",
         "../node_modules/rxjs/operators/index.d.ts",
         "../src/channel/dto/create-message.dto.ts",
+        "../src/channel/entities/message.entity.ts",
+        "../src/channel/dto/find-messages.dto.ts",
+        "../src/channel/validators/find-messages-params.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -10450,6 +10480,7 @@
         "../src/channel/interfaces/message.interface.ts",
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/rxjs/index.d.ts",
+        "../src/channel/dto/find-messages.dto.ts",
         "../src/channel/dto/create-channel.dto.ts",
         "../src/channel/dto/subscription.dto.ts",
         "../src/channel/dto/create-message.dto.ts",
@@ -10459,6 +10490,9 @@
         "../node_modules/@types/mongoose/index.d.ts"
       ],
       "../src/user/dto/create-user.dto.ts": [
+        "../src/user/dto/address.dto.ts"
+      ],
+      "../src/user/dto/update-user.dto.ts": [
         "../src/user/dto/address.dto.ts"
       ],
       "../src/user/dao/user.dao.ts": [
@@ -10473,6 +10507,8 @@
         "../src/user/dao/user.dao.ts",
         "../node_modules/rxjs/index.d.ts",
         "../src/channel/entities/channel.entity.ts",
+        "../src/channel/dto/find-messages.dto.ts",
+        "../src/channel/entities/message.entity.ts",
         "../src/channel/dto/create-channel.dto.ts",
         "../src/channel/dto/subscription.dto.ts",
         "../src/channel/dto/create-message.dto.ts"
@@ -10497,6 +10533,8 @@
         "../node_modules/rxjs/index.d.ts",
         "../src/channel/entities/channel.entity.ts",
         "../src/channel/validators/handler-params.ts",
+        "../src/channel/validators/find-messages-params.ts",
+        "../src/channel/entities/message.entity.ts",
         "../src/channel/dto/create-channel.dto.ts",
         "../src/channel/dto/subscription.dto.ts",
         "../src/channel/dto/create-message.dto.ts"
@@ -11208,9 +11246,6 @@
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/user/dto/update-user.dto.ts": [
-        "../src/user/dto/address.dto.ts"
       ]
     },
     "semanticDiagnosticsPerFile": []

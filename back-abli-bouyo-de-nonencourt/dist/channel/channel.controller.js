@@ -22,6 +22,7 @@ const handler_params_1 = require("./validators/handler-params");
 const channel_interceptor_1 = require("./interceptors/channel.interceptor");
 const subscription_dto_1 = require("./dto/subscription.dto");
 const create_message_dto_1 = require("./dto/create-message.dto");
+const find_messages_params_1 = require("./validators/find-messages-params");
 let ChannelController = class ChannelController {
     constructor(_channelService, _logger) {
         this._channelService = _channelService;
@@ -32,6 +33,9 @@ let ChannelController = class ChannelController {
     }
     findOne(params) {
         return this._channelService.findOne(params.id);
+    }
+    findMessagesFromChannel(params) {
+        return this._channelService.findMessagesOnChannel(params);
     }
     create(createChannelDto) {
         return this._channelService.create(createChannelDto);
@@ -68,6 +72,20 @@ __decorate([
     __metadata("design:paramtypes", [handler_params_1.HandlerParams]),
     __metadata("design:returntype", rxjs_1.Observable)
 ], ChannelController.prototype, "findOne", null);
+__decorate([
+    swagger_1.ApiOkResponse({ description: 'Returns the channel for the given "id"', type: channel_entity_1.ChannelEntity }),
+    swagger_1.ApiNotFoundResponse({ description: 'Channel with the given "id" doesn\'t exist in the database' }),
+    swagger_1.ApiBadRequestResponse({ description: 'Parameter provided is not good' }),
+    swagger_1.ApiUnprocessableEntityResponse({ description: 'The request can\'t be performed in the database' }),
+    swagger_1.ApiImplicitQuery({ name: 'idChannel', description: 'Unique identifier of the channel in the database', type: String }),
+    swagger_1.ApiImplicitQuery({ name: 'threshold', description: 'Max number of messages to retrieve. -1 to retrieve every message.', type: Number }),
+    swagger_1.ApiImplicitQuery({ name: 'startingAt', description: 'Retrieve messages starting with the N-th message', type: Number }),
+    common_1.Get('/messages'),
+    __param(0, common_1.Query()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [find_messages_params_1.FindMessagesParams]),
+    __metadata("design:returntype", rxjs_1.Observable)
+], ChannelController.prototype, "findMessagesFromChannel", null);
 __decorate([
     swagger_1.ApiCreatedResponse({ description: 'The channel has been successfully created', type: channel_entity_1.ChannelEntity }),
     swagger_1.ApiConflictResponse({ description: 'The channel already exists in the database' }),

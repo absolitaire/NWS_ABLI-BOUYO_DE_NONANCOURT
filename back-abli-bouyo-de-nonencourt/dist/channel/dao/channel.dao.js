@@ -32,6 +32,10 @@ let ChannelDao = class ChannelDao {
         return rxjs_1.from(this._channelModel.findById(id))
             .pipe(operators_1.map((doc) => !!doc ? doc.toJSON() : undefined));
     }
+    findMessagesOnChannel(params) {
+        return rxjs_1.from(this._messageModel.find({ idChannel: params.idChannel }))
+            .pipe(operators_1.map((docs) => (!!docs && docs.length > 0) ? docs.map(_ => _.toJSON()) : undefined));
+    }
     createChannel(channel) {
         return rxjs_1.from(this._channelModel.create(channel))
             .pipe(operators_1.map((doc) => doc.toJSON()));

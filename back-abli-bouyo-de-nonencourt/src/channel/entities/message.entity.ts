@@ -18,7 +18,7 @@ export class MessageEntity {
   @ApiModelProperty({ description: 'Id of author', example: '5763cd4dc378a38ecd387737' })
   @Expose()
   @Type(() => String)
-  authorId: String;
+  idUser: String;
 
   @ApiModelProperty({ description: 'Date of the message', example: '101343600000' })
   @Expose()

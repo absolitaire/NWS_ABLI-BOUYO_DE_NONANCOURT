@@ -15,6 +15,7 @@ const channel_entity_1 = require("./entities/channel.entity");
 const operators_1 = require("rxjs/operators");
 const channel_dao_1 = require("./dao/channel.dao");
 const user_dao_1 = require("../user/dao/user.dao");
+const message_entity_1 = require("./entities/message.entity");
 let ChannelService = class ChannelService {
     constructor(_channelDao, _userDao) {
         this._channelDao = _channelDao;
@@ -29,6 +30,10 @@ let ChannelService = class ChannelService {
             .pipe(operators_1.catchError(e => rxjs_1.throwError(new common_1.UnprocessableEntityException(e.message))), operators_1.flatMap(_ => !!_ ?
             rxjs_1.of(new channel_entity_1.ChannelEntity(_)) :
             rxjs_1.throwError(new common_1.NotFoundException(`Channel with id '${id}' not found`))));
+    }
+    findMessagesOnChannel(params) {
+        return this._channelDao.findMessagesOnChannel(params)
+            .pipe(operators_1.map(_ => !!_ ? _.map(__ => new message_entity_1.MessageEntity(__)) : undefined));
     }
     create(channel) {
         return this._addChannel(channel)

@@ -9,6 +9,8 @@ import { UserDto } from './dto/user.dto';
 import { SubscriptionDto } from './dto/subscription.dto';
 import { CreateMessageDto } from './dto/create-message.dto';
 import { UserDao } from '../user/dao/user.dao';
+import { MessageEntity } from './entities/message.entity';
+import { FindMessagesDto } from './dto/find-messages.dto';
 
 @Injectable()
 export class ChannelService {
@@ -48,6 +50,12 @@ export class ChannelService {
       );
   }
 
+  findMessagesOnChannel(params: FindMessagesDto): Observable<MessageEntity[] | void> {
+    return this._channelDao.findMessagesOnChannel(params)
+      .pipe(
+        map(_ => !!_ ? _.map(__ => new MessageEntity(__)) : undefined),
+      );
+  }
   /**
    * Check if channel already exists and add it in people list
    *

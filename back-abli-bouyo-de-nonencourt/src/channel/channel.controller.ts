@@ -1,10 +1,10 @@
-import { Body, ClassSerializerInterceptor, Controller, Delete, Get, Logger, Param, Post, UseInterceptors } from '@nestjs/common';
+import { Body, ClassSerializerInterceptor, Controller, Delete, Get, Logger, Param, Post, Query, UseInterceptors } from '@nestjs/common';
 import { ChannelService } from './channel.service';
 import {
   ApiBadRequestResponse,
   ApiConflictResponse,
   ApiCreatedResponse,
-  ApiImplicitParam,
+  ApiImplicitParam, ApiImplicitQuery,
   ApiNoContentResponse,
   ApiNotFoundResponse,
   ApiOkResponse,
@@ -19,6 +19,9 @@ import { ChannelInterceptor } from './interceptors/channel.interceptor';
 import { SubscriptionDto } from './dto/subscription.dto';
 import { flatMap } from 'rxjs/operators';
 import { CreateMessageDto } from './dto/create-message.dto';
+import { MessageEntity } from './entities/message.entity';
+import { FindMessagesDto } from './dto/find-messages.dto';
+import { FindMessagesParams } from './validators/find-messages-params';
 
 @ApiUseTags('back/channel')
 @Controller('channel')
@@ -56,6 +59,30 @@ export class ChannelController {
     return this._channelService.findOne(params.id);
   }
 
+  /**
+   * Handler to answer to GET /channel/:id route
+   *
+   * @param {HandlerParams} params list of route params to take channel id
+   *
+   * @returns Observable<ChannelEntity>
+   */
+  @ApiOkResponse({ description: 'Returns the channel for the given "id"', type: ChannelEntity })
+  @ApiNotFoundResponse({ description: 'Channel with the given "id" doesn\'t exist in the database' })
+  @ApiBadRequestResponse({ description: 'Parameter provided is not good' })
+  @ApiUnprocessableEntityResponse({ description: 'The request can\'t be performed in the database' })
+  @ApiImplicitQuery({ name: 'idChannel', description: 'Unique identifier of the channel in the database', type: String })
+  @ApiImplicitQuery({ name: 'threshold', description: 'Max number of messages to retrieve. -1 to retrieve every message.', type: Number })
+  @ApiImplicitQuery({ name: 'startingAt', description: 'Retrieve messages starting with the N-th message', type: Number })
+  // @ApiImplicitParam({ name: 'idChannel', description: 'Unique identifier of the channel in the database', type: String })
+  // @ApiImplicitParam({ name: 'threshold', description: 'Max number of messages to retrieve. -1 to retrieve every message.', type: Number })
+  // @ApiImplicitParam({ name: 'startingAt', description: 'Retrieve messages starting with the N-th message', type: Number })
+  @Get('/messages')
+  // findMessagesFromChannel(@Body() params: FindMessagesDto): Observable<MessageEntity[] | void> {
+  //   @Get(':idChannel/messages/:threshold/:startingAt')
+  //     findMessagesFromChannel(@Param() params: FindMessagesParams): Observable<MessageEntity[] | void> {
+    findMessagesFromChannel(@Query() params: FindMessagesParams): Observable<MessageEntity[] | void> {
+    return this._channelService.findMessagesOnChannel(params);
+  }
   /**
    * Handler to answer to POST /channel route
    *

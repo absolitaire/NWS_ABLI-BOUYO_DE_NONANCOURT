@@ -1,7 +1,7 @@
 export declare class MessageEntity {
     _id: string;
     content: string;
-    authorId: String;
+    idUser: String;
     date: number;
     constructor(partial: Partial<MessageEntity>);
 }

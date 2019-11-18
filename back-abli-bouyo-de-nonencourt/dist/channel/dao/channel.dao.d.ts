@@ -7,6 +7,7 @@ import { SubscriptionDto } from '../dto/subscription.dto';
 import { CreateMessageDto } from '../dto/create-message.dto';
 import { Message } from '../interfaces/message.interface';
 import { MessageEntity } from '../entities/message.entity';
+import { FindMessagesDto } from '../dto/find-messages.dto';
 export declare class ChannelDao {
     private readonly _channelModel;
     private readonly _messageModel;
@@ -14,6 +15,7 @@ export declare class ChannelDao {
     constructor(_channelModel: Model<Channel>, _messageModel: Model<Message>, _logger: Logger);
     findAllChannels(): Observable<Channel[] | void>;
     findChannelById(id: string): Observable<Channel | void>;
+    findMessagesOnChannel(params: FindMessagesDto): Observable<Message[] | void>;
     createChannel(channel: CreateChannelDto): Observable<Channel>;
     findChannelByIdAndRemove(id: string): Observable<Channel | void>;
     subscribe(sub: SubscriptionDto): Observable<Channel | void>;
