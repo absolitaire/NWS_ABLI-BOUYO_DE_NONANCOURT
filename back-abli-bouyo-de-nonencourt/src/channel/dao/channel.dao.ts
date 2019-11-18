@@ -88,21 +88,38 @@ export class ChannelDao {
    * @return {Observable<Channel | void>}
    */
   subscribe(sub: SubscriptionDto): Observable<Channel | void> {
-    this._logger.log(`AYYYYY2222 ${sub.idChannel}`);
+    //this._logger.log(`AYYYYY2222 ${sub.idChannel}`);
     return from(this._channelModel.findOneAndUpdate({ _id: sub.idChannel, usersSubscribed:{$nin: sub.idUser } }, {$push: {usersSubscribed: sub.idUser}} ))
 
     .pipe(
       map((doc: MongooseDocument) => !!doc ? doc.toJSON() : undefined)
     );
-      // .pipe(
-      //
-      //
-      //   ,
-      //
-      //   this._logger.log(`EN  VRAI CEST LA FIN `),
-      //   return chan,
-      // )
-      //
+  }
+
+  /**
+   * Delete a channel. Called only when a channel is empty
+   *
+   * @param {string} id
+   *
+   * @return {Observable<Channel | void>}
+   */
+  unsubscribe(sub: SubscriptionDto): Observable<Channel | void> {
+    return from(this._channelModel.findOneAndUpdate({ _id: sub.idChannel, usersSubscribed:{$in: sub.idUser } }, {$pull: {usersSubscribed: sub.idUser}} ))
+
+      .pipe(
+        map((doc: MongooseDocument) => !!doc ? doc.toJSON() : undefined)
+      );
+  }
+
+  /**
+   * Delete a channel. Called only when a channel is empty
+   *
+   * @param {string} id
+   *
+   * @return {Observable<Channel | void>}
+   */
+  existsWithId(id: string): Observable<boolean> {
+    return from(this._channelModel.exists({_id: id}));
   }
 }
 /*  subscribe(sub: SubscriptionDto): Observable<Channel | void> {

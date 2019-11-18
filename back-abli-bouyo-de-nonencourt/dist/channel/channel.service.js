@@ -44,10 +44,26 @@ let ChannelService = class ChannelService {
             rxjs_1.throwError(new common_1.NotFoundException(`Channel with id '${id}' not found`))));
     }
     subscribe(sub) {
-        return this._channelDao.subscribe(sub)
-            .pipe(operators_1.catchError(e => rxjs_1.throwError(new common_1.NotFoundException(e.message))), operators_1.flatMap(_ => !!_ ?
-            rxjs_1.of(undefined) :
-            rxjs_1.throwError(new common_1.NotFoundException(`Channel with id '${sub.idChannel}' not found`))));
+        if (!!this._channelDao.findChannelById(sub.idChannel)) {
+            return this._channelDao.subscribe(sub)
+                .pipe(operators_1.catchError(e => rxjs_1.throwError(new common_1.NotFoundException(e.message))), operators_1.flatMap(_ => !!_ ?
+                rxjs_1.of(undefined) :
+                rxjs_1.throwError(new common_1.ConflictException(`Channel with id '${sub.idChannel}' don't exists or user'${sub.idUser}' is already subscribed to this channel`))));
+        }
+        else {
+            rxjs_1.throwError(new common_1.NotFoundException(`Channel with id '${sub.idChannel}' not found.`));
+        }
+    }
+    unsubscribe(sub) {
+        if (!!this._channelDao.findChannelById(sub.idChannel)) {
+            return this._channelDao.unsubscribe(sub)
+                .pipe(operators_1.catchError(e => rxjs_1.throwError(new common_1.NotFoundException(e.message))), operators_1.flatMap(_ => !!_ ?
+                rxjs_1.of(undefined) :
+                rxjs_1.throwError(new common_1.NotFoundException(`User with id '${sub.idUser}' not found`))));
+        }
+        else {
+            rxjs_1.throwError(new common_1.NotFoundException(`Channel with id '${sub.idChannel}' not found.`));
+        }
     }
 };
 ChannelService = __decorate([

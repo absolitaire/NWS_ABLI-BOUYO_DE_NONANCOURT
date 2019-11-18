@@ -12,4 +12,5 @@ export declare class ChannelService {
     private _addChannel;
     delete(id: string): Observable<void>;
     subscribe(sub: SubscriptionDto): Observable<ChannelEntity>;
+    unsubscribe(sub: SubscriptionDto): Observable<ChannelEntity>;
 }

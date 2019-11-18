@@ -40,6 +40,9 @@ let ChannelController = class ChannelController {
         const res = this._channelService.subscribe(sub);
         return res;
     }
+    unsubscribeAccountToChannel(sub) {
+        return this._channelService.unsubscribe(sub);
+    }
 };
 __decorate([
     swagger_1.ApiOkResponse({ description: 'Returns an array of channels', type: channel_entity_1.ChannelEntity, isArray: true }),
@@ -83,6 +86,17 @@ __decorate([
     __metadata("design:paramtypes", [subscription_dto_1.SubscriptionDto]),
     __metadata("design:returntype", rxjs_1.Observable)
 ], ChannelController.prototype, "subscribeAccountToChannel", null);
+__decorate([
+    swagger_1.ApiCreatedResponse({ description: 'The user has been subscribed' }),
+    swagger_1.ApiConflictResponse({ description: 'The user is already subscribed' }),
+    swagger_1.ApiBadRequestResponse({ description: 'Payload provided is not good' }),
+    swagger_1.ApiUnprocessableEntityResponse({ description: 'The request can\'t be performed in the database' }),
+    common_1.Delete('unsubscribe'),
+    __param(0, common_1.Body()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [subscription_dto_1.SubscriptionDto]),
+    __metadata("design:returntype", rxjs_1.Observable)
+], ChannelController.prototype, "unsubscribeAccountToChannel", null);
 ChannelController = __decorate([
     swagger_1.ApiUseTags('back/channel'),
     common_1.Controller('channel'),

@@ -1786,12 +1786,12 @@
         "signature": "00f6b9dd4ef5c1b3f852762d51a03b2f5b9f7a4249a1173e7d0b313d46514061"
       },
       "../src/channel/dao/channel.dao.ts": {
-        "version": "b3d2ff49618e4f211791f471ca1d1b53a1e1cd79377b1ca7db4246c5fa52e02d",
-        "signature": "6772fa530af42228cc86598cc95df32574f567fd44fe85b2cbdd606f35c2139d"
+        "version": "8fa1f91a50a18d5a89ab99b8579c57cf789d2bafe7fe29cf2046d20c721991d9",
+        "signature": "73156840b003a3fa48be4e709dc94f0fdec3725e3ebc3789a5dd6a218f858186"
       },
       "../src/channel/channel.service.ts": {
-        "version": "7e37d8967fd65e10e926f6ad64d0eb2cc101e42d91c7f989a85b30c20711ed29",
-        "signature": "7590b92cb7b4488ee9d4f99a273c8286f320e2d0442060342255d6d05751264f"
+        "version": "d3db0307afb85fd83a2715254f589b200f381ed9749b07dda1eb51cc0876f6d8",
+        "signature": "0726d6783db7b16b32647c7fee9fb44227f7e728ed947a251b138afe776f69a2"
       },
       "../src/channel/validators/handler-params.ts": {
         "version": "c2d5d2c2254acffe8012f86ffe9890242f5d997d203a4670c40993dbf47a3959",
@@ -1806,8 +1806,8 @@
         "signature": "5979d520d308aaa4f3318a388e2a12db743b258c31c63e78f05373b299588449"
       },
       "../src/channel/channel.controller.ts": {
-        "version": "9b181e6120e5bd41f14d3ff4f536ab251b39512ab7ddfad6316ff250847335c4",
-        "signature": "66470363bcc921bfdfa9037c8217ad81bbb02639425fa995f918fb3abdd68014"
+        "version": "95d78df95ed5e39c56f2de997e19400dec734fefbe2049e817042814fefa340d",
+        "signature": "1a7286e7bda2cb8c9e697a360ee2ec6825d31257ac04c3c5085763a799497953"
       },
       "../src/channel/schemas/channel.schema.ts": {
         "version": "2189d2b52209d5b656636606d35eb781b148c10399cb533851cf580a688cd235",

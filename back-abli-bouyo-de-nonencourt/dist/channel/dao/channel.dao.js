@@ -40,9 +40,15 @@ let ChannelDao = class ChannelDao {
             .pipe(operators_1.map((doc) => !!doc ? doc.toJSON() : undefined));
     }
     subscribe(sub) {
-        this._logger.log(`AYYYYY2222 ${sub.idChannel}`);
         return rxjs_1.from(this._channelModel.findOneAndUpdate({ _id: sub.idChannel, usersSubscribed: { $nin: sub.idUser } }, { $push: { usersSubscribed: sub.idUser } }))
             .pipe(operators_1.map((doc) => !!doc ? doc.toJSON() : undefined));
+    }
+    unsubscribe(sub) {
+        return rxjs_1.from(this._channelModel.findOneAndUpdate({ _id: sub.idChannel, usersSubscribed: { $in: sub.idUser } }, { $pull: { usersSubscribed: sub.idUser } }))
+            .pipe(operators_1.map((doc) => !!doc ? doc.toJSON() : undefined));
+    }
+    existsWithId(id) {
+        return rxjs_1.from(this._channelModel.exists({ _id: id }));
     }
 };
 ChannelDao = __decorate([

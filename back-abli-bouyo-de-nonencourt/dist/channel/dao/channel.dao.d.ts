@@ -14,4 +14,6 @@ export declare class ChannelDao {
     createChannel(channel: CreateChannelDto): Observable<Channel>;
     findChannelByIdAndRemove(id: string): Observable<Channel | void>;
     subscribe(sub: SubscriptionDto): Observable<Channel | void>;
+    unsubscribe(sub: SubscriptionDto): Observable<Channel | void>;
+    existsWithId(id: string): Observable<boolean>;
 }

@@ -13,4 +13,5 @@ export declare class ChannelController {
     findOne(params: HandlerParams): Observable<ChannelEntity>;
     create(createChannelDto: CreateChannelDto): Observable<ChannelEntity>;
     subscribeAccountToChannel(sub: SubscriptionDto): Observable<ChannelEntity>;
+    unsubscribeAccountToChannel(sub: SubscriptionDto): Observable<ChannelEntity>;
 }

@@ -1,4 +1,4 @@
-import { Body, ClassSerializerInterceptor, Controller, Get, Logger, Param, Post, UseInterceptors } from '@nestjs/common';
+import { Body, ClassSerializerInterceptor, Controller, Delete, Get, Logger, Param, Post, UseInterceptors } from '@nestjs/common';
 import { ChannelService } from './channel.service';
 import {
   ApiBadRequestResponse,
@@ -74,7 +74,7 @@ export class ChannelController {
   /**
    * Handler to answer to POST /channel/subscribe route
    *
-   * @param createChannelDto data to create
+   * @param SubscriptionDto data to create
    *
    * @returns Observable<ChannelEntity>
    */
@@ -93,5 +93,19 @@ export class ChannelController {
     // this._logger.log(from(res));
     return res;
   }
-
+  /**
+   * Handler to answer to POST /channel/unsubscribe route
+   *
+   * @param SubscriptionDto data to create
+   *
+   * @returns Observable<ChannelEntity>
+   */
+  @ApiNoContentResponse({ description: 'The user has been successfully unsubscribed' })
+  @ApiNotFoundResponse({ description: 'The user or the channel doesn\'t exist '})
+  @ApiBadRequestResponse({ description: 'Payload provided is not good' })
+  @ApiUnprocessableEntityResponse({ description: 'The request can\'t be performed in the database' })
+  @Delete('unsubscribe')
+  unsubscribeAccountToChannel(@Body() sub: SubscriptionDto): Observable<ChannelEntity>{
+    return this._channelService.unsubscribe(sub);
+  }
 }
