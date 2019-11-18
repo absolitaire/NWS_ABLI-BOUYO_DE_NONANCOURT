@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
 import {
   ApiBadRequestResponse, ApiConflictResponse, ApiCreatedResponse, ApiImplicitBody,
   ApiImplicitParam,
@@ -12,6 +12,7 @@ import { HandlerParams } from './validators/handler-params';
 import { CreateUserDto } from '../user/dto/create-user.dto';
 import { UserEntity } from '../user/entities/user.entity';
 import { UserService } from './user.service';
+import { UpdateUserDto } from './dto/update-user.dto';
 
 @ApiUseTags('back/user')
 @Controller('user')
@@ -83,5 +84,24 @@ export class UserController {
   @Delete(':id')
   delete(@Param() params: HandlerParams): Observable<void> {
     return this._userService.delete(params.id);
+  }
+
+  /**
+   * Handler to answer to PUT /user/:id route
+   *
+   * @param {HandlerParams} params list of route params to take user id
+   * @param updateUserDto data to update
+   *
+   * @returns Observable<UserEntity>
+   */
+  @ApiOkResponse({ description: 'The user has been successfully updated', type: UserEntity })
+  @ApiNotFoundResponse({ description: 'User with the given "id" doesn\'t exist in the database' })
+  @ApiBadRequestResponse({ description: 'Parameter and/or payload provided are not good' })
+  @ApiUnprocessableEntityResponse({ description: 'The request can\'t be performed in the database' })
+  @ApiImplicitParam({ name: 'id', description: 'Unique identifier of the user in the database', type: String })
+  @ApiImplicitBody({ name: 'UpdateUserDto', description: 'Payload to update a user', type: UpdateUserDto })
+  @Put(':id')
+  update(@Param() params: HandlerParams, @Body() updateUserDto: UpdateUserDto): Observable<UserEntity> {
+    return this._userService.tryToUpdate(params.id, updateUserDto);
   }
 }
