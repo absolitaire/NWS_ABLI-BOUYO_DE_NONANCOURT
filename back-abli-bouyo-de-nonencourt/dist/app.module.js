@@ -10,14 +10,15 @@ const common_1 = require("@nestjs/common");
 const mongoose_1 = require("@nestjs/mongoose");
 const channel_module_1 = require("./channel/channel.module");
 const user_module_1 = require("./user/user.module");
+const login_module_1 = require("./login/login.module");
+const auth_module_1 = require("./auth/auth.module");
 const Config = require("config");
-const people_module_1 = require("./people/people.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     common_1.Module({
         imports: [mongoose_1.MongooseModule.forRoot('mongodb://localhost:27017/back', Config.get('mongodb.options')),
-            channel_module_1.ChannelModule, user_module_1.UserModule, people_module_1.PeopleModule],
+            channel_module_1.ChannelModule, user_module_1.UserModule, login_module_1.LoginModule, auth_module_1.AuthModule],
     })
 ], AppModule);
 exports.AppModule = AppModule;

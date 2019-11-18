@@ -30,8 +30,7 @@ let UserDao = class UserDao {
             .pipe(operators_1.map((doc) => !!doc ? doc.toJSON() : undefined));
     }
     findByLogin(loginUser) {
-        return rxjs_1.from(this._userModel.findOne({ login: loginUser }))
-            .pipe(operators_1.map((doc) => !!doc ? doc.toJSON() : undefined));
+        return rxjs_1.from(this._userModel.findOne({ login: loginUser }));
     }
     create(user) {
         return rxjs_1.from(this._userModel.create(user))

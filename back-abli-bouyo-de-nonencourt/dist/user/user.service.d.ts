@@ -7,6 +7,7 @@ export declare class UserService {
     constructor(_userDao: UserDao);
     findAll(): Observable<UserEntity[] | void>;
     findOne(id: string): Observable<UserEntity>;
+    findByLogin(loginUser: string): Observable<UserEntity>;
     create(user: CreateUserDto): Observable<UserEntity>;
     delete(id: string): Observable<void>;
     private _addUser;

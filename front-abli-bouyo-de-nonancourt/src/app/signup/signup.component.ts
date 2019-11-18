@@ -1,7 +1,9 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {User} from "../shared/interfaces/user";
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { UserService } from '../shared/services/user.service';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -11,7 +13,7 @@ export class SignupComponent implements OnInit {
 
   private readonly _form: FormGroup;
 
-  constructor(private http: HttpClient) {
+  constructor(private _userService: UserService, private router: Router) {
     this._form = this._buildForm();
   }
 
@@ -23,13 +25,10 @@ export class SignupComponent implements OnInit {
   }
 
   submit(user: User) {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type':  'application/json'
-      })
-    };
-    this.http.post<User>("localhost:3000/User", user, httpOptions)
-      .pipe();
+    this._userService
+      .add(user)
+
+    this.router.navigateByUrl('/');
   }
 
   get form(): FormGroup {

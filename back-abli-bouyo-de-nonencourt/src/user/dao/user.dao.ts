@@ -42,6 +42,10 @@ export class UserDao {
       );
   }
 
+  findByLogin(loginUser: string): Observable<User | any> {
+    return from(this._userModel.findOne({login : loginUser}));
+  }
+
   /**
    * Check if user already exists with index and add it in people list
    *
@@ -84,4 +88,5 @@ export class UserDao {
         map((doc: MongooseDocument) => !!doc ? doc.toJSON() : undefined),
       );
   }
+
 }

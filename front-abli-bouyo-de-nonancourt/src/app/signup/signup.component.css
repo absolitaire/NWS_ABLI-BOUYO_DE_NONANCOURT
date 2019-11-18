@@ -14,3 +14,7 @@
 .signup-container > mat-toolbar {
   margin: 0px;
 }
+
+mat-form-field {
+  color:white;
+}

@@ -81,6 +81,7 @@ __decorate([
     __metadata("design:returntype", rxjs_1.Observable)
 ], UserController.prototype, "delete", null);
 UserController = __decorate([
+    swagger_1.ApiUseTags('back/user'),
     common_1.Controller('user'),
     __metadata("design:paramtypes", [user_service_1.UserService])
 ], UserController);

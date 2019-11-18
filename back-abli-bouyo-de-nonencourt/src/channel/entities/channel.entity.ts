@@ -1,12 +1,13 @@
 import { Exclude, Expose, Type } from 'class-transformer';
 import { ApiModelProperty } from '@nestjs/swagger';
+import { UserDto } from '../dto/user.dto';
 
 @Exclude()
 export class ChannelEntity {
   @ApiModelProperty({ description: 'Unique identifier in the database', example: '5763cd4dc378a38ecd387737' })
   @Expose()
   @Type(() => String)
-  id: string;
+  _id: string;
 
   @ApiModelProperty({ description: 'Unique identifier destined to be seen and used by the users', example: 'AbCd3' })
   @Expose()
@@ -22,6 +23,11 @@ export class ChannelEntity {
   @Expose()
   @Type(() => String)
   description: string;
+
+  @ApiModelProperty({ isArray: true, description: 'List of subscribed users', example: '[{\'id\':\'5763cd4dc378a38ecd387737\'}]' })
+  @Expose()
+  @Type(() => String)
+  usersSubscribed: String[];
   /**
    * Class constructor
    *

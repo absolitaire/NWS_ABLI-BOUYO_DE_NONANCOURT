@@ -1,7 +1,8 @@
 export declare class ChannelEntity {
-    id: string;
+    _id: string;
     idChannel: string;
     name: string;
     description: string;
+    usersSubscribed: String[];
     constructor(partial: Partial<ChannelEntity>);
 }

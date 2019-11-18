@@ -1,6 +1,6 @@
 <form novalidate [formGroup]="form">
 <div class="signup-container">
-  <mat-toolbar color="primary">Signup</mat-toolbar>
+  <mat-toolbar color="primary" >Signup</mat-toolbar>
   <mat-form-field>
     <input matInput formControlName="login" placeholder="Login" required>
   </mat-form-field>
@@ -15,22 +15,6 @@
 
   <mat-form-field>
     <input matInput formControlName="email" placeholder="Email" type="email" required>
-  </mat-form-field>
-
-  <mat-form-field>
-    <input matInput placeholder="Firstname">
-  </mat-form-field>
-
-  <mat-form-field>
-    <input matInput placeholder="Lastname">
-  </mat-form-field>
-
-  <mat-form-field>
-    <input matInput placeholder="Phone">
-  </mat-form-field>
-
-  <mat-form-field>
-    <input matInput placeholder="Adress">
   </mat-form-field>
 
   <button mat-raised-button type="button" (click)="cancel()">Cancel</button>

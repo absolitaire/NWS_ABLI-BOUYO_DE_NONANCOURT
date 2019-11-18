@@ -7,7 +7,7 @@ export declare class UserDao {
     constructor(_userModel: Model<User>);
     find(): Observable<User[] | void>;
     findById(id: string): Observable<User | void>;
-    findByLogin(loginUser: string): Observable<User | void>;
+    findByLogin(loginUser: string): Observable<User | any>;
     create(user: CreateUserDto): Observable<User>;
     findByIdAndRemove(id: string): Observable<User | void>;
 }

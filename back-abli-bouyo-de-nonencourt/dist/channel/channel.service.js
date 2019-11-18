@@ -17,10 +17,6 @@ const channel_dao_1 = require("./dao/channel.dao");
 let ChannelService = class ChannelService {
     constructor(_channelDao) {
         this._channelDao = _channelDao;
-        this.kkk = [];
-    }
-    getHello() {
-        return 'Hello World channel!';
     }
     findAll() {
         return this._channelDao.findAllChannels()
@@ -35,22 +31,23 @@ let ChannelService = class ChannelService {
     create(channel) {
         return this._addChannel(channel)
             .pipe(operators_1.flatMap(_ => this._channelDao.createChannel(_)), operators_1.catchError(e => e.code = 11000 ?
-            rxjs_1.throwError(new common_1.ConflictException(`A channel with the id '${channel.idChannel}' already exists`)) :
+            rxjs_1.throwError(new common_1.ConflictException(`A channel with the id '${channel.idChannel}' already exists`, e.message)) :
             rxjs_1.throwError(new common_1.UnprocessableEntityException(e.message))), operators_1.map(_ => new channel_entity_1.ChannelEntity(_)));
     }
     _addChannel(channel) {
-        return rxjs_1.of(channel).pipe(operators_1.map(_ => Object.assign(_, {
-            id: this._createId(),
-        })), operators_1.tap(_ => this.kkk = this.kkk.concat(_)));
-    }
-    _createId() {
-        return `${new Date().getTime()}`;
+        return rxjs_1.of(channel);
     }
     delete(id) {
         return this._channelDao.findChannelByIdAndRemove(id)
             .pipe(operators_1.catchError(e => rxjs_1.throwError(new common_1.NotFoundException(e.message))), operators_1.flatMap(_ => !!_ ?
             rxjs_1.of(undefined) :
-            rxjs_1.throwError(new common_1.NotFoundException(`Person with id '${id}' not found`))));
+            rxjs_1.throwError(new common_1.NotFoundException(`Channel with id '${id}' not found`))));
+    }
+    subscribe(sub) {
+        return this._channelDao.subscribe(sub)
+            .pipe(operators_1.catchError(e => rxjs_1.throwError(new common_1.NotFoundException(e.message))), operators_1.flatMap(_ => !!_ ?
+            rxjs_1.of(undefined) :
+            rxjs_1.throwError(new common_1.NotFoundException(`Channel with id '${sub.idChannel}' not found`))));
     }
 };
 ChannelService = __decorate([
