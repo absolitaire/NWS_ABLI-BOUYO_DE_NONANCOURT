@@ -5,5 +5,8 @@ export declare class AuthController {
     private readonly _authService;
     private readonly _logger;
     constructor(_authService: AuthService, _logger: Logger);
-    login(body: HandlerParams): Promise<any>;
+    login(body: HandlerParams): Promise<{
+        access_token: string;
+    }>;
+    getProfile(req: any): any;
 }

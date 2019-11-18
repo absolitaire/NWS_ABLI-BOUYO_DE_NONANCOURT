@@ -15,17 +15,21 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const auth_service_1 = require("./auth.service");
 const handler_params_1 = require("./validator/handler-params");
+const passport_1 = require("@nestjs/passport");
 let AuthController = class AuthController {
     constructor(_authService, _logger) {
         this._authService = _authService;
         this._logger = _logger;
     }
     async login(body) {
-        const user = await this._authService.validateUser(body.login, body.password);
+        const user = await this._authService.validateUser(body['login'], body['password']);
         if (!user) {
             throw new common_1.UnauthorizedException();
         }
-        return user;
+        return this._authService.login(user);
+    }
+    getProfile(req) {
+        return req.user;
     }
 };
 __decorate([
@@ -35,6 +39,14 @@ __decorate([
     __metadata("design:paramtypes", [handler_params_1.HandlerParams]),
     __metadata("design:returntype", Promise)
 ], AuthController.prototype, "login", null);
+__decorate([
+    common_1.UseGuards(passport_1.AuthGuard('jwt')),
+    common_1.Get('profile'),
+    __param(0, common_1.Request()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], AuthController.prototype, "getProfile", null);
 AuthController = __decorate([
     common_1.Controller('auth'),
     __metadata("design:paramtypes", [auth_service_1.AuthService, common_1.Logger])

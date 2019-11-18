@@ -44,7 +44,7 @@ export class UserDao {
   }
 
   findByLogin(loginUser: string): Observable<User | any> {
-    return from(this._userModel.findOne({login : loginUser}));
+    return from(this._userModel.find({login : loginUser}));
   }
 
   /**

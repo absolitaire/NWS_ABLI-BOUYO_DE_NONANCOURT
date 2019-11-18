@@ -15,12 +15,19 @@ const user_service_1 = require("../user/user.service");
 const user_dao_1 = require("../user/dao/user.dao");
 const mongoose_1 = require("@nestjs/mongoose");
 const user_schema_1 = require("../user/schemas/user.schema");
+const jwt_1 = require("@nestjs/jwt");
+const jwt_strategy_1 = require("./jwt.strategy");
+const constants_1 = require("./constants");
 let AuthModule = class AuthModule {
 };
 AuthModule = __decorate([
     common_1.Module({
-        imports: [user_module_1.UserModule, passport_1.PassportModule, mongoose_1.MongooseModule.forFeature([{ name: 'User', schema: user_schema_1.UserSchema }])],
-        providers: [auth_service_1.AuthService, user_service_1.UserService, user_dao_1.UserDao, common_1.Logger],
+        imports: [user_module_1.UserModule, passport_1.PassportModule, mongoose_1.MongooseModule.forFeature([{ name: 'User', schema: user_schema_1.UserSchema }]),
+            jwt_1.JwtModule.register({
+                secret: constants_1.jwtConstants.secret,
+                signOptions: { expiresIn: '5m' },
+            }),],
+        providers: [auth_service_1.AuthService, user_service_1.UserService, user_dao_1.UserDao, common_1.Logger, jwt_strategy_1.JwtStrategy],
         controllers: [auth_controller_1.AuthController],
     })
 ], AuthModule);

@@ -2,6 +2,8 @@ import {Component, Input, OnChanges, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 import { User } from '../shared/interfaces/user';
+import {Router} from "@angular/router";
+import {LoginService} from "../shared/services/login.service";
 
 @Component({
   selector: 'app-login',
@@ -14,7 +16,7 @@ export class LoginComponent implements OnInit, OnChanges  {
 
   private _model: User;
 
-  constructor() {
+  constructor(private _loginService: LoginService, private router: Router) {
     this._form = this._buildForm();
   }
 
@@ -37,10 +39,14 @@ export class LoginComponent implements OnInit, OnChanges  {
     }
   }
   cancel() {
-
+    this.router.navigateByUrl('/');
   }
 
-  submit(value: any) {
+  submit(user: User) {
+    this._loginService
+      .login(user);
+
+    this.router.navigateByUrl('/');
   }
 
   get form(): FormGroup {
