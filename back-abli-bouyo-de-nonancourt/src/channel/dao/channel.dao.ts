@@ -147,7 +147,20 @@ export class ChannelDao {
         map((doc: MongooseDocument) => !!doc ? doc.toJSON() : undefined)
       );
   }
+  /**
+   * Delete a channel if it hasn't any subscribed users.
+   *
+   * @param {string} id
+   *
+   * @return {Observable<Channel | void>}
+   */
+  tryToDeleteChannel(id: string): Observable<Channel | void> {
+    return from(this._channelModel.findOneAndDelete({ _id: id, usersSubscribed:{$size: 0 } } ))
 
+      .pipe(
+        map((doc: MongooseDocument) => !!doc ? doc.toJSON() : undefined)
+      );
+  }
   /**
    * Delete a channel. Called only when a channel is empty
    *

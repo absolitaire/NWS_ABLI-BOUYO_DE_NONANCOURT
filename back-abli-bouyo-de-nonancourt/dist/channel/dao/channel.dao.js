@@ -39,17 +39,17 @@ let ChannelDao = class ChannelDao {
         return rxjs_1.from(this._channelModel.findById(id))
             .pipe(operators_1.map((doc) => !!doc ? doc.toJSON() : undefined));
     }
-    async findMessagesOnChannel(params) {
+    async findMessagesOnChannel(query) {
         var e_1, _a;
         let i = 0;
         let nb = 0;
         let res = [];
         let tmp;
         try {
-            for (var _b = __asyncValues(await this._messageModel.find({ idChannel: params.idChannel })), _c; _c = await _b.next(), !_c.done;) {
+            for (var _b = __asyncValues(await this._messageModel.find({ idChannel: query.idChannel })), _c; _c = await _b.next(), !_c.done;) {
                 const message = _c.value;
                 this._logger.log(` ${i}`);
-                if (params.threshold == -1 || (nb < params.threshold && i + 1 >= params.startingAt)) {
+                if (query.threshold == -1 || (nb < query.threshold && i + 1 >= query.startingAt)) {
                     tmp = new message_entity_1.MessageEntity(message);
                     tmp.fillData(message.get('_id'), message.get('content'), message.get('idUser'), message.get('date'));
                     res = res.concat(tmp);
@@ -84,6 +84,10 @@ let ChannelDao = class ChannelDao {
     }
     unsubscribe(sub) {
         return rxjs_1.from(this._channelModel.findOneAndUpdate({ _id: sub.idChannel, usersSubscribed: { $in: sub.idUser } }, { $pull: { usersSubscribed: sub.idUser } }))
+            .pipe(operators_1.map((doc) => !!doc ? doc.toJSON() : undefined));
+    }
+    tryToDeleteChannel(id) {
+        return rxjs_1.from(this._channelModel.findOneAndDelete({ _id: id, usersSubscribed: { $size: 0 } }))
             .pipe(operators_1.map((doc) => !!doc ? doc.toJSON() : undefined));
     }
     existsWithId(id) {

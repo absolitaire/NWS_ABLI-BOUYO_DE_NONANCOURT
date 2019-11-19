@@ -16,6 +16,7 @@ const common_1 = require("@nestjs/common");
 const auth_service_1 = require("./auth.service");
 const handler_params_1 = require("./validator/handler-params");
 const passport_1 = require("@nestjs/passport");
+const swagger_1 = require("@nestjs/swagger");
 let AuthController = class AuthController {
     constructor(_authService, _logger) {
         this._authService = _authService;
@@ -49,6 +50,7 @@ __decorate([
 ], AuthController.prototype, "getProfile", null);
 AuthController = __decorate([
     common_1.Controller('auth'),
+    swagger_1.ApiUseTags('back/auth'),
     __metadata("design:paramtypes", [auth_service_1.AuthService, common_1.Logger])
 ], AuthController);
 exports.AuthController = AuthController;

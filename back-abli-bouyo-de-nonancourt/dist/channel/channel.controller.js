@@ -22,7 +22,7 @@ const handler_params_1 = require("./validators/handler-params");
 const channel_interceptor_1 = require("./interceptors/channel.interceptor");
 const subscription_dto_1 = require("./dto/subscription.dto");
 const create_message_dto_1 = require("./dto/create-message.dto");
-const find_messages_params_1 = require("./validators/find-messages-params");
+const find_messages_query_1 = require("./validators/find-messages-query");
 let ChannelController = class ChannelController {
     constructor(_channelService, _logger) {
         this._channelService = _channelService;
@@ -34,8 +34,8 @@ let ChannelController = class ChannelController {
     findOne(params) {
         return this._channelService.findOne(params.id);
     }
-    findMessagesFromChannel(params) {
-        return rxjs_1.from(this._channelService.findMessagesOnChannel(params));
+    findMessagesFromChannel(query) {
+        return rxjs_1.from(this._channelService.findMessagesOnChannel(query));
     }
     create(createChannelDto) {
         return this._channelService.create(createChannelDto);
@@ -81,7 +81,7 @@ __decorate([
     common_1.Get('/messages'),
     __param(0, common_1.Query()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [find_messages_params_1.FindMessagesParams]),
+    __metadata("design:paramtypes", [find_messages_query_1.FindMessagesQuery]),
     __metadata("design:returntype", rxjs_1.Observable)
 ], ChannelController.prototype, "findMessagesFromChannel", null);
 __decorate([
@@ -119,8 +119,8 @@ __decorate([
     __metadata("design:returntype", rxjs_1.Observable)
 ], ChannelController.prototype, "unsubscribeAccountToChannel", null);
 __decorate([
-    swagger_1.ApiCreatedResponse({ description: 'The user has been subscribed' }),
-    swagger_1.ApiConflictResponse({ description: 'The user is already subscribed' }),
+    swagger_1.ApiNotFoundResponse({ description: 'The user doesn\'t exists' }),
+    swagger_1.ApiConflictResponse({ description: 'The channel doesn\'t exists' }),
     swagger_1.ApiBadRequestResponse({ description: 'Payload provided is not good' }),
     swagger_1.ApiUnprocessableEntityResponse({ description: 'The request can\'t be performed in the database' }),
     common_1.Post('write'),

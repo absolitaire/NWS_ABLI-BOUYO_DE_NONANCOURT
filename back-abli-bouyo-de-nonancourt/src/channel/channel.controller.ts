@@ -4,7 +4,8 @@ import {
   ApiBadRequestResponse,
   ApiConflictResponse,
   ApiCreatedResponse,
-  ApiImplicitParam, ApiImplicitQuery,
+  ApiImplicitParam,
+  ApiImplicitQuery,
   ApiNoContentResponse,
   ApiNotFoundResponse,
   ApiOkResponse,
@@ -17,10 +18,8 @@ import { ChannelEntity } from './entities/channel.entity';
 import { HandlerParams } from './validators/handler-params';
 import { ChannelInterceptor } from './interceptors/channel.interceptor';
 import { SubscriptionDto } from './dto/subscription.dto';
-import { flatMap } from 'rxjs/operators';
 import { CreateMessageDto } from './dto/create-message.dto';
 import { MessageEntity } from './entities/message.entity';
-import { FindMessagesDto } from './dto/find-messages.dto';
 import { FindMessagesQuery } from './validators/find-messages-query';
 
 @ApiUseTags('back/channel')
@@ -136,7 +135,7 @@ export class ChannelController {
   @ApiConflictResponse({ description: 'The channel doesn\'t exists' })
   @ApiBadRequestResponse({ description: 'Payload provided is not good' })
   @ApiUnprocessableEntityResponse({ description: 'The request can\'t be performed in the database' })
- @Post('write')
+  @Post('write')
   writeIntoChannel(@Body() message: CreateMessageDto): Observable<ChannelEntity>{
     return this._channelService.tryToWriteIntoChannel(message);
   }

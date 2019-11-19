@@ -31,8 +31,8 @@ let ChannelService = class ChannelService {
             rxjs_1.of(new channel_entity_1.ChannelEntity(_)) :
             rxjs_1.throwError(new common_1.NotFoundException(`Channel with id '${id}' not found`))));
     }
-    async findMessagesOnChannel(params) {
-        return this._channelDao.findMessagesOnChannel(params);
+    async findMessagesOnChannel(query) {
+        return this._channelDao.findMessagesOnChannel(query);
     }
     create(channel) {
         return this._addChannel(channel)
@@ -61,16 +61,17 @@ let ChannelService = class ChannelService {
             rxjs_1.of(undefined) :
             rxjs_1.throwError(new common_1.ConflictException(`Channel with id '${sub.idChannel}' don't exists or user'${sub.idUser}' is already subscribed to this channel`))));
     }
+    tryToDeleteChannel(sub) {
+        return this._channelDao.tryToDeleteChannel(sub.idChannel)
+            .pipe(operators_1.catchError(e => rxjs_1.throwError(new common_1.NotFoundException(e.message))), operators_1.flatMap(_ => !!_ ?
+            this.subscribe(sub) :
+            rxjs_1.throwError(new common_1.ImATeapotException('Channel successfully deleted'))));
+    }
     unsubscribe(sub) {
-        if (!!this._channelDao.findChannelById(sub.idChannel)) {
-            return this._channelDao.unsubscribe(sub)
-                .pipe(operators_1.catchError(e => rxjs_1.throwError(new common_1.NotFoundException(e.message))), operators_1.flatMap(_ => !!_ ?
-                rxjs_1.of(undefined) :
-                rxjs_1.throwError(new common_1.NotFoundException(`User with id '${sub.idUser}' not found`))));
-        }
-        else {
-            rxjs_1.throwError(new common_1.NotFoundException(`Channel with id '${sub.idChannel}' not found.`));
-        }
+        return this._channelDao.unsubscribe(sub)
+            .pipe(operators_1.catchError(e => rxjs_1.throwError(new common_1.NotFoundException(e.message))), operators_1.flatMap(_ => !!_ ?
+            this.tryToDeleteChannel(sub) :
+            rxjs_1.throwError(new common_1.NotFoundException(`User with id '${sub.idUser}' or channel with id '${sub.idChannel}'not found`))));
     }
     writeIntoChannel(message) {
         return this._channelDao.writeIntoChannel(message)
@@ -82,7 +83,7 @@ let ChannelService = class ChannelService {
         return this._userDao.findById(message.idUser)
             .pipe(operators_1.catchError(e => rxjs_1.throwError(new common_1.NotFoundException(e.message))), operators_1.flatMap(_ => !!_ ?
             this.writeIntoChannel(message) :
-            rxjs_1.throwError(new common_1.ConflictException(`User with id '${message.idUser}' doesn't exist`))));
+            rxjs_1.throwError(new common_1.NotFoundException(`User with id '${message.idUser}' doesn't exist`))));
     }
 };
 ChannelService = __decorate([

@@ -3,17 +3,21 @@
   <component name="ChangeListManager">
     <list default="true" id="8ec6e8a9-ce98-47d7-ad79-666ba11e0ab8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/auth/auth.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/auth/auth.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/auth/auth.controller.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/auth/auth.controller.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/channel/channel.controller.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/channel.controller.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/channel/channel.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/channel.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/channel/channel.controller.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/channel.controller.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/channel/channel.service.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/channel.service.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/channel/channel.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/channel.service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/channel/channel.service.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/channel.service.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/channel/dao/channel.dao.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/dao/channel.dao.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/channel/dao/channel.dao.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/dao/channel.dao.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/channel/dao/channel.dao.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/dao/channel.dao.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/tsconfig.build.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/dist/tsconfig.build.tsbuildinfo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/auth/auth.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/auth/auth.controller.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/channel/channel.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/channel/channel.controller.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/channel/channel.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/channel/channel.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/channel/dao/channel.dao.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/channel/dao/channel.dao.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/channel/validators/find-messages-params.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/channel/validators/find-messages-query.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +71,7 @@
       <updated>1574108957461</updated>
       <workItem from="1574108960427" duration="5616000" />
       <workItem from="1574168420290" duration="4711000" />
-      <workItem from="1574174069316" duration="1772000" />
+      <workItem from="1574174069316" duration="5945000" />
     </task>
     <servers />
   </component>

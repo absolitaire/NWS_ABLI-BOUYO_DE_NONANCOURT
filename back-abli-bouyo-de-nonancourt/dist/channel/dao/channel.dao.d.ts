@@ -15,11 +15,12 @@ export declare class ChannelDao {
     constructor(_channelModel: Model<Channel>, _messageModel: Model<Message>, _logger: Logger);
     findAllChannels(): Observable<Channel[] | void>;
     findChannelById(id: string): Observable<Channel | void>;
-    findMessagesOnChannel(params: FindMessagesDto): Promise<MessageEntity[] | void>;
+    findMessagesOnChannel(query: FindMessagesDto): Promise<MessageEntity[] | void>;
     createChannel(channel: CreateChannelDto): Observable<Channel>;
     findChannelByIdAndRemove(id: string): Observable<Channel | void>;
     subscribe(sub: SubscriptionDto): Observable<Channel | void>;
     unsubscribe(sub: SubscriptionDto): Observable<Channel | void>;
+    tryToDeleteChannel(id: string): Observable<Channel | void>;
     existsWithId(id: string): Observable<boolean>;
     private _addDateToMessage;
     writeIntoChannel(message: CreateMessageDto): Observable<MessageEntity>;

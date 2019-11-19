@@ -1,4 +1,4 @@
-import { ConflictException, Injectable, Logger, NotFoundException, UnprocessableEntityException } from '@nestjs/common';
+import { ConflictException, ImATeapotException, Injectable, Logger, NotFoundException, UnprocessableEntityException } from '@nestjs/common';
 import { from, Observable, of, throwError } from 'rxjs';
 import { ChannelEntity } from './entities/channel.entity';
 import { catchError, map, flatMap, find, tap } from 'rxjs/operators';
@@ -256,22 +256,35 @@ export class ChannelService {
           ),
         );
     }*/
+  tryToDeleteChannel(sub: SubscriptionDto): Observable<ChannelEntity> {
+    //return this._channelDao.findChannelById(message.idChannel)
+    return this._channelDao.tryToDeleteChannel(sub.idChannel)
+      .pipe(
+        catchError(e => throwError(new NotFoundException(e.message))),
+        flatMap(_ =>
+          !!_ ?
+            this.subscribe(sub):
+            // throwError(new NotFoundException(`Channel with id '${sub.idChannel}' not found`)),
+            // throwError(new ConflictException(`User'${sub.idUser}' is already subscribed to the channel '${sub.idChannel}'`)),
+            // throwError(new ConflictException(`Channel with id '${message.idChannel}' doesn't exist`)),
+            //throwError(new NotFoundException(`Channel with id '${sub.idChannel}' doesn't exist`)),
+          throwError(new ImATeapotException('Channel successfully deleted'))
+        ),
+      );
 
+  }
   unsubscribe(sub: SubscriptionDto): Observable<ChannelEntity> {// fonctionne
-    if (!!this._channelDao.findChannelById(sub.idChannel)) {
       return this._channelDao.unsubscribe(sub)
         .pipe(
           catchError(e => throwError(new NotFoundException(e.message))),
           flatMap(_ =>
             !!_ ?
-              of(undefined) :
-               throwError(new NotFoundException(`User with id '${sub.idUser}' not found`)),
+              // of(undefined) :
+             this.tryToDeleteChannel(sub) :
+               throwError(new NotFoundException(`User with id '${sub.idUser}' or channel with id '${sub.idChannel}'not found`)),
               // throwError(new ConflictException(`User'${sub.idUser}' is already subscribed to the channel '${sub.idChannel}'`)),
           ),
         );
-    } else {
-      throwError(new NotFoundException(`Channel with id '${sub.idChannel}' not found.`));
-    }
 
   }
   writeIntoChannel(message: CreateMessageDto): Observable<ChannelEntity> {

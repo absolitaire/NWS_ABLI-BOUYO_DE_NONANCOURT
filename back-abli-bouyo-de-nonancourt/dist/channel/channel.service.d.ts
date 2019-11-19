@@ -15,12 +15,13 @@ export declare class ChannelService {
     constructor(_channelDao: ChannelDao, _userDao: UserDao, _logger: Logger);
     findAll(): Observable<ChannelEntity[] | void>;
     findOne(id: string): Observable<ChannelEntity>;
-    findMessagesOnChannel(params: FindMessagesDto): Promise<MessageEntity[] | void>;
+    findMessagesOnChannel(query: FindMessagesDto): Promise<MessageEntity[] | void>;
     create(channel: CreateChannelDto): Observable<ChannelEntity>;
     private _addChannel;
     delete(id: string): Observable<void>;
     tryToSubscribe(sub: SubscriptionDto): Observable<ChannelEntity>;
     subscribe(sub: SubscriptionDto): Observable<ChannelEntity>;
+    tryToDeleteChannel(sub: SubscriptionDto): Observable<ChannelEntity>;
     unsubscribe(sub: SubscriptionDto): Observable<ChannelEntity>;
     writeIntoChannel(message: CreateMessageDto): Observable<ChannelEntity>;
     tryToWriteIntoChannel(message: CreateMessageDto): Observable<ChannelEntity>;
