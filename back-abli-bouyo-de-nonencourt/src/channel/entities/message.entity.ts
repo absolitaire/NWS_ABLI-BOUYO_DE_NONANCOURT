@@ -32,4 +32,11 @@ export class MessageEntity {
   constructor(partial: Partial<MessageEntity>) {
     Object.assign(this, partial);
   }
+
+  fillData(id: string, content: string, idUser: string, date: number){
+    this._id = id;
+    this.content = content;
+    this.idUser = idUser;
+    this.date = date;
+  }
 }

@@ -56,12 +56,36 @@ export class ChannelDao {
       );
   }
 
+  //
+  // findMessagesOnChannel(params: FindMessagesDto): Observable<Message[] | void> {
+  //   return from(this._messageModel.find({idChannel: params.idChannel}))
+  //     .pipe(
+  //       map((docs: MongooseDocument[]) => (!!docs && docs.length > 0) ? docs.map(_ => _.toJSON()) : undefined),
+  //     );
+  // }
 
-  findMessagesOnChannel(params: FindMessagesDto): Observable<Message[] | void> {
-    return from(this._messageModel.find({idChannel: params.idChannel}))
-      .pipe(
-        map((docs: MongooseDocument[]) => (!!docs && docs.length > 0) ? docs.map(_ => _.toJSON()) : undefined),
-      );
+
+  async findMessagesOnChannel(params: FindMessagesDto): Promise<MessageEntity[] | void> {
+    let i = 0;
+    let nb = 0;
+    let res = [];
+    let tmp: MessageEntity;
+    for await (const message of await this._messageModel.find({ idChannel: params.idChannel })){
+      this._logger.log(` ${i}`);
+      if(params.threshold == -1 ||(nb < params.threshold && i+1 >= params.startingAt)){
+        //res = res.concat(message);
+        tmp = new MessageEntity(message);
+        tmp.fillData(message.get('_id'),message.get('content'),message.get('idUser'),message.get('date'))
+        res = res.concat(tmp);
+        //this._logger.log(`AYYYYY2222 ${i} ${message}`);
+        this._logger.log(`AYYYYY2222 ${i} ${tmp}`);
+        nb++;
+      }
+      i++;
+      this._logger.log(`lool ${res} , ${i}, ${nb}`);
+    }
+    this._logger.log(`AYYYYY2222 ${res} , ${i}, ${nb}`);
+    return res;
   }
   /**
    * Create a new Channel

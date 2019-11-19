@@ -1,3 +1,4 @@
+import { Logger } from '@nestjs/common';
 import { Observable } from 'rxjs';
 import { ChannelEntity } from './entities/channel.entity';
 import { CreateChannelDto } from './dto/create-channel.dto';
@@ -10,10 +11,11 @@ import { FindMessagesDto } from './dto/find-messages.dto';
 export declare class ChannelService {
     private readonly _channelDao;
     private readonly _userDao;
-    constructor(_channelDao: ChannelDao, _userDao: UserDao);
+    private readonly _logger;
+    constructor(_channelDao: ChannelDao, _userDao: UserDao, _logger: Logger);
     findAll(): Observable<ChannelEntity[] | void>;
     findOne(id: string): Observable<ChannelEntity>;
-    findMessagesOnChannel(params: FindMessagesDto): Observable<MessageEntity[] | void>;
+    findMessagesOnChannel(params: FindMessagesDto): Promise<MessageEntity[] | void>;
     create(channel: CreateChannelDto): Observable<ChannelEntity>;
     private _addChannel;
     delete(id: string): Observable<void>;

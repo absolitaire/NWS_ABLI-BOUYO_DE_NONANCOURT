@@ -15,6 +15,12 @@ let MessageEntity = class MessageEntity {
     constructor(partial) {
         Object.assign(this, partial);
     }
+    fillData(id, content, idUser, date) {
+        this._id = id;
+        this.content = content;
+        this.idUser = idUser;
+        this.date = date;
+    }
 };
 __decorate([
     swagger_1.ApiModelProperty({ description: 'Unique identifier in the database', example: '5763cd4dc378a38ecd387737' }),

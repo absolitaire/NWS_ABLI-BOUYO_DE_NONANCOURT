@@ -15,11 +15,11 @@ const channel_entity_1 = require("./entities/channel.entity");
 const operators_1 = require("rxjs/operators");
 const channel_dao_1 = require("./dao/channel.dao");
 const user_dao_1 = require("../user/dao/user.dao");
-const message_entity_1 = require("./entities/message.entity");
 let ChannelService = class ChannelService {
-    constructor(_channelDao, _userDao) {
+    constructor(_channelDao, _userDao, _logger) {
         this._channelDao = _channelDao;
         this._userDao = _userDao;
+        this._logger = _logger;
     }
     findAll() {
         return this._channelDao.findAllChannels()
@@ -31,9 +31,8 @@ let ChannelService = class ChannelService {
             rxjs_1.of(new channel_entity_1.ChannelEntity(_)) :
             rxjs_1.throwError(new common_1.NotFoundException(`Channel with id '${id}' not found`))));
     }
-    findMessagesOnChannel(params) {
-        return this._channelDao.findMessagesOnChannel(params)
-            .pipe(operators_1.map(_ => !!_ ? _.map(__ => new message_entity_1.MessageEntity(__)) : undefined));
+    async findMessagesOnChannel(params) {
+        return this._channelDao.findMessagesOnChannel(params);
     }
     create(channel) {
         return this._addChannel(channel)
@@ -87,7 +86,9 @@ let ChannelService = class ChannelService {
 };
 ChannelService = __decorate([
     common_1.Injectable(),
-    __metadata("design:paramtypes", [channel_dao_1.ChannelDao, user_dao_1.UserDao])
+    __metadata("design:paramtypes", [channel_dao_1.ChannelDao,
+        user_dao_1.UserDao,
+        common_1.Logger])
 ], ChannelService);
 exports.ChannelService = ChannelService;
 //# sourceMappingURL=channel.service.js.map

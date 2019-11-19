@@ -1794,16 +1794,16 @@
         "signature": "582dc26e730ea94266c1a0a2c22b43b191071dbc410bffe8ebde351dc404fb2c"
       },
       "../src/channel/entities/message.entity.ts": {
-        "version": "687f069138972cd3b6d840530f14a205c59ca467d6b401965f64a7a3824f4cc4",
-        "signature": "0f611da840eb9bbcfdfd1609c777a2b6520f774fb3796b83caf508cf90675a07"
+        "version": "b9e3629a418170f7a11a4bda6cd202e1c12c5256bd63cebfccbc1e6daff24183",
+        "signature": "5fb2d60d7bffb17b9c8161dc07237292bd5f1bb6a6ee2b1f7dcf494c93651341"
       },
       "../src/channel/dto/find-messages.dto.ts": {
         "version": "a70d5d1cfeb8e95895b3e3df53c4aabc1420c6f6ef3b562a3b01efed3a6c27a1",
         "signature": "72384690711eb4f299b6c974f1fc994acb293e69c60f5a7792a5e2cb0af0eff7"
       },
       "../src/channel/dao/channel.dao.ts": {
-        "version": "8f973940bb65c9df829f2116b546dbd64f932cbdc2ccf975ec800462b22df371",
-        "signature": "2ae8213193b7ccdf2c9c1f5d34b563cd492de94049f674500d2968c7fc3575de"
+        "version": "a353e6f8abf55d891c9814ba0eb81043a670ab33286cf9bcd8852a716a593f6f",
+        "signature": "6a8055c92fa2c0f3ed9b831b47dcaf1b11ad8dab36e5d9064f39b5a9bc4fedc4"
       },
       "../src/user/interfaces/user.interface.ts": {
         "version": "7e872739154635418d3a1292721c00b02d8bf9395a539d9fceea9ede87e909e6",
@@ -1822,12 +1822,12 @@
         "signature": "8c6b6a08340e7147eb111cf2ae73f3d436a08b0b91ff1320206de3ad21436772"
       },
       "../src/user/dao/user.dao.ts": {
-        "version": "6d1db409f5fc09122e71b2e865b3710e75d3545686fdbdddad8cf221fa5c6b4a",
+        "version": "5941f427844ce68863be52202f8f2ce01b5773d2a1db856853273b72b79fb94b",
         "signature": "7730fad0ee9e8c6e52f3f62a2500ee34679acadffa7f5606ba9baeaa0b197e2e"
       },
       "../src/channel/channel.service.ts": {
-        "version": "e34635eb109b94da7b3671bce65d7a4827882a048d0ef24fd410c4b4ca660246",
-        "signature": "0258e22c170b8ed81bf0295633f5d89df0b58e6c4e4b0719bc06c2e28e6b8d48"
+        "version": "55efda8a869f9666e154d802e067d8a628b0aa2a0c21705c224fdde6c0e78ef9",
+        "signature": "20fd5df4e4a24e20faf7e162cce790afd90c707569d4839fd1a400213ceed6b9"
       },
       "../src/channel/validators/handler-params.ts": {
         "version": "c2d5d2c2254acffe8012f86ffe9890242f5d997d203a4670c40993dbf47a3959",
@@ -1846,7 +1846,7 @@
         "signature": "56aecf5b6a81e48e08fa871006562d91382cf1c5c9f4b82689808c91cc06bdd3"
       },
       "../src/channel/channel.controller.ts": {
-        "version": "fa776b7e19c7ec6d8429f43d95e92570102d3d94a9e17f6c147fef62a3d1bfea",
+        "version": "cc7d88c7dc59daa5a5bd66e4071f9593708456cb28fdbade5b08ab94f8a92c84",
         "signature": "fbe1ddde87cdab349f8ce21bb732667001b2ca7b03d1092c527a95d1cdbee38e"
       },
       "../src/channel/schemas/channel.schema.ts": {
@@ -1901,9 +1901,37 @@
         "version": "acd7600b6afcc46b8906ebc5f07cf60af72aad1915062636fb3c5fa69f963c0e",
         "signature": "7d2c312d4cd4539930e18319eea2c2d827a57c4b476c904069f8272ad1f74047"
       },
+      "../node_modules/@nestjs/jwt/node_modules/@types/jsonwebtoken/index.d.ts": {
+        "version": "3ee1c4479498ce568cf7789174c181a68a7f7f16f7b338132ded0daf24a8a971",
+        "signature": "3ee1c4479498ce568cf7789174c181a68a7f7f16f7b338132ded0daf24a8a971"
+      },
+      "../node_modules/@nestjs/jwt/dist/interfaces/jwt-module-options.interface.d.ts": {
+        "version": "b0d13187d80ad7ba46537913f1458c4bd3778ffde916a4673c2df5f479c8be15",
+        "signature": "b0d13187d80ad7ba46537913f1458c4bd3778ffde916a4673c2df5f479c8be15"
+      },
+      "../node_modules/@nestjs/jwt/dist/interfaces/index.d.ts": {
+        "version": "7c14e702387296711c1a829bc95052ff02f533d4aa27d53cc0186c795094a3a9",
+        "signature": "7c14e702387296711c1a829bc95052ff02f533d4aa27d53cc0186c795094a3a9"
+      },
+      "../node_modules/@nestjs/jwt/dist/jwt.module.d.ts": {
+        "version": "579f8828da42ae02db6915a0223d23b0da07157ff484fecdbf8a96fffa0fa4df",
+        "signature": "579f8828da42ae02db6915a0223d23b0da07157ff484fecdbf8a96fffa0fa4df"
+      },
+      "../node_modules/@nestjs/jwt/dist/jwt.service.d.ts": {
+        "version": "1695b64f0130b6aef2c1eb7cecc1d9339bf2181af887ce5ccc6c3075115d6355",
+        "signature": "1695b64f0130b6aef2c1eb7cecc1d9339bf2181af887ce5ccc6c3075115d6355"
+      },
+      "../node_modules/@nestjs/jwt/dist/index.d.ts": {
+        "version": "a13aac535101a942283e3d00bce50f483bfa9bed6e1f8dfda33a3bb072498776",
+        "signature": "a13aac535101a942283e3d00bce50f483bfa9bed6e1f8dfda33a3bb072498776"
+      },
+      "../node_modules/@nestjs/jwt/index.d.ts": {
+        "version": "a2b176f66f0b708241265fb3b417597c9c9d21912bbb7f5cc00d99af551c2078",
+        "signature": "a2b176f66f0b708241265fb3b417597c9c9d21912bbb7f5cc00d99af551c2078"
+      },
       "../src/auth/auth.service.ts": {
-        "version": "eb09a558b2d1ce1626de9a48754a906f28f7b9b861365b9e84f4b062dabc7e79",
-        "signature": "fc872c5c8ee325e3bdc1bc889bf905ba4b89255f74b5c29a0de98c7038465869"
+        "version": "aaf524e924d95d6b4abaac3f8c295257d76fc06ea790490b99a974a958020a09",
+        "signature": "affb9dcca41c7f003bcc91998bf839bd409345bc2beab646d6f83461bf0c0068"
       },
       "../node_modules/@nestjs/passport/dist/abstract.strategy.d.ts": {
         "version": "ba63131c5e91f797736444933af16ffa42f9f8c150d859ec65f568f037a416ea",
@@ -1950,11 +1978,63 @@
         "signature": "b8218ede8aea8b83c67d965088fb3421f31c986d801df10404a618fe8c05b34d"
       },
       "../src/auth/auth.controller.ts": {
-        "version": "f0b1684da0dcec5c6c77a3c8dec3960ff189c285d80fb91e3cfdadde02b75e71",
-        "signature": "bea41a0badc4e9ecb7f142fcbd577984bfd2add6d35da870f5e044abcc480144"
+        "version": "c119e4e5511bb075480816d20c2337f74f729fd2bb68d2acd4883a21e847920a",
+        "signature": "e4ff1f2ea6ef5b8cff42ca9b6a37d020627610e44e08a3e9f02a53aed4b84f89"
+      },
+      "../node_modules/@types/range-parser/index.d.ts": {
+        "version": "4e88b833be14c7f384e0dcd57bb30acd799e8e34d212635d693e41a75a71164b",
+        "signature": "4e88b833be14c7f384e0dcd57bb30acd799e8e34d212635d693e41a75a71164b"
+      },
+      "../node_modules/@types/express-serve-static-core/index.d.ts": {
+        "version": "88300a14933efa862bf68f8444082c7ce0cfb23f67b3eeaf1575933a1ce84b3d",
+        "signature": "88300a14933efa862bf68f8444082c7ce0cfb23f67b3eeaf1575933a1ce84b3d"
+      },
+      "../node_modules/@types/mime/index.d.ts": {
+        "version": "be27a64e821a3e5af838650e4aa25805c60f057d0c37a9762c378d19d364b3e6",
+        "signature": "be27a64e821a3e5af838650e4aa25805c60f057d0c37a9762c378d19d364b3e6"
+      },
+      "../node_modules/@types/serve-static/index.d.ts": {
+        "version": "cdbae5083ef8f786069519405ca1f1e2ce72b9efebdf5e1931584fba747f3bc0",
+        "signature": "cdbae5083ef8f786069519405ca1f1e2ce72b9efebdf5e1931584fba747f3bc0"
+      },
+      "../node_modules/@types/connect/index.d.ts": {
+        "version": "c3be42b83b5f57ae2f65280fa395f6d31f61304ac1a29b7b406b6a0e71da8c82",
+        "signature": "c3be42b83b5f57ae2f65280fa395f6d31f61304ac1a29b7b406b6a0e71da8c82"
+      },
+      "../node_modules/@types/body-parser/index.d.ts": {
+        "version": "599abfa56230d73afc30a3bde749c2efd90acb58301b446835d5e235b35e2768",
+        "signature": "599abfa56230d73afc30a3bde749c2efd90acb58301b446835d5e235b35e2768"
+      },
+      "../node_modules/@types/express/index.d.ts": {
+        "version": "6e1c6fe784daeba017901db7766e6b872f535defe33b0e0196d2a12c26f50517",
+        "signature": "6e1c6fe784daeba017901db7766e6b872f535defe33b0e0196d2a12c26f50517"
+      },
+      "../node_modules/@types/passport/index.d.ts": {
+        "version": "31a5aab6f219b912bea2a80de1a1232272314eff56177416fb31ba95bb9c64e6",
+        "signature": "31a5aab6f219b912bea2a80de1a1232272314eff56177416fb31ba95bb9c64e6"
+      },
+      "../node_modules/@types/passport-strategy/index.d.ts": {
+        "version": "29d59e921bc723594bbfc98230d24f38f0d5a669f28fcf989b7468f4f95b7c52",
+        "signature": "29d59e921bc723594bbfc98230d24f38f0d5a669f28fcf989b7468f4f95b7c52"
+      },
+      "../node_modules/@types/jsonwebtoken/index.d.ts": {
+        "version": "bf42380db0fcb674325f9b6364e649c353cb5460925c53a51b71d88026ee6f58",
+        "signature": "bf42380db0fcb674325f9b6364e649c353cb5460925c53a51b71d88026ee6f58"
+      },
+      "../node_modules/@types/passport-jwt/index.d.ts": {
+        "version": "d306be26f96b4bd9b279cd7da9d1355d5ce4060a2bb254489c1b95c87057eb38",
+        "signature": "d306be26f96b4bd9b279cd7da9d1355d5ce4060a2bb254489c1b95c87057eb38"
+      },
+      "../src/auth/constants.ts": {
+        "version": "45655b1593d3a69955f99e20a0b51b2d632fe24452b3504a4b5b98bba4f2a8e2",
+        "signature": "a9a6d1ac7d8e1b27ed750995232ec31127a73624abfe24dcf9111d466d1dff17"
+      },
+      "../src/auth/jwt.strategy.ts": {
+        "version": "6bdee65ba83673c7b4be7076a41ba708c9616591da10ce1fc9b2a3c658feb4ed",
+        "signature": "9dd51a0c727ab479695beae90e12b0915998846aaf6586a33b8092b57220947a"
       },
       "../src/auth/auth.module.ts": {
-        "version": "3a8042660c81a4dd65c9f9077b54180509707f6c7516b10c8c0dee35ed8c6fac",
+        "version": "edc05b9752ea89d58a978bd881446036a3775a9d53ec239053cf07adfef3bc8a",
         "signature": "a28b5c0c372fb375910b3fe3c3ce4331509bc18ccef7cc39c9ee9d8daf8225d1"
       },
       "../src/app.module.ts": {
@@ -2141,14 +2221,6 @@
         "version": "8b6748f9e15ad7bac494dc3cd3b13ba0a8be195aca97f7c10a96b1c74a956f32",
         "signature": "8b6748f9e15ad7bac494dc3cd3b13ba0a8be195aca97f7c10a96b1c74a956f32"
       },
-      "../node_modules/@types/connect/index.d.ts": {
-        "version": "c3be42b83b5f57ae2f65280fa395f6d31f61304ac1a29b7b406b6a0e71da8c82",
-        "signature": "c3be42b83b5f57ae2f65280fa395f6d31f61304ac1a29b7b406b6a0e71da8c82"
-      },
-      "../node_modules/@types/body-parser/index.d.ts": {
-        "version": "599abfa56230d73afc30a3bde749c2efd90acb58301b446835d5e235b35e2768",
-        "signature": "599abfa56230d73afc30a3bde749c2efd90acb58301b446835d5e235b35e2768"
-      },
       "../node_modules/@types/color-name/index.d.ts": {
         "version": "f0cb4b3ab88193e3e51e9e2622e4c375955003f1f81239d72c5b7a95415dad3e",
         "signature": "f0cb4b3ab88193e3e51e9e2622e4c375955003f1f81239d72c5b7a95415dad3e"
@@ -2156,26 +2228,6 @@
       "../node_modules/@types/cookiejar/index.d.ts": {
         "version": "16b7fb094ffaa5d270f934e7406e8baee2f8245cfabf6dcc20f693389f005f56",
         "signature": "16b7fb094ffaa5d270f934e7406e8baee2f8245cfabf6dcc20f693389f005f56"
-      },
-      "../node_modules/@types/range-parser/index.d.ts": {
-        "version": "4e88b833be14c7f384e0dcd57bb30acd799e8e34d212635d693e41a75a71164b",
-        "signature": "4e88b833be14c7f384e0dcd57bb30acd799e8e34d212635d693e41a75a71164b"
-      },
-      "../node_modules/@types/express-serve-static-core/index.d.ts": {
-        "version": "88300a14933efa862bf68f8444082c7ce0cfb23f67b3eeaf1575933a1ce84b3d",
-        "signature": "88300a14933efa862bf68f8444082c7ce0cfb23f67b3eeaf1575933a1ce84b3d"
-      },
-      "../node_modules/@types/mime/index.d.ts": {
-        "version": "be27a64e821a3e5af838650e4aa25805c60f057d0c37a9762c378d19d364b3e6",
-        "signature": "be27a64e821a3e5af838650e4aa25805c60f057d0c37a9762c378d19d364b3e6"
-      },
-      "../node_modules/@types/serve-static/index.d.ts": {
-        "version": "cdbae5083ef8f786069519405ca1f1e2ce72b9efebdf5e1931584fba747f3bc0",
-        "signature": "cdbae5083ef8f786069519405ca1f1e2ce72b9efebdf5e1931584fba747f3bc0"
-      },
-      "../node_modules/@types/express/index.d.ts": {
-        "version": "6e1c6fe784daeba017901db7766e6b872f535defe33b0e0196d2a12c26f50517",
-        "signature": "6e1c6fe784daeba017901db7766e6b872f535defe33b0e0196d2a12c26f50517"
       },
       "../node_modules/@types/minimatch/index.d.ts": {
         "version": "1d1e6bd176eee5970968423d7e215bfd66828b6db8d54d17afec05a831322633",
@@ -2212,14 +2264,6 @@
       "../node_modules/@types/json5/index.d.ts": {
         "version": "96d14f21b7652903852eef49379d04dbda28c16ed36468f8c9fa08f7c14c9538",
         "signature": "96d14f21b7652903852eef49379d04dbda28c16ed36468f8c9fa08f7c14c9538"
-      },
-      "../node_modules/@types/passport/index.d.ts": {
-        "version": "31a5aab6f219b912bea2a80de1a1232272314eff56177416fb31ba95bb9c64e6",
-        "signature": "31a5aab6f219b912bea2a80de1a1232272314eff56177416fb31ba95bb9c64e6"
-      },
-      "../node_modules/@types/passport-strategy/index.d.ts": {
-        "version": "29d59e921bc723594bbfc98230d24f38f0d5a669f28fcf989b7468f4f95b7c52",
-        "signature": "29d59e921bc723594bbfc98230d24f38f0d5a669f28fcf989b7468f4f95b7c52"
       },
       "../node_modules/@types/passport-local/index.d.ts": {
         "version": "e50f9ae34bb92232533e3a32848970dd04f874a8f64d3ae48980e062b6489f26",
@@ -6168,10 +6212,66 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../node_modules/@nestjs/jwt/node_modules/@types/jsonwebtoken/index.d.ts": [
+        "../node_modules/@types/node/ts3.2/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/jwt/dist/interfaces/jwt-module-options.interface.d.ts": [
+        "../node_modules/@nestjs/common/interfaces/index.d.ts",
+        "../node_modules/@nestjs/jwt/node_modules/@types/jsonwebtoken/index.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/jwt/dist/interfaces/index.d.ts": [
+        "../node_modules/@nestjs/jwt/dist/interfaces/jwt-module-options.interface.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/jwt/dist/jwt.module.d.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/jwt/dist/interfaces/jwt-module-options.interface.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/jwt/dist/jwt.service.d.ts": [
+        "../node_modules/@nestjs/jwt/node_modules/@types/jsonwebtoken/index.d.ts",
+        "../node_modules/@nestjs/jwt/dist/interfaces/jwt-module-options.interface.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/jwt/dist/index.d.ts": [
+        "../node_modules/@nestjs/jwt/dist/interfaces/index.d.ts",
+        "../node_modules/@nestjs/jwt/dist/jwt.module.d.ts",
+        "../node_modules/@nestjs/jwt/dist/jwt.service.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/jwt/index.d.ts": [
+        "../node_modules/@nestjs/jwt/dist/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../src/auth/auth.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/user/user.service.ts",
-        "../node_modules/rxjs/index.d.ts",
+        "../node_modules/@nestjs/jwt/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -6263,6 +6363,110 @@
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/auth/auth.service.ts",
         "../src/auth/validator/handler-params.ts",
+        "../node_modules/@nestjs/passport/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/range-parser/index.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/express-serve-static-core/index.d.ts": [
+        "../node_modules/@types/node/http.d.ts",
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/range-parser/index.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/mime/index.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/serve-static/index.d.ts": [
+        "../node_modules/@types/express-serve-static-core/index.d.ts",
+        "../node_modules/@types/mime/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/connect/index.d.ts": [
+        "../node_modules/@types/node/http.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/body-parser/index.d.ts": [
+        "../node_modules/@types/connect/index.d.ts",
+        "../node_modules/@types/node/http.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/express/index.d.ts": [
+        "../node_modules/@types/body-parser/index.d.ts",
+        "../node_modules/@types/serve-static/index.d.ts",
+        "../node_modules/@types/express-serve-static-core/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/passport/index.d.ts": [
+        "../node_modules/@types/express/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/passport-strategy/index.d.ts": [
+        "../node_modules/@types/passport/index.d.ts",
+        "../node_modules/@types/express/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/jsonwebtoken/index.d.ts": [
+        "../node_modules/@types/node/ts3.2/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/passport-jwt/index.d.ts": [
+        "../node_modules/@types/passport-strategy/index.d.ts",
+        "../node_modules/@types/express/index.d.ts",
+        "../node_modules/@types/jsonwebtoken/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/auth/constants.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/auth/jwt.strategy.ts": [
+        "../node_modules/@types/passport-jwt/index.d.ts",
+        "../node_modules/@nestjs/passport/index.d.ts",
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/auth/constants.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -6278,6 +6482,9 @@
         "../src/user/dao/user.dao.ts",
         "../node_modules/@nestjs/mongoose/index.d.ts",
         "../src/user/schemas/user.schema.ts",
+        "../node_modules/@nestjs/jwt/index.d.ts",
+        "../src/auth/jwt.strategy.ts",
+        "../src/auth/constants.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -6684,23 +6891,6 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../node_modules/@types/connect/index.d.ts": [
-        "../node_modules/@types/node/http.d.ts",
-        "../node_modules/@types/node/ts3.2/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@types/body-parser/index.d.ts": [
-        "../node_modules/@types/connect/index.d.ts",
-        "../node_modules/@types/node/http.d.ts",
-        "../node_modules/@types/node/ts3.2/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
       "../node_modules/@types/color-name/index.d.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -6708,45 +6898,6 @@
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "../node_modules/@types/cookiejar/index.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@types/range-parser/index.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@types/express-serve-static-core/index.d.ts": [
-        "../node_modules/@types/node/http.d.ts",
-        "../node_modules/@types/node/events.d.ts",
-        "../node_modules/@types/range-parser/index.d.ts",
-        "../node_modules/@types/node/ts3.2/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@types/mime/index.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@types/serve-static/index.d.ts": [
-        "../node_modules/@types/express-serve-static-core/index.d.ts",
-        "../node_modules/@types/mime/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@types/express/index.d.ts": [
-        "../node_modules/@types/body-parser/index.d.ts",
-        "../node_modules/@types/serve-static/index.d.ts",
-        "../node_modules/@types/express-serve-static-core/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -6809,21 +6960,6 @@
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "../node_modules/@types/json5/index.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@types/passport/index.d.ts": [
-        "../node_modules/@types/express/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@types/passport-strategy/index.d.ts": [
-        "../node_modules/@types/passport/index.d.ts",
-        "../node_modules/@types/express/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -10481,10 +10617,10 @@
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/rxjs/index.d.ts",
         "../src/channel/dto/find-messages.dto.ts",
+        "../src/channel/entities/message.entity.ts",
         "../src/channel/dto/create-channel.dto.ts",
         "../src/channel/dto/subscription.dto.ts",
-        "../src/channel/dto/create-message.dto.ts",
-        "../src/channel/entities/message.entity.ts"
+        "../src/channel/dto/create-message.dto.ts"
       ],
       "../src/user/interfaces/user.interface.ts": [
         "../node_modules/@types/mongoose/index.d.ts"
@@ -10505,6 +10641,7 @@
       "../src/channel/channel.service.ts": [
         "../src/channel/dao/channel.dao.ts",
         "../src/user/dao/user.dao.ts",
+        "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/rxjs/index.d.ts",
         "../src/channel/entities/channel.entity.ts",
         "../src/channel/dto/find-messages.dto.ts",
@@ -10566,9 +10703,66 @@
         "../src/user/dto/create-user.dto.ts",
         "../src/user/dto/update-user.dto.ts"
       ],
+      "../node_modules/@nestjs/jwt/node_modules/@types/jsonwebtoken/index.d.ts": [
+        "../node_modules/@types/node/ts3.2/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/jwt/dist/interfaces/jwt-module-options.interface.d.ts": [
+        "../node_modules/@nestjs/common/interfaces/index.d.ts",
+        "../node_modules/@nestjs/jwt/node_modules/@types/jsonwebtoken/index.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/jwt/dist/interfaces/index.d.ts": [
+        "../node_modules/@nestjs/jwt/dist/interfaces/jwt-module-options.interface.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/jwt/dist/jwt.module.d.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/jwt/dist/interfaces/jwt-module-options.interface.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/jwt/dist/jwt.service.d.ts": [
+        "../node_modules/@nestjs/jwt/node_modules/@types/jsonwebtoken/index.d.ts",
+        "../node_modules/@nestjs/jwt/dist/interfaces/jwt-module-options.interface.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/jwt/dist/index.d.ts": [
+        "../node_modules/@nestjs/jwt/dist/interfaces/index.d.ts",
+        "../node_modules/@nestjs/jwt/dist/jwt.module.d.ts",
+        "../node_modules/@nestjs/jwt/dist/jwt.service.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/jwt/index.d.ts": [
+        "../node_modules/@nestjs/jwt/dist/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../src/auth/auth.service.ts": [
         "../src/user/user.service.ts",
-        "../node_modules/@nestjs/common/index.d.ts"
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/jwt/index.d.ts"
       ],
       "../node_modules/@nestjs/passport/dist/abstract.strategy.d.ts": [
         "../node_modules/@types/node/fs.d.ts",
@@ -10649,6 +10843,96 @@
         "../src/auth/auth.service.ts",
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/auth/validator/handler-params.ts"
+      ],
+      "../node_modules/@types/range-parser/index.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/express-serve-static-core/index.d.ts": [
+        "../node_modules/@types/node/http.d.ts",
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/range-parser/index.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/mime/index.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/serve-static/index.d.ts": [
+        "../node_modules/@types/express-serve-static-core/index.d.ts",
+        "../node_modules/@types/mime/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/connect/index.d.ts": [
+        "../node_modules/@types/node/http.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/body-parser/index.d.ts": [
+        "../node_modules/@types/connect/index.d.ts",
+        "../node_modules/@types/node/http.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/express/index.d.ts": [
+        "../node_modules/@types/body-parser/index.d.ts",
+        "../node_modules/@types/serve-static/index.d.ts",
+        "../node_modules/@types/express-serve-static-core/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/passport/index.d.ts": [
+        "../node_modules/@types/express/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/passport-strategy/index.d.ts": [
+        "../node_modules/@types/passport/index.d.ts",
+        "../node_modules/@types/express/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/jsonwebtoken/index.d.ts": [
+        "../node_modules/@types/node/ts3.2/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/passport-jwt/index.d.ts": [
+        "../node_modules/@types/passport-strategy/index.d.ts",
+        "../node_modules/@types/express/index.d.ts",
+        "../node_modules/@types/jsonwebtoken/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/auth/jwt.strategy.ts": [
+        "../node_modules/@types/passport-jwt/index.d.ts"
       ],
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -11004,23 +11288,6 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../node_modules/@types/connect/index.d.ts": [
-        "../node_modules/@types/node/http.d.ts",
-        "../node_modules/@types/node/ts3.2/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@types/body-parser/index.d.ts": [
-        "../node_modules/@types/connect/index.d.ts",
-        "../node_modules/@types/node/http.d.ts",
-        "../node_modules/@types/node/ts3.2/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
       "../node_modules/@types/color-name/index.d.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -11028,45 +11295,6 @@
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "../node_modules/@types/cookiejar/index.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@types/range-parser/index.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@types/express-serve-static-core/index.d.ts": [
-        "../node_modules/@types/node/http.d.ts",
-        "../node_modules/@types/node/events.d.ts",
-        "../node_modules/@types/range-parser/index.d.ts",
-        "../node_modules/@types/node/ts3.2/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@types/mime/index.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@types/serve-static/index.d.ts": [
-        "../node_modules/@types/express-serve-static-core/index.d.ts",
-        "../node_modules/@types/mime/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@types/express/index.d.ts": [
-        "../node_modules/@types/body-parser/index.d.ts",
-        "../node_modules/@types/serve-static/index.d.ts",
-        "../node_modules/@types/express-serve-static-core/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -11129,21 +11357,6 @@
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "../node_modules/@types/json5/index.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@types/passport/index.d.ts": [
-        "../node_modules/@types/express/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@types/passport-strategy/index.d.ts": [
-        "../node_modules/@types/passport/index.d.ts",
-        "../node_modules/@types/express/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",

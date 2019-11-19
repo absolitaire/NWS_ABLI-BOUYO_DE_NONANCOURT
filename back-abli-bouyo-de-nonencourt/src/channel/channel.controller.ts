@@ -80,8 +80,11 @@ export class ChannelController {
   // findMessagesFromChannel(@Body() params: FindMessagesDto): Observable<MessageEntity[] | void> {
   //   @Get(':idChannel/messages/:threshold/:startingAt')
   //     findMessagesFromChannel(@Param() params: FindMessagesParams): Observable<MessageEntity[] | void> {
-    findMessagesFromChannel(@Query() params: FindMessagesParams): Observable<MessageEntity[] | void> {
-    return this._channelService.findMessagesOnChannel(params);
+  //   findMessagesFromChannel(@Query() params: FindMessagesParams): Observable<MessageEntity[] | void> {
+  //   return this._channelService.findMessagesOnChannel(params);
+  // } fonctionne
+  findMessagesFromChannel(@Query() params: FindMessagesParams): Observable<MessageEntity[] | void> {
+    return from(this._channelService.findMessagesOnChannel(params));
   }
   /**
    * Handler to answer to POST /channel route

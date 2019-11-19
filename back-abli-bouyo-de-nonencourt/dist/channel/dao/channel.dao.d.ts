@@ -15,7 +15,7 @@ export declare class ChannelDao {
     constructor(_channelModel: Model<Channel>, _messageModel: Model<Message>, _logger: Logger);
     findAllChannels(): Observable<Channel[] | void>;
     findChannelById(id: string): Observable<Channel | void>;
-    findMessagesOnChannel(params: FindMessagesDto): Observable<Message[] | void>;
+    findMessagesOnChannel(params: FindMessagesDto): Promise<MessageEntity[] | void>;
     createChannel(channel: CreateChannelDto): Observable<Channel>;
     findChannelByIdAndRemove(id: string): Observable<Channel | void>;
     subscribe(sub: SubscriptionDto): Observable<Channel | void>;

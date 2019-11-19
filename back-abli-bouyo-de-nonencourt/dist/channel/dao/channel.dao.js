@@ -11,6 +11,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
+var __asyncValues = (this && this.__asyncValues) || function (o) {
+    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+    var m = o[Symbol.asyncIterator], i;
+    return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const mongoose_1 = require("@nestjs/mongoose");
@@ -32,9 +39,36 @@ let ChannelDao = class ChannelDao {
         return rxjs_1.from(this._channelModel.findById(id))
             .pipe(operators_1.map((doc) => !!doc ? doc.toJSON() : undefined));
     }
-    findMessagesOnChannel(params) {
-        return rxjs_1.from(this._messageModel.find({ idChannel: params.idChannel }))
-            .pipe(operators_1.map((docs) => (!!docs && docs.length > 0) ? docs.map(_ => _.toJSON()) : undefined));
+    async findMessagesOnChannel(params) {
+        var e_1, _a;
+        let i = 0;
+        let nb = 0;
+        let res = [];
+        let tmp;
+        try {
+            for (var _b = __asyncValues(await this._messageModel.find({ idChannel: params.idChannel })), _c; _c = await _b.next(), !_c.done;) {
+                const message = _c.value;
+                this._logger.log(` ${i}`);
+                if (params.threshold == -1 || (nb < params.threshold && i + 1 >= params.startingAt)) {
+                    tmp = new message_entity_1.MessageEntity(message);
+                    tmp.fillData(message.get('_id'), message.get('content'), message.get('idUser'), message.get('date'));
+                    res = res.concat(tmp);
+                    this._logger.log(`AYYYYY2222 ${i} ${tmp}`);
+                    nb++;
+                }
+                i++;
+                this._logger.log(`lool ${res} , ${i}, ${nb}`);
+            }
+        }
+        catch (e_1_1) { e_1 = { error: e_1_1 }; }
+        finally {
+            try {
+                if (_c && !_c.done && (_a = _b.return)) await _a.call(_b);
+            }
+            finally { if (e_1) throw e_1.error; }
+        }
+        this._logger.log(`AYYYYY2222 ${res} , ${i}, ${nb}`);
+        return res;
     }
     createChannel(channel) {
         return rxjs_1.from(this._channelModel.create(channel))

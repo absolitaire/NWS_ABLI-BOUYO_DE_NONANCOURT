@@ -35,7 +35,7 @@ let ChannelController = class ChannelController {
         return this._channelService.findOne(params.id);
     }
     findMessagesFromChannel(params) {
-        return this._channelService.findMessagesOnChannel(params);
+        return rxjs_1.from(this._channelService.findMessagesOnChannel(params));
     }
     create(createChannelDto) {
         return this._channelService.create(createChannelDto);

@@ -1,4 +1,4 @@
-import { ConflictException, Injectable, NotFoundException, UnprocessableEntityException } from '@nestjs/common';
+import { ConflictException, Injectable, Logger, NotFoundException, UnprocessableEntityException } from '@nestjs/common';
 import { from, Observable, of, throwError } from 'rxjs';
 import { ChannelEntity } from './entities/channel.entity';
 import { catchError, map, flatMap, find, tap } from 'rxjs/operators';
@@ -15,7 +15,9 @@ import { FindMessagesDto } from './dto/find-messages.dto';
 @Injectable()
 export class ChannelService {
 
-  constructor(private readonly _channelDao: ChannelDao, private readonly _userDao: UserDao) {
+  constructor(private readonly _channelDao: ChannelDao,
+              private readonly _userDao: UserDao,
+              private readonly _logger: Logger) {
   }
 
   /**
@@ -49,13 +51,18 @@ export class ChannelService {
         ),
       );
   }
-
-  findMessagesOnChannel(params: FindMessagesDto): Observable<MessageEntity[] | void> {
-    return this._channelDao.findMessagesOnChannel(params)
-      .pipe(
-        map(_ => !!_ ? _.map(__ => new MessageEntity(__)) : undefined),
-      );
+  async findMessagesOnChannel(params: FindMessagesDto): Promise<MessageEntity[] | void> {
+    return this._channelDao.findMessagesOnChannel(params);
   }
+  // findMessagesOnChannel(params: FindMessagesDto): Observable<MessageEntity[] | void> {
+  //   return from(this._channelDao.findMessagesOnChannel(params))
+  //     .pipe(
+  //       //this._logger.log(`SERVICE`),
+  //       map(_ => !!_ ? _.map(__ => new MessageEntity(__)) : undefined),
+  //     );
+  // }// fonctionne
+
+
   /**
    * Check if channel already exists and add it in people list
    *
