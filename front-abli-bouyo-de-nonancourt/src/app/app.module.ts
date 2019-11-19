@@ -21,6 +21,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { ChannelComponent } from './channel/channel.component';
 import {MatSidenavModule} from "@angular/material/sidenav";
 import { DialogComponent } from './shared/dialog/dialog.component';
+import {MessageComponent} from './shared/message/message.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { DialogComponent } from './shared/dialog/dialog.component';
     LoginComponent,
     SignupComponent,
     ChannelComponent,
-    DialogComponent
+    DialogComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,
