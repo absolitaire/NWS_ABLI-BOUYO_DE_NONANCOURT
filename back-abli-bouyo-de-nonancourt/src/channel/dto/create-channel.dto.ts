@@ -4,8 +4,8 @@ import { ApiModelProperty } from '@nestjs/swagger';
 export class CreateChannelDto {
 
   @ApiModelProperty({ description: 'Unique identifier destined to be seen and used by the users', example: 'AbCd3' })
+  @IsOptional()
   @IsString()
-  @IsNotEmpty()
   idChannel: string;
 
   @ApiModelProperty({ description: 'Name', example: 'The Basketball Channel' })

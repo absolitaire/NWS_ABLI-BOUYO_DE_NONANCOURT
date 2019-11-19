@@ -15,8 +15,8 @@ class CreateChannelDto {
 }
 __decorate([
     swagger_1.ApiModelProperty({ description: 'Unique identifier destined to be seen and used by the users', example: 'AbCd3' }),
+    class_validator_1.IsOptional(),
     class_validator_1.IsString(),
-    class_validator_1.IsNotEmpty(),
     __metadata("design:type", String)
 ], CreateChannelDto.prototype, "idChannel", void 0);
 __decorate([

@@ -19,6 +19,7 @@ export declare class ChannelService {
     findSubscribedChannelsOfUser(id: string): Observable<ChannelEntity[] | void>;
     create(channel: CreateChannelDto): Observable<ChannelEntity>;
     private _addChannel;
+    private _randomChannelId;
     delete(id: string): Observable<void>;
     tryToSubscribe(sub: SubscriptionDto): Observable<ChannelEntity>;
     subscribe(sub: SubscriptionDto): Observable<ChannelEntity>;

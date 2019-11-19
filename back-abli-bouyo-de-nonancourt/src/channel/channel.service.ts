@@ -11,13 +11,15 @@ import { CreateMessageDto } from './dto/create-message.dto';
 import { UserDao } from '../user/dao/user.dao';
 import { MessageEntity } from './entities/message.entity';
 import { FindMessagesDto } from './dto/find-messages.dto';
+import cryptoRandomString = require('crypto-random-string');
 
 @Injectable()
 export class ChannelService {
 
   constructor(private readonly _channelDao: ChannelDao,
               private readonly _userDao: UserDao,
-              private readonly _logger: Logger) {
+              private readonly _logger: Logger,
+              ) {
   }
 
   /**
@@ -106,9 +108,20 @@ export class ChannelService {
    * @private
    */
   private _addChannel(channel: CreateChannelDto): Observable<CreateChannelDto> {
-    return of(channel);
+    return of(channel).pipe(
+      map(_ =>
+        Object.assign(_,
+          {
+            idChannel: cryptoRandomString({length: 5, type: 'url-safe'}),
+          },
+          Object.assign({}, _)
+        ),
+      ));
   }
 
+  private _randomChannelId(): string{
+    return '';
+  }
   /**
    * Delete one channel.
    * Called when a channel doesn't have any users subscribed anymore.

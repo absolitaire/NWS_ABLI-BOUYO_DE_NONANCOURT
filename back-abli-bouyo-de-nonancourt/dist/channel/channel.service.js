@@ -15,6 +15,7 @@ const channel_entity_1 = require("./entities/channel.entity");
 const operators_1 = require("rxjs/operators");
 const channel_dao_1 = require("./dao/channel.dao");
 const user_dao_1 = require("../user/dao/user.dao");
+const cryptoRandomString = require("crypto-random-string");
 let ChannelService = class ChannelService {
     constructor(_channelDao, _userDao, _logger) {
         this._channelDao = _channelDao;
@@ -45,7 +46,12 @@ let ChannelService = class ChannelService {
             rxjs_1.throwError(new common_1.UnprocessableEntityException(e.message))), operators_1.map(_ => new channel_entity_1.ChannelEntity(_)));
     }
     _addChannel(channel) {
-        return rxjs_1.of(channel);
+        return rxjs_1.of(channel).pipe(operators_1.map(_ => Object.assign(_, {
+            idChannel: cryptoRandomString({ length: 5, type: 'url-safe' }),
+        }, Object.assign({}, _))));
+    }
+    _randomChannelId() {
+        return '';
     }
     delete(id) {
         return this._channelDao.findChannelByIdAndRemove(id)
