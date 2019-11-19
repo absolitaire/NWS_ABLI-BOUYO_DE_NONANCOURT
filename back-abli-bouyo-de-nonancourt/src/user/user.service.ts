@@ -1,4 +1,4 @@
-import { ConflictException, Injectable, NotFoundException, UnprocessableEntityException } from '@nestjs/common';
+import { ConflictException, Injectable, Logger, NotFoundException, UnprocessableEntityException } from '@nestjs/common';
 import { catchError, flatMap, map } from 'rxjs/operators';
 import { Observable, of, throwError } from 'rxjs';
 import { CreateUserDto } from '../user/dto/create-user.dto';
@@ -17,7 +17,8 @@ export class UserService {
    *
    * @param {UserDao} _userDao instance of the DAO
    */
-  constructor(private readonly _userDao: UserDao) {}
+  constructor(private readonly _userDao: UserDao,
+              private readonly _logger: Logger) {}
 
   /**
    * Returns all existing user in the list
@@ -82,7 +83,7 @@ export class UserService {
         catchError(e =>
           e.code = 11000 ?
             throwError(
-              new ConflictException(`User already exists`),
+              new ConflictException(`User already exists ${e.message}`),
             ) :
             throwError(new UnprocessableEntityException(e.message)),
         ),
@@ -164,13 +165,20 @@ export class UserService {
    */
   private _addUser(user: CreateUserDto): Observable<CreateUserDto> {
     return of(user).pipe(
-      map(_ =>
-        Object.assign(_,
+      map(_ =>  Object.assign(_,
           {
+            firstname: 'N/A',
+            lastname: 'N/A',
+            address: {
+              street: 'N/A',
+              postalCode: '12345',
+              city: 'N/A'
+            },
+            phone : '+33600000000',
             picture: 'https://icon-library.net/images/default-profile-icon/default-profile-icon-24.jpg',
         },
           Object.assign({}, _)
-        ),
+        )
       ));
   }
 

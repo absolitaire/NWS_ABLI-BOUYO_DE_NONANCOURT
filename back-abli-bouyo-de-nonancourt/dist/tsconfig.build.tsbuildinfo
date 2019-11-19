@@ -1846,7 +1846,7 @@
         "signature": "85487959dc9d9aa45cc32ef1f06c862efbfd929016c96dc6641a18a7cf67c6a4"
       },
       "../src/user/dto/address.dto.ts": {
-        "version": "13643b6a42b05b0e706f2e25cedcd53f5a09275cfd466ee52ce80169593a38f1",
+        "version": "16e2fd5c9ed4ad8290b8882aeece01bfb739c6892bc53c002eda54f6041cf8b2",
         "signature": "c45eccea6e61406c530906f1fdb8ea10368f7808d622611f6aa4cc08b86fc2c2"
       },
       "../src/user/dto/create-user.dto.ts": {
@@ -1858,7 +1858,7 @@
         "signature": "8c6b6a08340e7147eb111cf2ae73f3d436a08b0b91ff1320206de3ad21436772"
       },
       "../src/user/dao/user.dao.ts": {
-        "version": "5941f427844ce68863be52202f8f2ce01b5773d2a1db856853273b72b79fb94b",
+        "version": "552040be7ad4d559618a154a70cfe2cd65935aa20eee8c11da45339780871164",
         "signature": "7730fad0ee9e8c6e52f3f62a2500ee34679acadffa7f5606ba9baeaa0b197e2e"
       },
       "../node_modules/type-fest/source/basic.d.ts": {
@@ -1958,15 +1958,15 @@
         "signature": "91eb3d245998765443e32622ba1d8e52fa9ca4c8157c0e01798a21ba504c4f6b"
       },
       "../src/user/user.service.ts": {
-        "version": "062dbdff398f1369f24548c77a0d7f165a427d8e66c5b49705195e80a12bf58e",
-        "signature": "2bcfeff4930314d578f8785c201f3f8577bd60701bd39f1e166f97ca9acfef88"
+        "version": "d83ad5eee0cee962257f2409e417bdcf66d37062ed6fdb2f38c019cdc2c31ac2",
+        "signature": "3766316fac54f2cc5c9859c1c8567399a223881b2f0e0a6d4b4225f6bef0c857"
       },
       "../src/user/user.controller.ts": {
         "version": "ef6abd4582e2a68b49f5cc6124486121744c05b7b8817fbbbb5937367454099b",
         "signature": "9e2e1619b5380d44c3d65a5be71cf7469053ac82e2d78abefcf4ca8ee9d1ddbb"
       },
       "../src/user/user.module.ts": {
-        "version": "c55965b6297d94123404a405f289686155d86f672b34f26087da38c59ce0041a",
+        "version": "03eca51baf655f2cc6ab8b4f0dd69a3652a098917f3c7ed848802a04f5669daa",
         "signature": "482b8f0d35a3d453500a15b6c6057c1e4c40baa4329b39da9e1026d8e1de4329"
       },
       "../src/login/login.service.ts": {
@@ -2010,7 +2010,7 @@
         "signature": "a2b176f66f0b708241265fb3b417597c9c9d21912bbb7f5cc00d99af551c2078"
       },
       "../src/auth/auth.service.ts": {
-        "version": "aaf524e924d95d6b4abaac3f8c295257d76fc06ea790490b99a974a958020a09",
+        "version": "b77e0d33224002fadb4af97e42f121ab5142dcbd9fd6dc30f65f3c044dd5ea97",
         "signature": "affb9dcca41c7f003bcc91998bf839bd409345bc2beab646d6f83461bf0c0068"
       },
       "../node_modules/@nestjs/passport/dist/abstract.strategy.d.ts": {
@@ -2057,9 +2057,13 @@
         "version": "1b0ddb44c4329036179f65054f44885e352ca178c8a9b35b33b990f4099939af",
         "signature": "b8218ede8aea8b83c67d965088fb3421f31c986d801df10404a618fe8c05b34d"
       },
+      "../src/auth/dto/login_user.dto.ts": {
+        "version": "45afe3f2adfe0d8a6881b7608850a95b5108ed32384a05030524dd885bd0e40e",
+        "signature": "490c1fcfc641d51394c6830c0607b1f654d58b8e9aaed5445727fbdd5d4e71b4"
+      },
       "../src/auth/auth.controller.ts": {
-        "version": "ef295de9d8925984c941936f4a332a6641299ad84edd498f230149f381507fe7",
-        "signature": "e4ff1f2ea6ef5b8cff42ca9b6a37d020627610e44e08a3e9f02a53aed4b84f89"
+        "version": "4468350b8ccc93ca8222146f496f939edab9db0db993d11a956ad278257ea06c",
+        "signature": "89989e127965a192adb08cdc862dc9827d5db1c3c8ea9670287f65e8b73acb9f"
       },
       "../node_modules/@types/range-parser/index.d.ts": {
         "version": "4e88b833be14c7f384e0dcd57bb30acd799e8e34d212635d693e41a75a71164b",
@@ -2114,7 +2118,7 @@
         "signature": "9dd51a0c727ab479695beae90e12b0915998846aaf6586a33b8092b57220947a"
       },
       "../src/auth/auth.module.ts": {
-        "version": "edc05b9752ea89d58a978bd881446036a3775a9d53ec239053cf07adfef3bc8a",
+        "version": "dfb3a4f7ac356eccb34c84746a3e917a04b26b185e512c3556ff36575f4e3652",
         "signature": "a28b5c0c372fb375910b3fe3c3ce4331509bc18ccef7cc39c9ee9d8daf8225d1"
       },
       "../src/app.module.ts": {
@@ -6573,12 +6577,23 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../src/auth/dto/login_user.dto.ts": [
+        "../node_modules/class-validator/index.d.ts",
+        "../node_modules/@nestjs/swagger/index.d.ts",
+        "../node_modules/class-transformer/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../src/auth/auth.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/auth/auth.service.ts",
         "../src/auth/validator/handler-params.ts",
         "../node_modules/@nestjs/passport/index.d.ts",
         "../node_modules/@nestjs/swagger/index.d.ts",
+        "../src/user/entities/user.entity.ts",
+        "../src/auth/dto/login_user.dto.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -11040,6 +11055,7 @@
       ],
       "../src/user/user.service.ts": [
         "../src/user/dao/user.dao.ts",
+        "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/rxjs/index.d.ts",
         "../src/user/entities/user.entity.ts",
         "../src/user/dto/create-user.dto.ts",
@@ -11191,8 +11207,7 @@
       ],
       "../src/auth/auth.controller.ts": [
         "../src/auth/auth.service.ts",
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../src/auth/validator/handler-params.ts"
+        "../node_modules/@nestjs/common/index.d.ts"
       ],
       "../node_modules/@types/range-parser/index.d.ts": [
         "../node_modules/@types/node/fs.d.ts",

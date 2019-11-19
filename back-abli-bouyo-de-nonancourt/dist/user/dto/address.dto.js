@@ -15,20 +15,20 @@ class AddressDto {
 }
 __decorate([
     swagger_1.ApiModelProperty({ description: 'Street', example: 'Jewel Street' }),
+    class_validator_1.IsOptional(),
     class_validator_1.IsString(),
-    class_validator_1.IsNotEmpty(),
     __metadata("design:type", String)
 ], AddressDto.prototype, "street", void 0);
 __decorate([
     swagger_1.ApiModelProperty({ description: 'Postal code', example: '61400' }),
+    class_validator_1.IsOptional(),
     class_validator_1.IsString(),
-    class_validator_1.IsNotEmpty(),
     __metadata("design:type", String)
 ], AddressDto.prototype, "postalCode", void 0);
 __decorate([
     swagger_1.ApiModelProperty({ description: 'City', example: 'Snelling' }),
+    class_validator_1.IsOptional(),
     class_validator_1.IsString(),
-    class_validator_1.IsNotEmpty(),
     __metadata("design:type", String)
 ], AddressDto.prototype, "city", void 0);
 exports.AddressDto = AddressDto;

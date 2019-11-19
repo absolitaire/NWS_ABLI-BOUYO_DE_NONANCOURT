@@ -3,17 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="8ec6e8a9-ce98-47d7-ad79-666ba11e0ab8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/channel/channel.service.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/channel.service.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/channel/channel.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/channel.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/channel/channel.service.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/channel/channel.service.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/auth/auth.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/auth/auth.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/auth/auth.controller.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/auth/auth.controller.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/tsconfig.build.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/dist/tsconfig.build.tsbuildinfo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.yarn-integrity" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.yarn-integrity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fastify-swagger/static/favicon-16x16.png" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/fastify-swagger/static/favicon-16x16.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fastify-swagger/static/favicon-32x32.png" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/fastify-swagger/static/favicon-32x32.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/channel/channel.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/channel/channel.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/channel/dto/create-channel.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/channel/dto/create-channel.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/user/dto/address.dto.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/user/dto/address.dto.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/user/dto/address.dto.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/user/dto/address.dto.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/user/user.module.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/user/user.module.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/user/user.module.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/user/user.module.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/user/user.service.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/user/user.service.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/user/user.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/user/user.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/user/user.service.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/user/user.service.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/dto/address.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/dto/address.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/user.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/user.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/user.service.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +70,7 @@
       <updated>1574108957461</updated>
       <workItem from="1574108960427" duration="5616000" />
       <workItem from="1574168420290" duration="4711000" />
-      <workItem from="1574174069316" duration="11266000" />
+      <workItem from="1574174069316" duration="15016000" />
     </task>
     <servers />
   </component>
