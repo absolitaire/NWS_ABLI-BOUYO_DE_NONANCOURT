@@ -32,6 +32,12 @@ let ChannelService = class ChannelService {
             rxjs_1.of(new channel_entity_1.ChannelEntity(_)) :
             rxjs_1.throwError(new common_1.NotFoundException(`Channel with id '${id}' not found`))));
     }
+    findOneByIdChannel(id) {
+        return this._channelDao.findChannelByIdChannel(id)
+            .pipe(operators_1.catchError(e => rxjs_1.throwError(new common_1.UnprocessableEntityException(e.message))), operators_1.flatMap(_ => !!_ ?
+            rxjs_1.of(new channel_entity_1.ChannelEntity(_)) :
+            rxjs_1.throwError(new common_1.NotFoundException(`Channel with id '${id}' not found`))));
+    }
     async findMessagesOnChannel(query) {
         return this._channelDao.findMessagesOnChannel(query);
     }

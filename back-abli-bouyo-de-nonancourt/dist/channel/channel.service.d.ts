@@ -15,6 +15,7 @@ export declare class ChannelService {
     constructor(_channelDao: ChannelDao, _userDao: UserDao, _logger: Logger);
     findAll(): Observable<ChannelEntity[] | void>;
     findOne(id: string): Observable<ChannelEntity>;
+    findOneByIdChannel(id: string): Observable<ChannelEntity>;
     findMessagesOnChannel(query: FindMessagesDto): Promise<MessageEntity[] | void>;
     findSubscribedChannelsOfUser(id: string): Observable<ChannelEntity[] | void>;
     create(channel: CreateChannelDto): Observable<ChannelEntity>;
