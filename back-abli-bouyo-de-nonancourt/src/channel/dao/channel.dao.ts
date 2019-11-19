@@ -65,6 +65,13 @@ export class ChannelDao {
   // }
 
 
+  findSubscribedChannelsOfUser(id: string): Observable<Channel[] | void> {
+    return from(this._channelModel.find({usersSubscribed: {$in: id}}))
+      .pipe(
+        map((docs: MongooseDocument[]) => (!!docs && docs.length > 0) ? docs.map(_ => _.toJSON()) : undefined),
+      );
+  }
+
   async findMessagesOnChannel(query: FindMessagesDto): Promise<MessageEntity[] | void> {
     let i = 0;
     let nb = 0;

@@ -34,6 +34,9 @@ let ChannelController = class ChannelController {
     findOne(params) {
         return this._channelService.findOne(params.id);
     }
+    findSubscribedChannelsOfUser(params) {
+        return this._channelService.findSubscribedChannelsOfUser(params.id);
+    }
     findMessagesFromChannel(query) {
         return rxjs_1.from(this._channelService.findMessagesOnChannel(query));
     }
@@ -70,6 +73,18 @@ __decorate([
     __metadata("design:paramtypes", [handler_params_1.HandlerParams]),
     __metadata("design:returntype", rxjs_1.Observable)
 ], ChannelController.prototype, "findOne", null);
+__decorate([
+    swagger_1.ApiOkResponse({ description: 'Returns the channels subscribed by the given user ', type: channel_entity_1.ChannelEntity }),
+    swagger_1.ApiNotFoundResponse({ description: 'Channel with the given "id" doesn\'t exist in the database' }),
+    swagger_1.ApiBadRequestResponse({ description: 'Parameter provided is not good' }),
+    swagger_1.ApiUnprocessableEntityResponse({ description: 'The request can\'t be performed in the database' }),
+    swagger_1.ApiImplicitParam({ name: 'id', description: 'Unique identifier of the channel in the database', type: String }),
+    common_1.Get('/subscribedBy/:id'),
+    __param(0, common_1.Param()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [handler_params_1.HandlerParams]),
+    __metadata("design:returntype", rxjs_1.Observable)
+], ChannelController.prototype, "findSubscribedChannelsOfUser", null);
 __decorate([
     swagger_1.ApiOkResponse({ description: 'Returns the channel for the given "id"', type: channel_entity_1.ChannelEntity }),
     swagger_1.ApiNotFoundResponse({ description: 'Channel with the given "id" doesn\'t exist in the database' }),

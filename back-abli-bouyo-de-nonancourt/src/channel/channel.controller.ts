@@ -57,6 +57,22 @@ export class ChannelController {
   findOne(@Param() params: HandlerParams): Observable<ChannelEntity> {
     return this._channelService.findOne(params.id);
   }
+  /**
+   * Handler to answer to GET /subscribedBy/:id route
+   *
+   * @param {HandlerParams} params list of route params to take user id
+   *
+   * @returns Observable<ChannelEntity[] | void>
+   */
+  @ApiOkResponse({ description: 'Returns the channels subscribed by the given user ', type: ChannelEntity })
+  @ApiNotFoundResponse({ description: 'Channel with the given "id" doesn\'t exist in the database' })
+  @ApiBadRequestResponse({ description: 'Parameter provided is not good' })
+  @ApiUnprocessableEntityResponse({ description: 'The request can\'t be performed in the database' })
+  @ApiImplicitParam({ name: 'id', description: 'Unique identifier of the channel in the database', type: String })
+  @Get('/subscribedBy/:id')
+  findSubscribedChannelsOfUser(@Param() params: HandlerParams): Observable<ChannelEntity[] | void> {
+    return this._channelService.findSubscribedChannelsOfUser(params.id);
+  }
 
   /**
    * Handler to answer to GET /channel/message route

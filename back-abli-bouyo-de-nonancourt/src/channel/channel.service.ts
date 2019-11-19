@@ -62,6 +62,13 @@ export class ChannelService {
   //     );
   // }// fonctionne
 
+  findSubscribedChannelsOfUser(id: string): Observable<ChannelEntity[] | void> {
+    return from(this._channelDao.findSubscribedChannelsOfUser(id))
+      .pipe(
+        //this._logger.log(`SERVICE`),
+        map(_ => !!_ ? _.map(__ => new ChannelEntity(__)) : undefined),
+      );
+  }// fonctionne
 
   /**
    * Check if channel already exists and add it in people list

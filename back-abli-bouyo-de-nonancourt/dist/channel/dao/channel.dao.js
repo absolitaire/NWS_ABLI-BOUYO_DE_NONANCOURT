@@ -39,6 +39,10 @@ let ChannelDao = class ChannelDao {
         return rxjs_1.from(this._channelModel.findById(id))
             .pipe(operators_1.map((doc) => !!doc ? doc.toJSON() : undefined));
     }
+    findSubscribedChannelsOfUser(id) {
+        return rxjs_1.from(this._channelModel.find({ usersSubscribed: { $in: id } }))
+            .pipe(operators_1.map((docs) => (!!docs && docs.length > 0) ? docs.map(_ => _.toJSON()) : undefined));
+    }
     async findMessagesOnChannel(query) {
         var e_1, _a;
         let i = 0;

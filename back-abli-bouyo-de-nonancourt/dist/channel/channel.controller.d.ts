@@ -14,6 +14,7 @@ export declare class ChannelController {
     constructor(_channelService: ChannelService, _logger: Logger);
     findAll(): Observable<ChannelEntity[] | void>;
     findOne(params: HandlerParams): Observable<ChannelEntity>;
+    findSubscribedChannelsOfUser(params: HandlerParams): Observable<ChannelEntity[] | void>;
     findMessagesFromChannel(query: FindMessagesQuery): Observable<MessageEntity[] | void>;
     create(createChannelDto: CreateChannelDto): Observable<ChannelEntity>;
     subscribeAccountToChannel(sub: SubscriptionDto): Observable<ChannelEntity>;

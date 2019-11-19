@@ -16,6 +16,7 @@ export declare class ChannelService {
     findAll(): Observable<ChannelEntity[] | void>;
     findOne(id: string): Observable<ChannelEntity>;
     findMessagesOnChannel(query: FindMessagesDto): Promise<MessageEntity[] | void>;
+    findSubscribedChannelsOfUser(id: string): Observable<ChannelEntity[] | void>;
     create(channel: CreateChannelDto): Observable<ChannelEntity>;
     private _addChannel;
     delete(id: string): Observable<void>;

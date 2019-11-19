@@ -1802,8 +1802,8 @@
         "signature": "72384690711eb4f299b6c974f1fc994acb293e69c60f5a7792a5e2cb0af0eff7"
       },
       "../src/channel/dao/channel.dao.ts": {
-        "version": "9ea52756d091745c381721b7990379f3afdcabce8e2ea1acfeedcd8bfd871f6b",
-        "signature": "24f8671d0c77b26e860832a3b9aa8e40962f85847a3e494e1c06de9cfb00ae87"
+        "version": "5e05b9d1b239a867dd87a6f3391baeaadc6ce2bf5d859a23332a00d6d793789c",
+        "signature": "4a6dff1c69ded09a6b50ad8b5d0379680a90f8299cd4944843dc0b93990d07cb"
       },
       "../src/user/interfaces/user.interface.ts": {
         "version": "7e872739154635418d3a1292721c00b02d8bf9395a539d9fceea9ede87e909e6",
@@ -1826,8 +1826,8 @@
         "signature": "7730fad0ee9e8c6e52f3f62a2500ee34679acadffa7f5606ba9baeaa0b197e2e"
       },
       "../src/channel/channel.service.ts": {
-        "version": "ed9156caa5a86b23fdbe827882005752c0dd835e146d51fe1787ee8579ecfa52",
-        "signature": "2901dfee41b245a10d298ffabdd347adc24c5888b5447395a3fe8c2cebdc6f5f"
+        "version": "30f047c115a6c0a81c3816977faaa0b616186f1111d4f62fc0598d00729bb650",
+        "signature": "e49a03f4ff6a6bbcb600aee8c4565fb7c27a119a5f6a58b6189a0d9b52d97b68"
       },
       "../src/channel/validators/handler-params.ts": {
         "version": "c2d5d2c2254acffe8012f86ffe9890242f5d997d203a4670c40993dbf47a3959",
@@ -1846,8 +1846,8 @@
         "signature": "93834a5c88b6f9faf3481b63dffb376c292733ce78943c60d1a2fa172a278b2f"
       },
       "../src/channel/channel.controller.ts": {
-        "version": "5f791ebdf5f2ffce0630258622f9d90ff98eb65a628bd79fa45a831080d3b45a",
-        "signature": "f447e96120f783f266644d4370782bece7d0564453ab55ae58b6c965cd5477c7"
+        "version": "9eba85c124aa95fa94f57688ce4f16502a46cb5aa929e3f75a66adeadaafb32c",
+        "signature": "11eea52a5cb35950a61a4815e6eab9a456f6ec26cffd1ab158baa053d5b609fa"
       },
       "../src/channel/schemas/channel.schema.ts": {
         "version": "fa638fa6691be4d1c11efbbdf74a122be3130ec2234eb0aa274b8cd0565dcbdd",
