@@ -43,10 +43,7 @@ export class LoginComponent implements OnInit, OnChanges  {
   }
 
   submit(user: User) {
-    this._loginService
-      .login(user);
-
-    this.router.navigateByUrl('/');
+    this._loginService.login(user);
   }
 
   get form(): FormGroup {

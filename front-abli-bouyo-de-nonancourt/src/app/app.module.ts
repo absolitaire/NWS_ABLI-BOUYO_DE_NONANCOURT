@@ -17,14 +17,19 @@ import {
 } from '@angular/material';
 import {ReactiveFormsModule} from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
-
+import { CookieService } from 'ngx-cookie-service';
+import { ChannelComponent } from './channel/channel.component';
+import {MatSidenavModule} from "@angular/material/sidenav";
+import { DialogComponent } from './shared/dialog/dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    ChannelComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -38,9 +43,13 @@ import { HttpClientModule } from '@angular/common/http';
     MatDialogModule,
     ReactiveFormsModule,
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSidenavModule
   ],
-  providers: [],
+  entryComponents: [
+    DialogComponent
+  ],
+  providers: [ CookieService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

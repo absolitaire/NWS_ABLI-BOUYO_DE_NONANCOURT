@@ -50,9 +50,9 @@ export class UserService {
   }
 
   /**
-   * Returns one user of the list matching id in parameter
+   * Returns one user of the list matching login in parameter
    *
-   * @param {string} id of the user
+   * @param {string} login of the user
    *
    * @returns {Observable<UserEntity>}
    */

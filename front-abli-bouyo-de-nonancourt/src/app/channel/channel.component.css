@@ -1,0 +1,22 @@
+.example-container {
+  position: relative;
+  height: 100vh;
+}
+
+.example-container > mat-sidenav {
+  border-top: #303030 dashed 1px;
+  background: #212121;
+  text-align: center;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.button-group button {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.button-group {
+  width: 100%;
+}
+

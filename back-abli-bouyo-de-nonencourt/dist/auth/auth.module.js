@@ -23,10 +23,11 @@ let AuthModule = class AuthModule {
 AuthModule = __decorate([
     common_1.Module({
         imports: [user_module_1.UserModule, passport_1.PassportModule, mongoose_1.MongooseModule.forFeature([{ name: 'User', schema: user_schema_1.UserSchema }]),
+            passport_1.PassportModule.register({ defaultStrategy: 'jwt' }),
             jwt_1.JwtModule.register({
                 secret: constants_1.jwtConstants.secret,
                 signOptions: { expiresIn: '5m' },
-            }),],
+            })],
         providers: [auth_service_1.AuthService, user_service_1.UserService, user_dao_1.UserDao, common_1.Logger, jwt_strategy_1.JwtStrategy],
         controllers: [auth_controller_1.AuthController],
     })

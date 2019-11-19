@@ -14,8 +14,10 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const auth_service_1 = require("./auth.service");
-const handler_params_1 = require("./validator/handler-params");
 const passport_1 = require("@nestjs/passport");
+const swagger_1 = require("@nestjs/swagger");
+const user_entity_1 = require("../user/entities/user.entity");
+const login_user_dto_1 = require("./dto/login_user.dto");
 let AuthController = class AuthController {
     constructor(_authService, _logger) {
         this._authService = _authService;
@@ -33,10 +35,15 @@ let AuthController = class AuthController {
     }
 };
 __decorate([
+    swagger_1.ApiCreatedResponse({ description: 'The user has been successfully logged in', type: user_entity_1.UserEntity }),
+    swagger_1.ApiConflictResponse({ description: 'The user does not exist in database' }),
+    swagger_1.ApiBadRequestResponse({ description: 'Payload provided is not good' }),
+    swagger_1.ApiUnprocessableEntityResponse({ description: 'The request can\'t be performed in the database' }),
+    swagger_1.ApiImplicitBody({ name: 'LoginUserDto', description: 'Payload to create a new user', type: login_user_dto_1.LoginUserDto }),
     common_1.Post('login'),
     __param(0, common_1.Body()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [handler_params_1.HandlerParams]),
+    __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], AuthController.prototype, "login", null);
 __decorate([

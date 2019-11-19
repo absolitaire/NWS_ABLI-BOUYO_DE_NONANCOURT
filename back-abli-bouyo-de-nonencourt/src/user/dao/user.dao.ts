@@ -43,8 +43,18 @@ export class UserDao {
       );
   }
 
+  /**
+   * Returns one user of the list matching login in parameter
+   *
+   * @param {string} login of the user in the db
+   *
+   * @return {Observable<User | void>}
+   */
   findByLogin(loginUser: string): Observable<User | any> {
-    return from(this._userModel.find({login : loginUser}));
+    return from(this._userModel.find({login : loginUser}))
+        .pipe(
+            map((docs: MongooseDocument[]) => (!!docs && docs.length > 0) ? docs.map(_ => _.toJSON()) : undefined),
+        );
   }
 
   /**
