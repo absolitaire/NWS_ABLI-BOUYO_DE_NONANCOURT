@@ -15,8 +15,9 @@ const rxjs_1 = require("rxjs");
 const user_entity_1 = require("../user/entities/user.entity");
 const user_dao_1 = require("./dao/user.dao");
 let UserService = class UserService {
-    constructor(_userDao) {
+    constructor(_userDao, _logger) {
         this._userDao = _userDao;
+        this._logger = _logger;
     }
     findAll() {
         return this._userDao.find()
@@ -37,7 +38,7 @@ let UserService = class UserService {
     create(user) {
         return this._addUser(user)
             .pipe(operators_1.flatMap(_ => this._userDao.create(_)), operators_1.catchError(e => e.code = 11000 ?
-            rxjs_1.throwError(new common_1.ConflictException(`User already exists`)) :
+            rxjs_1.throwError(new common_1.ConflictException(`User already exists ${e.message}`)) :
             rxjs_1.throwError(new common_1.UnprocessableEntityException(e.message))), operators_1.map(_ => new user_entity_1.UserEntity(_)));
     }
     delete(id) {
@@ -64,13 +65,22 @@ let UserService = class UserService {
     }
     _addUser(user) {
         return rxjs_1.of(user).pipe(operators_1.map(_ => Object.assign(_, {
+            firstname: 'N/A',
+            lastname: 'N/A',
+            address: {
+                street: 'N/A',
+                postalCode: '12345',
+                city: 'N/A'
+            },
+            phone: '+33600000000',
             picture: 'https://icon-library.net/images/default-profile-icon/default-profile-icon-24.jpg',
         }, Object.assign({}, _))));
     }
 };
 UserService = __decorate([
     common_1.Injectable(),
-    __metadata("design:paramtypes", [user_dao_1.UserDao])
+    __metadata("design:paramtypes", [user_dao_1.UserDao,
+        common_1.Logger])
 ], UserService);
 exports.UserService = UserService;
 //# sourceMappingURL=user.service.js.map

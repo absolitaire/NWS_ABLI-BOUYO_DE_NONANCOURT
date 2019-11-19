@@ -5,8 +5,7 @@ import {Router} from "@angular/router";
 import {ChannelsService} from "../shared/services/channels.service";
 import {MatDialog, MatDialogRef} from "@angular/material/dialog";
 import {DialogComponent} from "../shared/dialog/dialog.component";
-
-
+import {Channel} from "../shared/interfaces/channel";
 
 @Component({
   selector: 'app-channel',
@@ -17,7 +16,7 @@ export class ChannelComponent implements OnInit {
 
   events: string[] = [];
   opened: boolean;
-  channels: any;
+  channels: Channel[];
   private _dialogStatus: string;
   private _channelDialog: MatDialogRef<DialogComponent>;
 
@@ -32,8 +31,10 @@ export class ChannelComponent implements OnInit {
     this._loginService.verify().subscribe(user => {
       //If the user if verified, we get his data
       console.log(user);
+      this.cookieService.set('id_user', user['userId']);
       this._channelsService.get().subscribe(data => {
         console.log(data);
+        this.channels = data;
       });
     });
   }
@@ -45,14 +46,14 @@ export class ChannelComponent implements OnInit {
       width: '500px',
       disableClose: true
     });
-
+    const id_user = this.cookieService.get('id_user');
     this._channelDialog.afterClosed().subscribe(data => {
-        console.log(data);
+        this._channelsService.create(data.value, id_user);
       }
     );
   }
 
   join(){
-
+    //this._channelsService.join(data.value, this.cookieService);
   }
 }

@@ -67,7 +67,9 @@ export class DialogComponent implements OnInit, OnChanges {
 
   private _buildForm(): FormGroup {
     return new FormGroup({
-      idChannel: new FormControl(),
+      idChannel: new FormControl('', Validators.compose([
+        Validators.minLength(5), Validators.maxLength(5)
+      ])),
       channelName: new FormControl('', Validators.compose([
         Validators.required, Validators.minLength(2)
       ])),

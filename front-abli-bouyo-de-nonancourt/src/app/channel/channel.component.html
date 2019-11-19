@@ -4,18 +4,25 @@
 
     <ul>
       <li *ngFor="let channel of channels; let i=index">
-        {{channel.name}}
+        <h2>{{channel.name}}</h2>
+        <p>{{channel.description}}</p>
       </li>
     </ul>
 
-
-
     <div class="button-group">
       <button mat-flat-button color="primary" (click)="create()">Create a channel</button>
-      <br>
+      <mat-form-field>
+        <mat-label>Channel ID</mat-label>
+        <textarea matInput
+                  cdkTextareaAutosize
+                  #autosize="cdkTextareaAutosize"
+                  cdkAutosizeMaxRows="1"></textarea>
+      </mat-form-field>
       <button mat-flat-button color="accent" (click)="join()">Join a channel</button>
     </div>
   </mat-sidenav>
   <mat-sidenav position="end">Join a channel</mat-sidenav>
-  <mat-sidenav-content></mat-sidenav-content>
+  <mat-sidenav-content>
+
+  </mat-sidenav-content>
 </mat-sidenav-container>

@@ -13,7 +13,8 @@ import {
   MatDialogModule,
   MatInputModule,
   MatFormFieldModule,
-  MatCardModule
+  MatCardModule,
+
 } from '@angular/material';
 import {ReactiveFormsModule} from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
@@ -44,7 +45,7 @@ import { DialogComponent } from './shared/dialog/dialog.component';
     ReactiveFormsModule,
     MatCardModule,
     HttpClientModule,
-    MatSidenavModule
+    MatSidenavModule,
   ],
   entryComponents: [
     DialogComponent
