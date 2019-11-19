@@ -21,6 +21,7 @@ import { SubscriptionDto } from './dto/subscription.dto';
 import { CreateMessageDto } from './dto/create-message.dto';
 import { MessageEntity } from './entities/message.entity';
 import { FindMessagesQuery } from './validators/find-messages-query';
+import { IdChannelParams } from './validators/idchannel-params';
 
 @ApiUseTags('back/channel')
 @Controller('channel')
@@ -73,7 +74,22 @@ export class ChannelController {
   findSubscribedChannelsOfUser(@Param() params: HandlerParams): Observable<ChannelEntity[] | void> {
     return this._channelService.findSubscribedChannelsOfUser(params.id);
   }
-
+  /**
+   * Handler to answer to GET /findId/:id route
+   *
+   * @param {HandlerParams} params list of route params to take user id
+   *
+   * @returns Observable<ChannelEntity[] | void>
+   */
+  @ApiOkResponse({ description: 'Returns the channel for the given "idChannel"', type: ChannelEntity })
+  @ApiNotFoundResponse({ description: 'Channel with the given "id" doesn\'t exist in the database' })
+  @ApiBadRequestResponse({ description: 'Parameter provided is not good' })
+  @ApiUnprocessableEntityResponse({ description: 'The request can\'t be performed in the database' })
+  @ApiImplicitParam({ name: 'idChannel', description: 'Unique identifier of the channel (e.g. "ABcD3")', type: String })
+  @Get('/findId/:idChannel')
+  findOneByIdChannel(@Param() params: IdChannelParams): Observable<ChannelEntity> {
+    return this._channelService.findOneByIdChannel(params.idChannel);
+  }
   /**
    * Handler to answer to GET /channel/message route
    *

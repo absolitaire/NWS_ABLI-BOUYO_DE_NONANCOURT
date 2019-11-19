@@ -53,6 +53,28 @@ export class ChannelService {
         ),
       );
   }
+
+
+  /**
+   * Returns one channel of the list matching id in parameter
+   *
+   * @param {string} id of the channel
+   *
+   * @returns {Observable<ChannelEntity>}
+   */
+
+  findOneByIdChannel(id: string): Observable<ChannelEntity> {
+    return this._channelDao.findChannelByIdChannel(id)
+      .pipe(
+        catchError(e => throwError(new UnprocessableEntityException(e.message))),
+        flatMap(_ =>
+          !!_ ?
+            of(new ChannelEntity(_)) :
+            throwError(new NotFoundException(`Channel with id '${id}' not found`)),
+        ),
+      );
+  }
+
   async findMessagesOnChannel(query: FindMessagesDto): Promise<MessageEntity[] | void> {
     return this._channelDao.findMessagesOnChannel(query);
   }

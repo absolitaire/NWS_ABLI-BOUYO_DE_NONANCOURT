@@ -6,6 +6,9 @@ import {ChannelsService} from "../shared/services/channels.service";
 import {MatDialog, MatDialogRef} from "@angular/material/dialog";
 import {DialogComponent} from "../shared/dialog/dialog.component";
 import {Channel} from "../shared/interfaces/channel";
+import {Message} from '../shared/interfaces/message';
+
+
 
 @Component({
   selector: 'app-channel',
@@ -19,12 +22,14 @@ export class ChannelComponent implements OnInit {
   channels: Channel[];
   private _dialogStatus: string;
   private _channelDialog: MatDialogRef<DialogComponent>;
+  private _messages: Message[];
 
   constructor( private cookieService: CookieService, private _loginService: LoginService,
                private _channelsService: ChannelsService, private router: Router,
                private _dialog: MatDialog) {
     this.channels = [];
     this._dialogStatus = 'inactive';
+    this._messages = [];
   }
 
   ngOnInit() {

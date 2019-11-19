@@ -56,6 +56,19 @@ export class ChannelDao {
       );
   }
 
+  /**
+   * Returns one person of the list matching id in parameter
+   *
+   * @param {string} id of the person in the db
+   *
+   * @return {Observable<Channel | void>}
+   */
+  findChannelByIdChannel(id: string): Observable<Channel | void> {
+    return from(this._channelModel.findOne({idChannel : id}))
+      .pipe(
+        map((doc: MongooseDocument) => !!doc ? doc.toJSON() : undefined),
+      );
+  }
   //
   // findMessagesOnChannel(params: FindMessagesDto): Observable<Message[] | void> {
   //   return from(this._messageModel.find({idChannel: params.idChannel}))

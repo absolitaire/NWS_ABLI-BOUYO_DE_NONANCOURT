@@ -23,6 +23,7 @@ const channel_interceptor_1 = require("./interceptors/channel.interceptor");
 const subscription_dto_1 = require("./dto/subscription.dto");
 const create_message_dto_1 = require("./dto/create-message.dto");
 const find_messages_query_1 = require("./validators/find-messages-query");
+const idchannel_params_1 = require("./validators/idchannel-params");
 let ChannelController = class ChannelController {
     constructor(_channelService, _logger) {
         this._channelService = _channelService;
@@ -36,6 +37,9 @@ let ChannelController = class ChannelController {
     }
     findSubscribedChannelsOfUser(params) {
         return this._channelService.findSubscribedChannelsOfUser(params.id);
+    }
+    findOneByIdChannel(params) {
+        return this._channelService.findOneByIdChannel(params.idChannel);
     }
     findMessagesFromChannel(query) {
         return rxjs_1.from(this._channelService.findMessagesOnChannel(query));
@@ -85,6 +89,18 @@ __decorate([
     __metadata("design:paramtypes", [handler_params_1.HandlerParams]),
     __metadata("design:returntype", rxjs_1.Observable)
 ], ChannelController.prototype, "findSubscribedChannelsOfUser", null);
+__decorate([
+    swagger_1.ApiOkResponse({ description: 'Returns the channel for the given "idChannel"', type: channel_entity_1.ChannelEntity }),
+    swagger_1.ApiNotFoundResponse({ description: 'Channel with the given "id" doesn\'t exist in the database' }),
+    swagger_1.ApiBadRequestResponse({ description: 'Parameter provided is not good' }),
+    swagger_1.ApiUnprocessableEntityResponse({ description: 'The request can\'t be performed in the database' }),
+    swagger_1.ApiImplicitParam({ name: 'idChannel', description: 'Unique identifier of the channel (e.g. "ABcD3")', type: String }),
+    common_1.Get('/findId/:idChannel'),
+    __param(0, common_1.Param()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [idchannel_params_1.IdChannelParams]),
+    __metadata("design:returntype", rxjs_1.Observable)
+], ChannelController.prototype, "findOneByIdChannel", null);
 __decorate([
     swagger_1.ApiOkResponse({ description: 'Returns the channel for the given "id"', type: channel_entity_1.ChannelEntity }),
     swagger_1.ApiNotFoundResponse({ description: 'Channel with the given "id" doesn\'t exist in the database' }),

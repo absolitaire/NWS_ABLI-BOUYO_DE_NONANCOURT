@@ -1838,8 +1838,8 @@
         "signature": "72384690711eb4f299b6c974f1fc994acb293e69c60f5a7792a5e2cb0af0eff7"
       },
       "../src/channel/dao/channel.dao.ts": {
-        "version": "5e05b9d1b239a867dd87a6f3391baeaadc6ce2bf5d859a23332a00d6d793789c",
-        "signature": "4a6dff1c69ded09a6b50ad8b5d0379680a90f8299cd4944843dc0b93990d07cb"
+        "version": "c5f1edc94ed9fbc6754c10ee47c3f3e263cd21f28f355177b9bd7dac21b86fda",
+        "signature": "b5bbb24e17c14773dacfaea98c4d332c7e8ba49da2b359245cb7ad0215f3ffb0"
       },
       "../src/user/interfaces/user.interface.ts": {
         "version": "72bb38698e1d7164ab86a4df2767dde4a09ef1f19235e4973b9d0fcbc88c5e7b",
@@ -1906,8 +1906,8 @@
         "signature": "422c47c3e62567a6629cf5a670e5799f27eb18db7d586ee3209d71cfa53845eb"
       },
       "../src/channel/channel.service.ts": {
-        "version": "a300ce681aee097e368d4433ec64442e757d9d8333a77f381a4e3012fcf8cce5",
-        "signature": "01dbda3a1bb10598908c1e607836de51d4e08df90ddffe8305001f3afa4721ab"
+        "version": "f805a265ca75a2877f84d040d148df59a222a2b77131752cf6b6fbcfa5c133dd",
+        "signature": "db53ed5f95db6931a8c97300790e98f6732c22b801085133f8dadc9653af5665"
       },
       "../src/channel/validators/handler-params.ts": {
         "version": "c2d5d2c2254acffe8012f86ffe9890242f5d997d203a4670c40993dbf47a3959",
@@ -1925,9 +1925,13 @@
         "version": "8b4513b822327507695af0166239c2e7e38bc9840fe38bab036daeaae4d2e07a",
         "signature": "93834a5c88b6f9faf3481b63dffb376c292733ce78943c60d1a2fa172a278b2f"
       },
+      "../src/channel/validators/idchannel-params.ts": {
+        "version": "ac63edb037eb7d5fc2d02614dda2a8cd692c0123a7ff66036c3b34e908dac8bb",
+        "signature": "23a3946df98afb78781dde099b48e686fed46cdb29ec4cee114dd1fee5403e02"
+      },
       "../src/channel/channel.controller.ts": {
-        "version": "9eba85c124aa95fa94f57688ce4f16502a46cb5aa929e3f75a66adeadaafb32c",
-        "signature": "11eea52a5cb35950a61a4815e6eab9a456f6ec26cffd1ab158baa053d5b609fa"
+        "version": "ac7752c663943f04b8137df9ae07281827947d5f2d7d73e33dcc477288f3dbab",
+        "signature": "5cfda9e8c7c8bd2e95c81b8e9c203f0a106fdea1f1563c9022413e8ee5336004"
       },
       "../src/channel/schemas/channel.schema.ts": {
         "version": "fa638fa6691be4d1c11efbbdf74a122be3130ec2234eb0aa274b8cd0565dcbdd",
@@ -6287,6 +6291,14 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../src/channel/validators/idchannel-params.ts": [
+        "../node_modules/class-validator/index.d.ts",
+        "../node_modules/rxjs/operators/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../src/channel/channel.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/channel/channel.service.ts",
@@ -6300,6 +6312,7 @@
         "../src/channel/dto/create-message.dto.ts",
         "../src/channel/entities/message.entity.ts",
         "../src/channel/validators/find-messages-query.ts",
+        "../src/channel/validators/idchannel-params.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -11149,17 +11162,68 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+<<<<<<< HEAD
       "../node_modules/class-validator/validation/ValidationArguments.d.ts": [
+=======
+      "../src/channel/channel.service.ts": [
+        "../src/channel/dao/channel.dao.ts",
+        "../src/user/dao/user.dao.ts",
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/rxjs/index.d.ts",
+        "../src/channel/entities/channel.entity.ts",
+        "../src/channel/dto/find-messages.dto.ts",
+        "../src/channel/entities/message.entity.ts",
+        "../src/channel/dto/create-channel.dto.ts",
+        "../src/channel/dto/subscription.dto.ts",
+        "../src/channel/dto/create-message.dto.ts"
+      ],
+      "../node_modules/fastify/fastify.d.ts": [
+        "../node_modules/@types/node/http.d.ts",
+        "../node_modules/@types/node/http2.d.ts",
+        "../node_modules/@types/node/https.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts",
+>>>>>>> f7c3e2eed88fd77ccde0aad6a5587448ba0fdcd9
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+<<<<<<< HEAD
       "../node_modules/class-validator/validation/ValidationTypeOptions.d.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
+=======
+      "../src/channel/interceptors/channel.interceptor.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/rxjs/index.d.ts"
+      ],
+      "../src/channel/channel.controller.ts": [
+        "../src/channel/channel.service.ts",
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/rxjs/index.d.ts",
+        "../src/channel/entities/channel.entity.ts",
+        "../src/channel/validators/handler-params.ts",
+        "../src/channel/validators/idchannel-params.ts",
+        "../src/channel/validators/find-messages-query.ts",
+        "../src/channel/entities/message.entity.ts",
+        "../src/channel/dto/create-channel.dto.ts",
+        "../src/channel/dto/subscription.dto.ts",
+        "../src/channel/dto/create-message.dto.ts"
+      ],
+      "../src/channel/schemas/channel.schema.ts": [
+        "../node_modules/@types/mongoose/index.d.ts"
+      ],
+      "../src/channel/schemas/message.schema.ts": [
+        "../node_modules/@types/mongoose/index.d.ts"
+      ],
+      "../src/user/schemas/user.schema.ts": [
+        "../node_modules/@types/mongoose/index.d.ts"
+      ],
+      "../src/user/entities/user.entity.ts": [
+        "../src/user/entities/address.entity.ts"
+>>>>>>> f7c3e2eed88fd77ccde0aad6a5587448ba0fdcd9
       ],
       "../node_modules/@types/validator/index.d.ts": [
         "../node_modules/@types/node/fs.d.ts",
