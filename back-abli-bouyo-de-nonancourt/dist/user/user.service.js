@@ -63,7 +63,9 @@ let UserService = class UserService {
         }
     }
     _addUser(user) {
-        return rxjs_1.of(user);
+        return rxjs_1.of(user).pipe(operators_1.map(_ => Object.assign(_, {
+            picture: 'https://icon-library.net/images/default-profile-icon/default-profile-icon-24.jpg',
+        }, Object.assign({}, _))));
     }
 };
 UserService = __decorate([

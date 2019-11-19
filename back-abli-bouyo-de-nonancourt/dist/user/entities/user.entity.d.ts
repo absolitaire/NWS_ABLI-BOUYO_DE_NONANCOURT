@@ -8,5 +8,6 @@ export declare class UserEntity {
     lastname: string;
     address: AddressEntity;
     phone: string;
+    picture: string;
     constructor(partial: Partial<UserEntity>);
 }

@@ -163,7 +163,15 @@ export class UserService {
    * @private
    */
   private _addUser(user: CreateUserDto): Observable<CreateUserDto> {
-    return of(user);
+    return of(user).pipe(
+      map(_ =>
+        Object.assign(_,
+          {
+            picture: 'https://icon-library.net/images/default-profile-icon/default-profile-icon-24.jpg',
+        },
+          Object.assign({}, _)
+        ),
+      ));
   }
 
 }

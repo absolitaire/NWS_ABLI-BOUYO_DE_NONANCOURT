@@ -42,6 +42,11 @@ export class UserEntity {
   @Expose()
   @Type(() => String)
   phone: string;
+
+  @ApiModelProperty({ description: 'Phone', example: '+33600000000', pattern: '/^(\+\d{11})$/' })
+  @Expose()
+  @Type(() => String)
+  picture: string;
   /**
    * Class constructor
    *

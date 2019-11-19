@@ -8,6 +8,7 @@ export interface User extends Document {
     email: string;
     phone: string;
     address: Address;
+    picture: string;
 }
 export interface Address {
     street: string;

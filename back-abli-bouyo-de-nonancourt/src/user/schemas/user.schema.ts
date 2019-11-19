@@ -51,6 +51,12 @@ export const UserSchema = new mongoose.Schema({
       trim: true,
     },
   },
+  picture: {
+    type: String,
+    required: true,
+    minlength: 2,
+    trim: true,
+  },
 }, {
   toJSON: { virtuals: true },
   versionKey: false,

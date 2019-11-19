@@ -64,6 +64,12 @@ __decorate([
     class_transformer_1.Type(() => String),
     __metadata("design:type", String)
 ], UserEntity.prototype, "phone", void 0);
+__decorate([
+    swagger_1.ApiModelProperty({ description: 'Phone', example: '+33600000000', pattern: '/^(\+\d{11})$/' }),
+    class_transformer_1.Expose(),
+    class_transformer_1.Type(() => String),
+    __metadata("design:type", String)
+], UserEntity.prototype, "picture", void 0);
 UserEntity = __decorate([
     class_transformer_1.Exclude(),
     __metadata("design:paramtypes", [Object])

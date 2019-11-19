@@ -3,9 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="8ec6e8a9-ce98-47d7-ad79-666ba11e0ab8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/channel/channel.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/channel/channel.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/channel/channel.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/channel/channel.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/channel/dao/channel.dao.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/channel/dao/channel.dao.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/tsconfig.build.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/dist/tsconfig.build.tsbuildinfo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/user/entities/user.entity.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/user/entities/user.entity.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/user/entities/user.entity.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/user/entities/user.entity.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/user/entities/user.entity.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/user/entities/user.entity.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/user/interfaces/user.interface.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/user/interfaces/user.interface.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/user/schemas/user.schema.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/user/schemas/user.schema.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/user/schemas/user.schema.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/user/schemas/user.schema.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/user/user.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/user/user.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/user/user.service.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/user/user.service.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/entities/user.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/entities/user.entity.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/interfaces/user.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/interfaces/user.interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/schemas/user.schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/schemas/user.schema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/user.service.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,7 +30,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/nwt-school-front-ng8" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -59,7 +69,7 @@
       <updated>1574108957461</updated>
       <workItem from="1574108960427" duration="5616000" />
       <workItem from="1574168420290" duration="4711000" />
-      <workItem from="1574174069316" duration="6698000" />
+      <workItem from="1574174069316" duration="9978000" />
     </task>
     <servers />
   </component>
