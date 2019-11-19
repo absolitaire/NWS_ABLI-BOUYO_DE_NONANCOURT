@@ -1826,8 +1826,8 @@
         "signature": "7730fad0ee9e8c6e52f3f62a2500ee34679acadffa7f5606ba9baeaa0b197e2e"
       },
       "../src/channel/channel.service.ts": {
-        "version": "55efda8a869f9666e154d802e067d8a628b0aa2a0c21705c224fdde6c0e78ef9",
-        "signature": "20fd5df4e4a24e20faf7e162cce790afd90c707569d4839fd1a400213ceed6b9"
+        "version": "1066848cc8026d2927e70dd01fff33ccf0c166b7cebda0e2c7021ac9d656fe30",
+        "signature": "b6cf2f293f9f61edcbeca0d3aba6ee826dc7c1b194a93f07aff72e25f6d5e00d"
       },
       "../src/channel/validators/handler-params.ts": {
         "version": "c2d5d2c2254acffe8012f86ffe9890242f5d997d203a4670c40993dbf47a3959",
@@ -1846,7 +1846,7 @@
         "signature": "56aecf5b6a81e48e08fa871006562d91382cf1c5c9f4b82689808c91cc06bdd3"
       },
       "../src/channel/channel.controller.ts": {
-        "version": "cc7d88c7dc59daa5a5bd66e4071f9593708456cb28fdbade5b08ab94f8a92c84",
+        "version": "55e451cd3c0852630b14bdb6c1963c994044645745ad84ae54a6976c970e2a23",
         "signature": "fbe1ddde87cdab349f8ce21bb732667001b2ca7b03d1092c527a95d1cdbee38e"
       },
       "../src/channel/schemas/channel.schema.ts": {

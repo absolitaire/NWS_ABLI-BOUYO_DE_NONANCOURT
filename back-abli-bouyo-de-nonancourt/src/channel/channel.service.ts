@@ -51,8 +51,8 @@ export class ChannelService {
         ),
       );
   }
-  async findMessagesOnChannel(params: FindMessagesDto): Promise<MessageEntity[] | void> {
-    return this._channelDao.findMessagesOnChannel(params);
+  async findMessagesOnChannel(query: FindMessagesDto): Promise<MessageEntity[] | void> {
+    return this._channelDao.findMessagesOnChannel(query);
   }
   // findMessagesOnChannel(params: FindMessagesDto): Observable<MessageEntity[] | void> {
   //   return from(this._channelDao.findMessagesOnChannel(params))
@@ -196,9 +196,42 @@ export class ChannelService {
   //      ;
   //
   // }
-  subscribe(sub: SubscriptionDto): Observable<ChannelEntity> {// la version qui fonctionne
-     if (!!this._channelDao.findChannelById(sub.idChannel)) {
-    // if (from(this._channelDao.existsWithId(sub.idChannel)) ){
+  // subscribe(sub: SubscriptionDto): Observable<ChannelEntity> {// la version qui fonctionne
+  //    if (!!this._channelDao.findChannelById(sub.idChannel)) {
+  //   // if (from(this._channelDao.existsWithId(sub.idChannel)) ){
+  //     return this._channelDao.subscribe(sub)
+  //       .pipe(
+  //         catchError(e => throwError(new NotFoundException(e.message))),
+  //         flatMap(_ =>
+  //           !!_ ?
+  //             of(undefined) :
+  //             // throwError(new NotFoundException(`Channel with id '${sub.idChannel}' not found`)),
+  //             // throwError(new ConflictException(`User'${sub.idUser}' is already subscribed to the channel '${sub.idChannel}'`)),
+  //              throwError(new ConflictException(`Channel with id '${sub.idChannel}' don't exists or user'${sub.idUser}' is already subscribed to this channel`)),
+  //         ),
+  //       );
+  //   } else {
+  //     throwError(new NotFoundException(`Channel with id '${sub.idChannel}' not found.`));
+  //   }
+  //
+  // }
+  tryToSubscribe(sub: SubscriptionDto): Observable<ChannelEntity> {
+    //return this._channelDao.findChannelById(message.idChannel)
+    return this._userDao.findById(sub.idUser)
+      .pipe(
+        catchError(e => throwError(new NotFoundException(e.message))),
+        flatMap(_ =>
+          !!_ ?
+            this.subscribe(sub):
+            // throwError(new NotFoundException(`Channel with id '${sub.idChannel}' not found`)),
+            // throwError(new ConflictException(`User'${sub.idUser}' is already subscribed to the channel '${sub.idChannel}'`)),
+            // throwError(new ConflictException(`Channel with id '${message.idChannel}' doesn't exist`)),
+            throwError(new NotFoundException(`User with id '${sub.idChannel}' doesn't exist`)),
+        ),
+      );
+
+  }
+  subscribe(sub: SubscriptionDto): Observable<ChannelEntity> {
       return this._channelDao.subscribe(sub)
         .pipe(
           catchError(e => throwError(new NotFoundException(e.message))),
@@ -207,12 +240,9 @@ export class ChannelService {
               of(undefined) :
               // throwError(new NotFoundException(`Channel with id '${sub.idChannel}' not found`)),
               // throwError(new ConflictException(`User'${sub.idUser}' is already subscribed to the channel '${sub.idChannel}'`)),
-               throwError(new ConflictException(`Channel with id '${sub.idChannel}' don't exists or user'${sub.idUser}' is already subscribed to this channel`)),
+              throwError(new ConflictException(`Channel with id '${sub.idChannel}' don't exists or user'${sub.idUser}' is already subscribed to this channel`)),
           ),
         );
-    } else {
-      throwError(new NotFoundException(`Channel with id '${sub.idChannel}' not found.`));
-    }
 
   }
   /*  subscribe(sub: SubscriptionDto): Observable<ChannelEntity> {
@@ -269,7 +299,7 @@ export class ChannelService {
               // throwError(new NotFoundException(`Channel with id '${sub.idChannel}' not found`)),
               // throwError(new ConflictException(`User'${sub.idUser}' is already subscribed to the channel '${sub.idChannel}'`)),
              // throwError(new ConflictException(`Channel with id '${message.idChannel}' doesn't exist`)),
-            throwError(new ConflictException(`User with id '${message.idUser}' doesn't exist`)),
+            throwError(new NotFoundException(`User with id '${message.idUser}' doesn't exist`)),
           ),
         );
 

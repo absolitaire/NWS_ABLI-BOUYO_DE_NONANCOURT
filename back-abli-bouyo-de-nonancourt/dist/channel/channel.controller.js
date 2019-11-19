@@ -41,9 +41,7 @@ let ChannelController = class ChannelController {
         return this._channelService.create(createChannelDto);
     }
     subscribeAccountToChannel(sub) {
-        this._logger.log(`AYYYYY ${sub.idChannel}`);
-        const res = this._channelService.subscribe(sub);
-        return res;
+        return this._channelService.tryToSubscribe(sub);
     }
     unsubscribeAccountToChannel(sub) {
         return this._channelService.unsubscribe(sub);
@@ -102,6 +100,7 @@ __decorate([
     swagger_1.ApiConflictResponse({ description: 'The user is already subscribed' }),
     swagger_1.ApiBadRequestResponse({ description: 'Payload provided is not good' }),
     swagger_1.ApiUnprocessableEntityResponse({ description: 'The request can\'t be performed in the database' }),
+    swagger_1.ApiNotFoundResponse({ description: 'The user doesn\'t exist ' }),
     common_1.Post('subscribe'),
     __param(0, common_1.Body()),
     __metadata("design:type", Function),

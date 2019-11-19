@@ -21,7 +21,7 @@ import { flatMap } from 'rxjs/operators';
 import { CreateMessageDto } from './dto/create-message.dto';
 import { MessageEntity } from './entities/message.entity';
 import { FindMessagesDto } from './dto/find-messages.dto';
-import { FindMessagesParams } from './validators/find-messages-params';
+import { FindMessagesQuery } from './validators/find-messages-query';
 
 @ApiUseTags('back/channel')
 @Controller('channel')
@@ -60,9 +60,9 @@ export class ChannelController {
   }
 
   /**
-   * Handler to answer to GET /channel/:id route
+   * Handler to answer to GET /channel/message route
    *
-   * @param {HandlerParams} params list of route params to take channel id
+   * @query {FindMessageParams} params list of route params to take channel id
    *
    * @returns Observable<ChannelEntity>
    */
@@ -73,18 +73,9 @@ export class ChannelController {
   @ApiImplicitQuery({ name: 'idChannel', description: 'Unique identifier of the channel in the database', type: String })
   @ApiImplicitQuery({ name: 'threshold', description: 'Max number of messages to retrieve. -1 to retrieve every message.', type: Number })
   @ApiImplicitQuery({ name: 'startingAt', description: 'Retrieve messages starting with the N-th message', type: Number })
-  // @ApiImplicitParam({ name: 'idChannel', description: 'Unique identifier of the channel in the database', type: String })
-  // @ApiImplicitParam({ name: 'threshold', description: 'Max number of messages to retrieve. -1 to retrieve every message.', type: Number })
-  // @ApiImplicitParam({ name: 'startingAt', description: 'Retrieve messages starting with the N-th message', type: Number })
   @Get('/messages')
-  // findMessagesFromChannel(@Body() params: FindMessagesDto): Observable<MessageEntity[] | void> {
-  //   @Get(':idChannel/messages/:threshold/:startingAt')
-  //     findMessagesFromChannel(@Param() params: FindMessagesParams): Observable<MessageEntity[] | void> {
-  //   findMessagesFromChannel(@Query() params: FindMessagesParams): Observable<MessageEntity[] | void> {
-  //   return this._channelService.findMessagesOnChannel(params);
-  // } fonctionne
-  findMessagesFromChannel(@Query() params: FindMessagesParams): Observable<MessageEntity[] | void> {
-    return from(this._channelService.findMessagesOnChannel(params));
+  findMessagesFromChannel(@Query() query: FindMessagesQuery): Observable<MessageEntity[] | void> {
+    return from(this._channelService.findMessagesOnChannel(query));
   }
   /**
    * Handler to answer to POST /channel route
@@ -113,16 +104,10 @@ export class ChannelController {
   @ApiConflictResponse({ description: 'The user is already subscribed' })
   @ApiBadRequestResponse({ description: 'Payload provided is not good' })
   @ApiUnprocessableEntityResponse({ description: 'The request can\'t be performed in the database' })
-  // @ApiImplicitParam({ name: 'id', description: 'Unique identifier of the channel in the database', type: String })
-  // @ApiImplicitParam({ name: 'idUser', description: 'Unique identifier of the user in the database', type: String })
-  // @Post(':id/subscribe/:idUser')
-  // subscribeAccountToChannel(@Param() params: SubscriptionParams): Observable<ChannelEntity>{
+  @ApiNotFoundResponse({ description: 'The user doesn\'t exist '})
   @Post('subscribe')
   subscribeAccountToChannel(@Body() sub: SubscriptionDto): Observable<ChannelEntity>{
-    this._logger.log(`AYYYYY ${sub.idChannel}`);
-    const res = this._channelService.subscribe(sub);
-    // this._logger.log(from(res));
-    return res;
+    return this._channelService.tryToSubscribe(sub);
   }
   /**
    * Handler to answer to POST /channel/unsubscribe route
@@ -141,19 +126,18 @@ export class ChannelController {
   }
 
   /**
-   * Handler to answer to POST /channel/subscribe route
+   * Handler to answer to POST /channel/write route
    *
    * @param SubscriptionDto data to create
    *
    * @returns Observable<ChannelEntity>
    */
-  @ApiCreatedResponse({ description: 'The user has been subscribed'})
-  @ApiConflictResponse({ description: 'The user is already subscribed' })
+  @ApiNotFoundResponse({ description: 'The user doesn\'t exists'})
+  @ApiConflictResponse({ description: 'The channel doesn\'t exists' })
   @ApiBadRequestResponse({ description: 'Payload provided is not good' })
   @ApiUnprocessableEntityResponse({ description: 'The request can\'t be performed in the database' })
  @Post('write')
   writeIntoChannel(@Body() message: CreateMessageDto): Observable<ChannelEntity>{
-    //return this._channelService.writeIntoChannel(message);
     return this._channelService.tryToWriteIntoChannel(message);
   }
 }

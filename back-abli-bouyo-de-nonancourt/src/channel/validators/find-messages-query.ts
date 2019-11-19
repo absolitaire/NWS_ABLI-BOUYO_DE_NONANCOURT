@@ -1,7 +1,7 @@
 import { IsInt, IsMongoId, IsNotEmpty, IsNumberString } from 'class-validator';
 import { ApiModelProperty } from '@nestjs/swagger';
 
-export class FindMessagesParams {
+export class FindMessagesQuery {
   @IsMongoId()
   @IsNotEmpty()
   idChannel: string;

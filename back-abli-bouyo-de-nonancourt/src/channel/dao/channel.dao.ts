@@ -65,14 +65,14 @@ export class ChannelDao {
   // }
 
 
-  async findMessagesOnChannel(params: FindMessagesDto): Promise<MessageEntity[] | void> {
+  async findMessagesOnChannel(query: FindMessagesDto): Promise<MessageEntity[] | void> {
     let i = 0;
     let nb = 0;
     let res = [];
     let tmp: MessageEntity;
-    for await (const message of await this._messageModel.find({ idChannel: params.idChannel })){
+    for await (const message of await this._messageModel.find({ idChannel: query.idChannel })){
       this._logger.log(` ${i}`);
-      if(params.threshold == -1 ||(nb < params.threshold && i+1 >= params.startingAt)){
+      if(query.threshold == -1 ||(nb < query.threshold && i+1 >= query.startingAt)){
         //res = res.concat(message);
         tmp = new MessageEntity(message);
         tmp.fillData(message.get('_id'),message.get('content'),message.get('idUser'),message.get('date'))

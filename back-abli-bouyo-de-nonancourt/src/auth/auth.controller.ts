@@ -2,8 +2,10 @@ import { Controller, Post, UseGuards, Logger, UnauthorizedException, Param, Body
 import { AuthService } from './auth.service';
 import { HandlerParams } from './validator/handler-params';
 import { AuthGuard } from '@nestjs/passport';
+import { ApiUseTags } from '@nestjs/swagger';
 
 @Controller('auth')
+@ApiUseTags('back/auth')
 export class AuthController {
 
   constructor(private readonly _authService: AuthService, private readonly _logger: Logger) {}

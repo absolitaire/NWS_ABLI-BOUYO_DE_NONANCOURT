@@ -19,6 +19,7 @@ export declare class ChannelService {
     create(channel: CreateChannelDto): Observable<ChannelEntity>;
     private _addChannel;
     delete(id: string): Observable<void>;
+    tryToSubscribe(sub: SubscriptionDto): Observable<ChannelEntity>;
     subscribe(sub: SubscriptionDto): Observable<ChannelEntity>;
     unsubscribe(sub: SubscriptionDto): Observable<ChannelEntity>;
     writeIntoChannel(message: CreateMessageDto): Observable<ChannelEntity>;
