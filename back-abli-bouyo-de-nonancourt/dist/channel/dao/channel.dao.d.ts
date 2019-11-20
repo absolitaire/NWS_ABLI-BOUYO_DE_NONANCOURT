@@ -25,6 +25,7 @@ export declare class ChannelDao {
     subscribe(sub: SubscriptionDto): Observable<Channel | void>;
     unsubscribe(sub: SubscriptionDto): Observable<Channel | void>;
     tryToDeleteChannel(id: string): Observable<Channel | void>;
+    deleteMessage(id: string): Observable<Message | void>;
     existsWithId(id: string): Observable<boolean>;
     private _addDateToMessage;
     writeIntoChannel(message: CreateMessageDto): Observable<MessageEntity>;

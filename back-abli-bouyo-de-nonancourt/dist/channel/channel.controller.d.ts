@@ -23,5 +23,6 @@ export declare class ChannelController {
     create(createChannelDto: CreateChannelDto): Observable<ChannelEntity>;
     subscribeAccountToChannel(sub: SubscriptionDto): Observable<ChannelEntity>;
     unsubscribeAccountToChannel(sub: SubscriptionDto): Observable<ChannelEntity>;
+    eraseMessage(params: HandlerParams): Observable<MessageEntity | void>;
     writeIntoChannel(message: CreateMessageDto): Observable<ChannelEntity>;
 }

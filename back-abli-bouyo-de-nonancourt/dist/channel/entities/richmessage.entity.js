@@ -15,13 +15,27 @@ let RichMessageEntity = class RichMessageEntity {
     constructor(partial) {
         Object.assign(this, partial);
     }
-    fillData(content, date, login, picture) {
+    fillData(id, idUser, content, date, login, picture) {
+        this.idMessage = id;
+        this.idUser = idUser;
         this.content = content;
         this.date = date;
         this.login = login;
         this.picture = picture;
     }
 };
+__decorate([
+    swagger_1.ApiModelProperty({ description: 'Unique identifier in the database', example: '5763cd4dc378a38ecd387737' }),
+    class_transformer_1.Expose(),
+    class_transformer_1.Type(() => String),
+    __metadata("design:type", String)
+], RichMessageEntity.prototype, "idMessage", void 0);
+__decorate([
+    swagger_1.ApiModelProperty({ description: 'Unique identifier in the database', example: '5763cd4dc378a38ecd387737' }),
+    class_transformer_1.Expose(),
+    class_transformer_1.Type(() => String),
+    __metadata("design:type", String)
+], RichMessageEntity.prototype, "idUser", void 0);
 __decorate([
     swagger_1.ApiModelProperty({ description: 'Content', example: 'This is a funny message.' }),
     class_transformer_1.Expose(),

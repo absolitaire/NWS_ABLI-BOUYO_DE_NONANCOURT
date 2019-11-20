@@ -23,6 +23,9 @@ export class MessageComponent implements OnInit {
   private _userIds : string[];
   private _text: string;
 
+  /**
+   * Component constructor
+   */
   constructor(private _router: Router,
               private _loginService: LoginService,
               private cookieService: CookieService,
@@ -35,6 +38,9 @@ export class MessageComponent implements OnInit {
 
   }
 
+  /**
+   * OnInit implementation
+   */
   ngOnInit() {
     this._loginService.verify().subscribe(user => {
     this.cookieService.set('id_user', user['userId']);
@@ -44,6 +50,9 @@ export class MessageComponent implements OnInit {
 
     });
   }
+  /**
+   * Reload the messages
+   */
   private refresh() {
 
     console.log(this._userIds);
@@ -54,31 +63,6 @@ export class MessageComponent implements OnInit {
     });
   }
 
-  // private refresh() {
-  //
-  //   console.log(this._userIds);
-  //   this._messagesService.get(this._idChannel).subscribe(data => {
-  //     // console.log(data);
-  //     this.messages = data;
-  //     this.messages.map((_: Message) => {
-  //
-  //       // console.log(`AYY ${_.idUser}`);
-  //       if (this._userIds.indexOf(_.idUser ) !== -1) {
-  //         // if (this._userIds.find(__ => __ === _.idUser )) {
-  //       //   if (this._userIds.find(_.idUser )) {
-  //         console.log(`AYY ${_.idUser}`);
-  //       } else {
-  //         console.log(`NO ${_.idUser}`);
-  //         this._messagesService.getUserData(_.idUser).subscribe(tmp => {
-  //           // console.log(tmp);
-  //           this._users = this._users.concat(tmp);
-  //           // this._userIds = this._userIds.concat(_.idUser);
-  //           this._userIds.push(_.idUser);
-  //         });
-  //       }
-  //     });
-  // });
-  // }
   /**
    * Returns private property _message
    */
@@ -111,36 +95,23 @@ export class MessageComponent implements OnInit {
     this._idChannel = id;
     this.refresh();
   }
-  // /**
-  //  * Returns private property _message
-  //  */
-  // get users(): UserBack[] {
-  //   return this._users;
-  // }
-  //
-  // /**
-  //  * Sets private property _message
-  //  */
-  // @Input()
-  // set users(users: UserBack[]) {
-  //   this._users = users;
-  // }
-  // @Input()
-  // findUserDatas(message: Message) {
-  //   const i = this._userIds.indexOf(message.idUser);
-  //   console.log(this._userIds[i]);
-  //   return this._users[i];
-  // }
 
-
+  /**
+   * Sets private property _text
+   */
   @Input()
   set text(value: any) {
     this._text = value;
   }
+  /**
+   * Returns private property text
+   */
   get text(): any {
     return this._text;
   }
-
+  /**
+   * Send the user's text to the server
+   */
   send(text: string) {
     this._messagesService.send(text, this._idChannel);
     this.refresh();

@@ -121,7 +121,7 @@ export class ChannelDao {
         //res = res.concat(message);
         tmp = new RichMessageEntity(message);
         const pop = await message.populate('idUser').execPopulate();
-        tmp.fillData(pop.get('content'),pop.get('date'),pop.get('idUser.login'),pop.get('idUser.picture'))
+        tmp.fillData(pop.get('_id'),pop.get('idUser._id'),pop.get('content'),pop.get('date'),pop.get('idUser.login'),pop.get('idUser.picture'))
         res = res.concat(tmp);
         //this._logger.log(`AYYYYY2222 ${i} ${message}`);
         this._logger.log(`AYYYYY2222 ${i} ${tmp} ${pop}`);
@@ -201,11 +201,25 @@ export class ChannelDao {
    * @return {Observable<Channel | void>}
    */
   tryToDeleteChannel(id: string): Observable<Channel | void> {
-    return from(this._channelModel.findOneAndDelete({ _id: id, usersSubscribed:{$size: 0 } } ))
+    return from(this._channelModel.findOneAndDelete({ _id: id, usersSubscribed: { $size: 0 } }))
 
       .pipe(
         map((doc: MongooseDocument) => !!doc ? doc.toJSON() : undefined)
       );
+  }
+    /**
+     * Delete a channel if it hasn't any subscribed users.
+     *
+     * @param {string} id
+     *
+     * @return {Observable<Channel | void>}
+     */
+    deleteMessage(id: string): Observable<Message | void> {
+      return from(this._messageModel.findOneAndDelete({ _id: id } ))
+
+        .pipe(
+          map((doc: MongooseDocument) => !!doc ? doc.toJSON() : undefined)
+        );
   }
   /**
    * Delete a channel. Called only when a channel is empty

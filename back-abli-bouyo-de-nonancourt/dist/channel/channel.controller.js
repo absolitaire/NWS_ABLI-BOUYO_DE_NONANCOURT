@@ -56,6 +56,9 @@ let ChannelController = class ChannelController {
     unsubscribeAccountToChannel(sub) {
         return this._channelService.unsubscribe(sub);
     }
+    eraseMessage(params) {
+        return this._channelService.eraseMessage(params.id);
+    }
     writeIntoChannel(message) {
         return this._channelService.tryToWriteIntoChannel(message);
     }
@@ -166,6 +169,18 @@ __decorate([
     __metadata("design:paramtypes", [subscription_dto_1.SubscriptionDto]),
     __metadata("design:returntype", rxjs_1.Observable)
 ], ChannelController.prototype, "unsubscribeAccountToChannel", null);
+__decorate([
+    swagger_1.ApiNoContentResponse({ description: 'The message has been deleted ' }),
+    swagger_1.ApiNotFoundResponse({ description: 'The message doesn\'t exist ' }),
+    swagger_1.ApiBadRequestResponse({ description: 'Payload provided is not good' }),
+    swagger_1.ApiUnprocessableEntityResponse({ description: 'The request can\'t be performed in the database' }),
+    swagger_1.ApiImplicitParam({ name: 'id', description: 'Unique identifier of the message in the database', type: String }),
+    common_1.Delete('erase/:id'),
+    __param(0, common_1.Param()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [handler_params_1.HandlerParams]),
+    __metadata("design:returntype", rxjs_1.Observable)
+], ChannelController.prototype, "eraseMessage", null);
 __decorate([
     swagger_1.ApiNotFoundResponse({ description: 'The user doesn\'t exists' }),
     swagger_1.ApiConflictResponse({ description: 'The channel doesn\'t exists' }),

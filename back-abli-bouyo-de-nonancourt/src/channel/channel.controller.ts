@@ -174,7 +174,22 @@ export class ChannelController {
   unsubscribeAccountToChannel(@Body() sub: SubscriptionDto): Observable<ChannelEntity>{
     return this._channelService.unsubscribe(sub);
   }
-
+  /**
+   * Handler to answer to POST /channel/erase route
+   *
+   * @param id message to erase
+   *
+   * @returns Observable<ChannelEntity>
+   */
+  @ApiNoContentResponse({ description: 'The message has been deleted ' })
+  @ApiNotFoundResponse({ description: 'The message doesn\'t exist '})
+  @ApiBadRequestResponse({ description: 'Payload provided is not good' })
+  @ApiUnprocessableEntityResponse({ description: 'The request can\'t be performed in the database' })
+  @ApiImplicitParam({ name: 'id', description: 'Unique identifier of the message in the database', type: String })
+  @Delete('erase/:id')
+  eraseMessage(@Param() params: HandlerParams): Observable<MessageEntity|void>{
+    return this._channelService.eraseMessage(params.id);
+  }
   /**
    * Handler to answer to POST /channel/write route
    *

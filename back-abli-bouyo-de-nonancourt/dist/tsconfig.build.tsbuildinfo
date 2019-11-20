@@ -1838,12 +1838,12 @@
         "signature": "72384690711eb4f299b6c974f1fc994acb293e69c60f5a7792a5e2cb0af0eff7"
       },
       "../src/channel/entities/richmessage.entity.ts": {
-        "version": "320c942e8478d40bbf3a97c3256f562f274ad97d9c39b5eeee02889067fa5a8d",
-        "signature": "56af77eb30e698af3ddd3eda1be65102ccea3f886042642f0dddcf048e222bed"
+        "version": "85eaf2e544013cc63117baafd5f4cad54d0deb85fe156c1f56ed828d799f3cd8",
+        "signature": "7e99339cf6a9afac494d5aa41c8081a22e71a2244186b6ed4b0752843ed98d92"
       },
       "../src/channel/dao/channel.dao.ts": {
-        "version": "0a47680c24e15fe10a031e47958c05dfa33921583cf48ec19b212cc7c9ad6508",
-        "signature": "647d5df6f9ad94ea25080e0c007c2a0dd30f3982ff7735f2c4b663c5efc69ef1"
+        "version": "4a990c01a8cda79152e9e0d7e60838ed8d79dee0ec4fcaffa02cee22c0f3ff83",
+        "signature": "cf9c3fe5b569e36a18408abbca87649cdfa889fed380e623276290b77755f414"
       },
       "../src/user/interfaces/user.interface.ts": {
         "version": "72bb38698e1d7164ab86a4df2767dde4a09ef1f19235e4973b9d0fcbc88c5e7b",
@@ -1910,8 +1910,8 @@
         "signature": "422c47c3e62567a6629cf5a670e5799f27eb18db7d586ee3209d71cfa53845eb"
       },
       "../src/channel/channel.service.ts": {
-        "version": "c3c92cf8f1a5524f3da45b87cdc4bc947a632d30216ee8ff805ee6db43d71d90",
-        "signature": "c1ccbadb87751eb5aa6a5f7a3c71c8b1a6e0270d26a501f86fcae6f9fa0b4bfe"
+        "version": "9cee5e9ef64af03aa1ac9babfd6d64737a85aeedf43d8e109831790be3aad591",
+        "signature": "56b4311fc84846b36a814fa1f015ea0882ea578d57af200ff2831683a2a72745"
       },
       "../src/channel/validators/handler-params.ts": {
         "version": "c2d5d2c2254acffe8012f86ffe9890242f5d997d203a4670c40993dbf47a3959",
@@ -1934,8 +1934,8 @@
         "signature": "23a3946df98afb78781dde099b48e686fed46cdb29ec4cee114dd1fee5403e02"
       },
       "../src/channel/channel.controller.ts": {
-        "version": "b9fc50f66154608413f49a93f5cf2f71a0a6157c0bd14d808aca2510eaf5ced3",
-        "signature": "5ce0edb7eb3be23b2e906fcb2854a678fa65fdd6d3701af2ce2fae0bb45775c7"
+        "version": "9c16a3448e4ae110c44c77d6d77b82fbfe2e004324da5d63fbfb12ef48e0a3b0",
+        "signature": "89eb5feb24df0fbae1858b0cd3e53deb5b16c34b3653a7e3211d591c8712756a"
       },
       "../src/channel/schemas/channel.schema.ts": {
         "version": "fa638fa6691be4d1c11efbbdf74a122be3130ec2234eb0aa274b8cd0565dcbdd",
@@ -6256,15 +6256,13 @@
         "../node_modules/rxjs/operators/index.d.ts",
         "../src/channel/dto/create-channel.dto.ts",
         "../src/channel/dao/channel.dao.ts",
-        "../src/channel/interfaces/channel.interface.ts",
-        "../src/channel/dto/user.dto.ts",
         "../src/channel/dto/subscription.dto.ts",
         "../src/channel/dto/create-message.dto.ts",
         "../src/user/dao/user.dao.ts",
         "../src/channel/entities/message.entity.ts",
         "../src/channel/dto/find-messages.dto.ts",
-        "../node_modules/crypto-random-string/index.d.ts",
         "../src/channel/entities/richmessage.entity.ts",
+        "../node_modules/crypto-random-string/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",

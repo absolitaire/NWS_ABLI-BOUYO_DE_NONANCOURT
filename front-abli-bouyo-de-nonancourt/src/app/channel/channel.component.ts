@@ -26,6 +26,9 @@ export class ChannelComponent implements OnInit {
   private _idChannel: string;
   idChannel: any;
 
+  /**
+   * Component constructor
+   */
   constructor( private cookieService: CookieService, private _loginService: LoginService,
                private _channelsService: ChannelsService, private router: Router,
                private _dialog: MatDialog, private _http: HttpClient){
@@ -35,6 +38,9 @@ export class ChannelComponent implements OnInit {
     this._idChannel = '';
   }
 
+  /**
+   * OnInit implementation
+   */
   ngOnInit() {
     this._loginService.verify().subscribe(user => {
 
