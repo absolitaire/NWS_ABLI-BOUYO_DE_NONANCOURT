@@ -22,9 +22,7 @@ export class MessagesService {
       idChannel: idChannel,
       content: message,
       idUser: this.cookieService.get('id_user'),
-    }, {observe: 'response'}).subscribe( final => {
-
-    });
+    }, {observe: 'response'});
   }
 
   delete(idMessage: string) {

@@ -113,13 +113,15 @@ export class MessageComponent implements OnInit {
    * Send the user's text to the server
    */
   send(text: string) {
-    this._messagesService.send(text, this._idChannel);
-    this.refresh();
-    this.text = '';
+    this._messagesService.send(text, this._idChannel).subscribe( resp => {
+      this.refresh();
+      this.text = '';
+    });
   }
 
   delete(message: any) {
-    this._messagesService.delete(message)
-    this.refresh();
+    this._messagesService.delete(message).subscribe(resp => {
+      this.refresh();
+    });
   }
 }

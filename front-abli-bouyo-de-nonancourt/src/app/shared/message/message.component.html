@@ -1,20 +1,17 @@
-<section *ngFor="let message of _messages">
+<section *ngFor="let message of _messages"  class="message-group">
 <mat-card class="mat-whiteframe-2dp">
   <mat-card-title-group>
-
-    <img mat-card-md-image src="{{message.picture}}">
     <mat-card-subtitle>
       <span nwtIsYou [user]="message.idUser">
-      <button mat-button title="Delete" (click)="delete(message.idMessage)">
-        (Delete)
+      <button mat-flat-button color="error" title="Delete" (click)="delete(message.idMessage)" class="button-delete">
+        <i class="material-icons md-36">delete</i>
       </button>
       </span>
-      <a [routerLink]="['/person', 8]">
-        <span>{{message.login }}</span>
-      </a>
-      , le {{message.date | date:'dd/MM/yyyy'}}:
+      <p style="margin : 0">
+        <img mat-card-md-image src="{{message.picture}}"> Envoyé par <strong>{{message.login }}</strong>, le {{message.date | date:'dd/MM/yyyy'}}:
+      </p>
     </mat-card-subtitle>
-    <mat-card-subtitle>
+    <mat-card-subtitle class="message-content">
       {{message.content}}
     </mat-card-subtitle>
   </mat-card-title-group>
@@ -29,7 +26,7 @@
               #autosize="cdkTextareaAutosize"
               cdkAutosizeMaxRows="1" [(ngModel)]="text" ></textarea>
   </mat-form-field>
-  <button mat-flat-button color="accent" (click)="send(text)">Send</button>
+  <button mat-flat-button color="accent" (click)="send(text)" class="send-button">Send</button>
 </mat-card>
 
 

@@ -43,13 +43,15 @@ export class ChannelComponent implements OnInit {
    */
   ngOnInit() {
     this._loginService.verify().subscribe(user => {
+
       //If the user if verified, we get his data
       this.cookieService.set('id_user', user['userId']);
       this._channelsService.get().subscribe(data => {
-
         this.channels = data;
-        console.log(this.channels);
       });
+    }, error =>  {
+      // UnAUthorized, we redirect
+      this.router.navigateByUrl("/");
     });
   }
 

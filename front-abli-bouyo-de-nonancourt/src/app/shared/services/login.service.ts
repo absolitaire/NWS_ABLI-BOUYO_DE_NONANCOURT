@@ -19,7 +19,6 @@ export class LoginService {
       login: user.login,
       password: user.password,
     }, {observe: 'response'}).subscribe(resp => {
-      console.log(resp);
       // if the resp is ok then we stock the ID and redirect the user
       if(resp['ok']) {
         this.cookieService.set('token', resp['body']['access_token']);
@@ -30,7 +29,7 @@ export class LoginService {
     });
   }
 
-  verify(): any{
+  verify(){
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
