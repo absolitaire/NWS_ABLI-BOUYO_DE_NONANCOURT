@@ -22,37 +22,12 @@ export class MessagesService {
       idChannel: idChannel,
       content: message,
       idUser: this.cookieService.get('id_user'),
-    }, {observe: 'response'}).subscribe( final => {
-
-    });
+    }, {observe: 'response'});
   }
 
-  // getUserData(idUser): Observable<any> {
-  //   return this._http.get(`http://localhost:3000/user/${idUser}`);
-  // }
-
-
-  // create(data, iduser) {
-  //   this._http.post<Channel>("http://localhost:3000/channel", {
-  //     idChannel: data.idChannel,
-  //     name: data.channelName,
-  //     description: data.channelDescription,
-  //   }, {observe: 'response'}).subscribe(resp => {
-  //     console.log(['body']['_id']);
-  //     //Si tout se passe bien on rejoin le channel
-  //     this.join(resp['body']['_id'], iduser)
-  //
-  //   });
-  // }
-  //
-  // private join(idChannel, idUser) {
-  //   this._http.post<Channel>("http://localhost:3000/channel/subscribe", {
-  //     idChannel: idChannel,
-  //     idUser: idUser,
-  //   }, {observe: 'response'}).subscribe(resp => {
-  //     console.log(resp);
-  //   });
-  // }
+  delete(idMessage: string) {
+    return this._http.delete(`http://localhost:3000/channel/erase/${idMessage}`, {observe: 'response'});
+  }
 }
 
 

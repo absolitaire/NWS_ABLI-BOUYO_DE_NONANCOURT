@@ -45,7 +45,7 @@ export class MessageComponent implements OnInit {
     this._loginService.verify().subscribe(user => {
     this.cookieService.set('id_user', user['userId']);
 
-    //interval(5000).subscribe(_ => this.refresh());
+    interval(5000).subscribe(_ => this.refresh());
     this.refresh();
 
     });
@@ -55,9 +55,9 @@ export class MessageComponent implements OnInit {
    */
   private refresh() {
 
-    console.log(this._userIds);
+    // console.log(this._userIds);
     this._messagesService.get(this._idChannel).subscribe(data => {
-      console.log(data);
+      // console.log(data);
       this.messages = data;
 
     });
@@ -83,7 +83,7 @@ export class MessageComponent implements OnInit {
    * Returns private property _message
    */
   get idChannelCourant(): string {
-     console.log(this._idChannel);
+     // console.log(this._idChannel);
     return this._idChannel;
   }
 
@@ -113,8 +113,15 @@ export class MessageComponent implements OnInit {
    * Send the user's text to the server
    */
   send(text: string) {
-    this._messagesService.send(text, this._idChannel);
-    this.refresh();
-    this.text = '';
+    this._messagesService.send(text, this._idChannel).subscribe( resp => {
+      this.refresh();
+      this.text = '';
+    });
+  }
+
+  delete(message: any) {
+    this._messagesService.delete(message).subscribe(resp => {
+      this.refresh();
+    });
   }
 }
