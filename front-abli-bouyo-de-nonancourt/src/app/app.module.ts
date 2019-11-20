@@ -16,7 +16,7 @@ import {
   MatCardModule,
 
 } from '@angular/material';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import { ChannelComponent } from './channel/channel.component';
@@ -48,6 +48,7 @@ import {MessageComponent} from './shared/message/message.component';
     MatCardModule,
     HttpClientModule,
     MatSidenavModule,
+    FormsModule,
   ],
   entryComponents: [
     DialogComponent

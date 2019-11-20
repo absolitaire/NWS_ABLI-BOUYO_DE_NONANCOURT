@@ -1,26 +1,42 @@
 .example-container {
-  position: relative;
+  position: fixed;
   height: 100vh;
 }
 
 .example-container > mat-sidenav {
-  border-top: #303030 dashed 1px;
+  border-top: #303030 solid 1px;
   background: #212121;
   text-align: center;
   padding-right: 20px;
   padding-left: 20px;
-
-  max-width: 200px;
-}
-
-.button-group button {
-  margin-bottom: 20px;
-  width: 100%;
-}
-.button-group input {
+  width: 230px;
 }
 
 .button-group {
+  position: absolute;
+  bottom: 80px;
+  width: 190px;
+  background: #212121;
+}
+.button-group button {
+
   width: 100%;
 }
+.button-group input {
+  width: 100%;
+}
+
+.channel-block {
+  margin-bottom: 5px;
+}
+
+.channel-block button{
+  width: 100%;
+}
+
+mat-form-field {
+  height: 50px;
+}
+
+
 
