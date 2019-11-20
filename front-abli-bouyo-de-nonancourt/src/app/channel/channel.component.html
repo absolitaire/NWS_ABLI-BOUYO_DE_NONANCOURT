@@ -2,12 +2,9 @@
   <mat-sidenav mode="side" opened>
     <p>Channels</p>
 
-    <ul>
-      <li *ngFor="let channel of channels; let i=index">
-        <h2>{{channel.name}}</h2>
-        <p>{{channel.description}}</p>
-      </li>
-    </ul>
+    <div *ngFor="let channel of channels; let i=index" class="channel-block">
+      <button mat-flat-button (click)="join(5)">{{channel.name}}</button>
+    </div>
 
     <div class="button-group">
       <button mat-flat-button color="primary" (click)="create()">Create a channel</button>
@@ -16,9 +13,9 @@
         <textarea matInput
                   cdkTextareaAutosize
                   #autosize="cdkTextareaAutosize"
-                  cdkAutosizeMaxRows="1"></textarea>
+                  cdkAutosizeMaxRows="1" [(ngModel)]="idChannel"></textarea>
       </mat-form-field>
-      <button mat-flat-button color="accent" (click)="join()">Join a channel</button>
+      <button mat-flat-button color="accent" (click)="join(idChannel)">Join a channel</button>
     </div>
   </mat-sidenav>
   <mat-sidenav position="end">Join a channel</mat-sidenav>
