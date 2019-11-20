@@ -55,9 +55,9 @@ export class MessageComponent implements OnInit {
    */
   private refresh() {
 
-    console.log(this._userIds);
+    // console.log(this._userIds);
     this._messagesService.get(this._idChannel).subscribe(data => {
-      console.log(data);
+      // console.log(data);
       this.messages = data;
 
     });
@@ -83,7 +83,7 @@ export class MessageComponent implements OnInit {
    * Returns private property _message
    */
   get idChannelCourant(): string {
-     console.log(this._idChannel);
+     // console.log(this._idChannel);
     return this._idChannel;
   }
 
@@ -116,5 +116,10 @@ export class MessageComponent implements OnInit {
     this._messagesService.send(text, this._idChannel);
     this.refresh();
     this.text = '';
+  }
+
+  delete(message: any) {
+    this._messagesService.delete(message)
+    this.refresh();
   }
 }

@@ -179,6 +179,9 @@
   height: 100px;
 }
 
+.purple {
+  color: orange;
+}
 mat-form-field {
   height: 50px;
   width: 95%;

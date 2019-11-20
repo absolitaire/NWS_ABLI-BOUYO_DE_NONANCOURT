@@ -4,6 +4,11 @@
 
     <img mat-card-md-image src="{{message.picture}}">
     <mat-card-subtitle>
+      <span nwtIsYou [user]="message.idUser">
+      <button mat-button title="Delete" (click)="delete(message.idMessage)">
+        (Delete)
+      </button>
+      </span>
       <a [routerLink]="['/person', 8]">
         <span>{{message.login }}</span>
       </a>
@@ -14,6 +19,7 @@
     </mat-card-subtitle>
   </mat-card-title-group>
 </mat-card>
+
 </section>
 <mat-card class="mat-end">
   <mat-form-field>

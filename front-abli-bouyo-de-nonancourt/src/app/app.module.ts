@@ -23,6 +23,7 @@ import { ChannelComponent } from './channel/channel.component';
 import {MatSidenavModule} from "@angular/material/sidenav";
 import { DialogComponent } from './shared/dialog/dialog.component';
 import {MessageComponent} from './shared/message/message.component';
+import {IsYouDirective} from './shared/directives/isyou.directive';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {MessageComponent} from './shared/message/message.component';
     SignupComponent,
     ChannelComponent,
     DialogComponent,
-    MessageComponent
+    MessageComponent,
+    IsYouDirective
   ],
   imports: [
     BrowserModule,
