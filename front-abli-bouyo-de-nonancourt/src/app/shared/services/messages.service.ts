@@ -26,9 +26,8 @@ export class MessagesService {
   }
 
   delete(idMessage: string) {
-    return this._http.delete(`http://localhost:3000/channel/erase/${idMessage}`, {observe: 'response'}).subscribe( final => {
 
-    });
+    return this._http.delete(`http://localhost:3000/channel/erase/${idMessage}`, {observe: 'response'});
   }
 }
 
