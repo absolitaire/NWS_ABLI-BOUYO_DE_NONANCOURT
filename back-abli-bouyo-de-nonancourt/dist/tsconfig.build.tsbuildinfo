@@ -1838,11 +1838,11 @@
         "signature": "72384690711eb4f299b6c974f1fc994acb293e69c60f5a7792a5e2cb0af0eff7"
       },
       "../src/channel/entities/richmessage.entity.ts": {
-        "version": "fa679e6208e3d6da7a130024826463615d0d454a58738420a6d0e600ec021f16",
-        "signature": "eb912a1beb425d0fad3866cc9bfdf4949db96c9fe076f8dc4192bbd702261987"
+        "version": "85eaf2e544013cc63117baafd5f4cad54d0deb85fe156c1f56ed828d799f3cd8",
+        "signature": "7e99339cf6a9afac494d5aa41c8081a22e71a2244186b6ed4b0752843ed98d92"
       },
       "../src/channel/dao/channel.dao.ts": {
-        "version": "2b714f2bc2177e57fe6ad319401079c97064d42700d47e6b9b2ed38460642764",
+        "version": "4a990c01a8cda79152e9e0d7e60838ed8d79dee0ec4fcaffa02cee22c0f3ff83",
         "signature": "cf9c3fe5b569e36a18408abbca87649cdfa889fed380e623276290b77755f414"
       },
       "../src/user/interfaces/user.interface.ts": {

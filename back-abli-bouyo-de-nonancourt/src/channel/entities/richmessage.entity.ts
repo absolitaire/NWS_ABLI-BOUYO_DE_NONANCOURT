@@ -9,6 +9,11 @@ export class RichMessageEntity {
   @Type(() => String)
   idMessage: string;
 
+  @ApiModelProperty({ description: 'Unique identifier in the database', example: '5763cd4dc378a38ecd387737' })
+  @Expose()
+  @Type(() => String)
+  idUser: string;
+
   @ApiModelProperty({ description: 'Content', example: 'This is a funny message.' })
   @Expose()
   @Type(() => String)
@@ -37,8 +42,9 @@ export class RichMessageEntity {
     Object.assign(this, partial);
   }
 
-  fillData(id: string, content: string, date: number, login: string, picture: string){
+  fillData(id: string, idUser: string, content: string, date: number, login: string, picture: string){
     this.idMessage = id;
+    this.idUser = idUser;
     this.content = content;
     this.date = date;
     this.login = login;

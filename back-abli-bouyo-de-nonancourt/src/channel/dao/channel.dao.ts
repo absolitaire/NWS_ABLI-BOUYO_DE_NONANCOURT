@@ -121,7 +121,7 @@ export class ChannelDao {
         //res = res.concat(message);
         tmp = new RichMessageEntity(message);
         const pop = await message.populate('idUser').execPopulate();
-        tmp.fillData(pop.get('_id'),pop.get('content'),pop.get('date'),pop.get('idUser.login'),pop.get('idUser.picture'))
+        tmp.fillData(pop.get('_id'),pop.get('idUser._id'),pop.get('content'),pop.get('date'),pop.get('idUser.login'),pop.get('idUser.picture'))
         res = res.concat(tmp);
         //this._logger.log(`AYYYYY2222 ${i} ${message}`);
         this._logger.log(`AYYYYY2222 ${i} ${tmp} ${pop}`);
