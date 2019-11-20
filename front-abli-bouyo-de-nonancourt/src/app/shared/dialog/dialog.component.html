@@ -2,10 +2,13 @@
   <form novalidate [formGroup]="form">
           <h1>Create your channel</h1>
           <mat-form-field>
-            <input matInput placeholder="ID (optionnal)" formControlName="idChannel" minlength="5" maxlength="5" name="idChannel" />
+            <input matInput placeholder="ID (optionnal)" formControlName="idChannel" required minlength="5" maxlength="5" name="idChannel" />
             <mat-error *ngIf="form.get('idChannel').dirty && form.get('idChannel').hasError('minlength')">
               ID must be <strong>5 chars</strong>
             </mat-error>
+            <mat-error *ngIf="form.get('idChannel').dirty && form.get('idChannel').hasError('required')">
+              ID is <strong>required</strong>
+          </mat-error>
           </mat-form-field>
 
           <mat-form-field>
@@ -26,5 +29,5 @@
 
 <mat-dialog-actions align="end">
   <button mat-button type="button" (click)="onCancel()">Cancel</button>
-  <button mat-button color="primary" type="submit" (click)="onSave(form)">Save</button>
+  <button mat-button color="primary" type="submit"  [disabled]="form.invalid" (click)="onSave(form)">Save</button>
 </mat-dialog-actions>
