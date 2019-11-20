@@ -8,6 +8,7 @@ import { CreateMessageDto } from '../dto/create-message.dto';
 import { Message } from '../interfaces/message.interface';
 import { MessageEntity } from '../entities/message.entity';
 import { FindMessagesDto } from '../dto/find-messages.dto';
+import { RichMessageEntity } from '../entities/richmessage.entity';
 export declare class ChannelDao {
     private readonly _channelModel;
     private readonly _messageModel;
@@ -18,6 +19,7 @@ export declare class ChannelDao {
     findChannelByIdChannel(id: string): Observable<Channel | void>;
     findSubscribedChannelsOfUser(id: string): Observable<Channel[] | void>;
     findMessagesOnChannel(query: FindMessagesDto): Promise<MessageEntity[] | void>;
+    findPopulatedMessagesOnChannel(query: FindMessagesDto): Promise<RichMessageEntity[] | void>;
     createChannel(channel: CreateChannelDto): Observable<Channel>;
     findChannelByIdAndRemove(id: string): Observable<Channel | void>;
     subscribe(sub: SubscriptionDto): Observable<Channel | void>;

@@ -9,6 +9,7 @@ import { CreateMessageDto } from './dto/create-message.dto';
 import { MessageEntity } from './entities/message.entity';
 import { FindMessagesQuery } from './validators/find-messages-query';
 import { IdChannelParams } from './validators/idchannel-params';
+import { RichMessageEntity } from './entities/richmessage.entity';
 export declare class ChannelController {
     private readonly _channelService;
     private readonly _logger;
@@ -18,6 +19,7 @@ export declare class ChannelController {
     findSubscribedChannelsOfUser(params: HandlerParams): Observable<ChannelEntity[] | void>;
     findOneByIdChannel(params: IdChannelParams): Observable<ChannelEntity>;
     findMessagesFromChannel(query: FindMessagesQuery): Observable<MessageEntity[] | void>;
+    findPopulatedMessagesFromChannel(query: FindMessagesQuery): Observable<RichMessageEntity[] | void>;
     create(createChannelDto: CreateChannelDto): Observable<ChannelEntity>;
     subscribeAccountToChannel(sub: SubscriptionDto): Observable<ChannelEntity>;
     unsubscribeAccountToChannel(sub: SubscriptionDto): Observable<ChannelEntity>;

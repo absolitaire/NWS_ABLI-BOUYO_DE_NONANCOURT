@@ -12,6 +12,7 @@ import { UserDao } from '../user/dao/user.dao';
 import { MessageEntity } from './entities/message.entity';
 import { FindMessagesDto } from './dto/find-messages.dto';
 import cryptoRandomString = require('crypto-random-string');
+import { RichMessageEntity } from './entities/richmessage.entity';
 
 @Injectable()
 export class ChannelService {
@@ -77,6 +78,9 @@ export class ChannelService {
 
   async findMessagesOnChannel(query: FindMessagesDto): Promise<MessageEntity[] | void> {
     return this._channelDao.findMessagesOnChannel(query);
+  }
+  async findPopulatedMessagesOnChannel(query: FindMessagesDto): Promise<RichMessageEntity[] | void> {
+    return this._channelDao.findPopulatedMessagesOnChannel(query);
   }
   // findMessagesOnChannel(params: FindMessagesDto): Observable<MessageEntity[] | void> {
   //   return from(this._channelDao.findMessagesOnChannel(params))

@@ -1,20 +1,26 @@
-mdr
+(Les messages s'affichent ci-dessous)
 <section *ngFor="let message of _messages">
-
-
+aaa
+<!--  <section *ngGet="let user of findUserDatas(message)" ></section>-->
+<!--  <section *ngFor="let user of _users">-->
+<!--    {{user._id}}-->
+<!--    <section *ngIf="user._id === message.idUser">-->
+<!--  {{user._id}}-->
 <mat-card class="mat-whiteframe-2dp">
   <mat-card-title-group>
 
-    <img mat-card-md-image src="https://icon-library.net/images/default-profile-icon/default-profile-icon-24.jpg">
+    <img mat-card-md-image src="{{message.picture}}">
     <mat-card-subtitle>
       <a [routerLink]="['/person', 8]">
-        <span>Phillipe</span>
+        <span>{{message.login }}</span>
       </a>
-      , le 01/01/1990:
+      , le {{message.date | date:'dd/MM/yyyy'}}:
     </mat-card-subtitle>
-    <mat-card-subtitle>content
-      La méthode statiLa méthode statique Object.defineProperty() permet de définir une nouvelle propriété ou de modifier une propriété existante, directement sur un objet. La méthode renvoie l'objet modifié.La méthode statique Object.defineProperty() permet de définir une nouvelle propriété ou de modifier une propriété existante, directement sur un objet. La méthode renvoie l'objet modifié.La méthode statique Object.defineProperty() permet de définir une nouvelle propriété ou de modifier une propriété existante, directement sur un objet. La méthode renvoie l'objet modifié.La méthode statique Object.defineProperty() permet de définir une nouvelle propriété ou de modifier une propriété existante, directement sur un objet. La méthode renvoie l'objet modifié.La méthode statique Object.defineProperty() permet de définir une nouvelle propriété ou de modifier une propriété existante, directement sur un objet. La méthode renvoie l'objet modifié.La méthode statique Object.defineProperty() permet de définir une nouvelle propriété ou de modifier une propriété existante, directement sur un objet. La méthode renvoie l'objet modifié.que Object.defineProperty() permet de définir une nouvelle propriété ou de modifier une propriété existante, directement sur un objet. La méthode renvoie l'objet modifié.
+    <mat-card-subtitle>
+      {{message.content}}
     </mat-card-subtitle>
   </mat-card-title-group>
 </mat-card>
 </section>
+<!--</section>-->
+<!--</section>-->

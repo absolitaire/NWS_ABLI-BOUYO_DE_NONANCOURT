@@ -8,6 +8,7 @@ import { CreateMessageDto } from './dto/create-message.dto';
 import { UserDao } from '../user/dao/user.dao';
 import { MessageEntity } from './entities/message.entity';
 import { FindMessagesDto } from './dto/find-messages.dto';
+import { RichMessageEntity } from './entities/richmessage.entity';
 export declare class ChannelService {
     private readonly _channelDao;
     private readonly _userDao;
@@ -17,6 +18,7 @@ export declare class ChannelService {
     findOne(id: string): Observable<ChannelEntity>;
     findOneByIdChannel(id: string): Observable<ChannelEntity>;
     findMessagesOnChannel(query: FindMessagesDto): Promise<MessageEntity[] | void>;
+    findPopulatedMessagesOnChannel(query: FindMessagesDto): Promise<RichMessageEntity[] | void>;
     findSubscribedChannelsOfUser(id: string): Observable<ChannelEntity[] | void>;
     create(channel: CreateChannelDto): Observable<ChannelEntity>;
     private _addChannel;

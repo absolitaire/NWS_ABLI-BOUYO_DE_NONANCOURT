@@ -41,6 +41,9 @@ let ChannelService = class ChannelService {
     async findMessagesOnChannel(query) {
         return this._channelDao.findMessagesOnChannel(query);
     }
+    async findPopulatedMessagesOnChannel(query) {
+        return this._channelDao.findPopulatedMessagesOnChannel(query);
+    }
     findSubscribedChannelsOfUser(id) {
         return rxjs_1.from(this._channelDao.findSubscribedChannelsOfUser(id))
             .pipe(operators_1.map(_ => !!_ ? _.map(__ => new channel_entity_1.ChannelEntity(__)) : undefined));

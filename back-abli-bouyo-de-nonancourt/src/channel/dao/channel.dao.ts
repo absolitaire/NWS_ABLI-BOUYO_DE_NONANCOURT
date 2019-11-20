@@ -11,6 +11,7 @@ import { CreateMessageDto } from '../dto/create-message.dto';
 import { Message } from '../interfaces/message.interface';
 import { MessageEntity } from '../entities/message.entity';
 import { FindMessagesDto } from '../dto/find-messages.dto';
+import { RichMessageEntity } from '../entities/richmessage.entity';
 
 @Injectable()
 export class ChannelDao {
@@ -99,6 +100,31 @@ export class ChannelDao {
         res = res.concat(tmp);
         //this._logger.log(`AYYYYY2222 ${i} ${message}`);
         this._logger.log(`AYYYYY2222 ${i} ${tmp}`);
+        nb++;
+      }
+      i++;
+      this._logger.log(`lool ${res} , ${i}, ${nb}`);
+    }
+    this._logger.log(`AYYYYY2222 ${res} , ${i}, ${nb}`);
+    return res;
+  }
+
+
+  async findPopulatedMessagesOnChannel(query: FindMessagesDto): Promise<RichMessageEntity[] | void> {
+    let i = 0;
+    let nb = 0;
+    let res = [];
+    let tmp: RichMessageEntity;
+    for await (const message of await this._messageModel.find({ idChannel: query.idChannel })){
+      this._logger.log(` ${i}`);
+      if(query.threshold == -1 ||(nb < query.threshold && i+1 >= query.startingAt)){
+        //res = res.concat(message);
+        tmp = new RichMessageEntity(message);
+        const pop = await message.populate('idUser').execPopulate();
+        tmp.fillData(pop.get('content'),pop.get('date'),pop.get('idUser.login'),pop.get('idUser.picture'))
+        res = res.concat(tmp);
+        //this._logger.log(`AYYYYY2222 ${i} ${message}`);
+        this._logger.log(`AYYYYY2222 ${i} ${tmp} ${pop}`);
         nb++;
       }
       i++;

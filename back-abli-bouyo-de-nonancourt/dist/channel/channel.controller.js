@@ -44,6 +44,9 @@ let ChannelController = class ChannelController {
     findMessagesFromChannel(query) {
         return rxjs_1.from(this._channelService.findMessagesOnChannel(query));
     }
+    findPopulatedMessagesFromChannel(query) {
+        return rxjs_1.from(this._channelService.findPopulatedMessagesOnChannel(query));
+    }
     create(createChannelDto) {
         return this._channelService.create(createChannelDto);
     }
@@ -115,6 +118,20 @@ __decorate([
     __metadata("design:paramtypes", [find_messages_query_1.FindMessagesQuery]),
     __metadata("design:returntype", rxjs_1.Observable)
 ], ChannelController.prototype, "findMessagesFromChannel", null);
+__decorate([
+    swagger_1.ApiOkResponse({ description: 'Returns the channel for the given "id"', type: channel_entity_1.ChannelEntity }),
+    swagger_1.ApiNotFoundResponse({ description: 'Channel with the given "id" doesn\'t exist in the database' }),
+    swagger_1.ApiBadRequestResponse({ description: 'Parameter provided is not good' }),
+    swagger_1.ApiUnprocessableEntityResponse({ description: 'The request can\'t be performed in the database' }),
+    swagger_1.ApiImplicitQuery({ name: 'idChannel', description: 'Unique identifier of the channel in the database', type: String }),
+    swagger_1.ApiImplicitQuery({ name: 'threshold', description: 'Max number of messages to retrieve. -1 to retrieve every message.', type: Number }),
+    swagger_1.ApiImplicitQuery({ name: 'startingAt', description: 'Retrieve messages starting with the N-th message', type: Number }),
+    common_1.Get('/richmessages'),
+    __param(0, common_1.Query()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [find_messages_query_1.FindMessagesQuery]),
+    __metadata("design:returntype", rxjs_1.Observable)
+], ChannelController.prototype, "findPopulatedMessagesFromChannel", null);
 __decorate([
     swagger_1.ApiCreatedResponse({ description: 'The channel has been successfully created', type: channel_entity_1.ChannelEntity }),
     swagger_1.ApiConflictResponse({ description: 'The channel already exists in the database' }),

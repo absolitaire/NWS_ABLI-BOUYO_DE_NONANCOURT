@@ -25,6 +25,7 @@ const mongoose_2 = require("mongoose");
 const rxjs_1 = require("rxjs");
 const operators_1 = require("rxjs/operators");
 const message_entity_1 = require("../entities/message.entity");
+const richmessage_entity_1 = require("../entities/richmessage.entity");
 let ChannelDao = class ChannelDao {
     constructor(_channelModel, _messageModel, _logger) {
         this._channelModel = _channelModel;
@@ -74,6 +75,38 @@ let ChannelDao = class ChannelDao {
                 if (_c && !_c.done && (_a = _b.return)) await _a.call(_b);
             }
             finally { if (e_1) throw e_1.error; }
+        }
+        this._logger.log(`AYYYYY2222 ${res} , ${i}, ${nb}`);
+        return res;
+    }
+    async findPopulatedMessagesOnChannel(query) {
+        var e_2, _a;
+        let i = 0;
+        let nb = 0;
+        let res = [];
+        let tmp;
+        try {
+            for (var _b = __asyncValues(await this._messageModel.find({ idChannel: query.idChannel })), _c; _c = await _b.next(), !_c.done;) {
+                const message = _c.value;
+                this._logger.log(` ${i}`);
+                if (query.threshold == -1 || (nb < query.threshold && i + 1 >= query.startingAt)) {
+                    tmp = new richmessage_entity_1.RichMessageEntity(message);
+                    const pop = await message.populate('idUser').execPopulate();
+                    tmp.fillData(pop.get('content'), pop.get('date'), pop.get('idUser.login'), pop.get('idUser.picture'));
+                    res = res.concat(tmp);
+                    this._logger.log(`AYYYYY2222 ${i} ${tmp} ${pop}`);
+                    nb++;
+                }
+                i++;
+                this._logger.log(`lool ${res} , ${i}, ${nb}`);
+            }
+        }
+        catch (e_2_1) { e_2 = { error: e_2_1 }; }
+        finally {
+            try {
+                if (_c && !_c.done && (_a = _b.return)) await _a.call(_b);
+            }
+            finally { if (e_2) throw e_2.error; }
         }
         this._logger.log(`AYYYYY2222 ${res} , ${i}, ${nb}`);
         return res;

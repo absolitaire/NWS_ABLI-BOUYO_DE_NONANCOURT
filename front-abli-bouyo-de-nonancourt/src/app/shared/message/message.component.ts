@@ -1,6 +1,11 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {Message} from '../interfaces/message';
+import {CookieService} from 'ngx-cookie-service';
+import {LoginService} from '../services/login.service';
+import {MessagesService} from '../services/messages.service';
+import {interval, Observable} from 'rxjs';
+import {UserBack} from '../interfaces/user-back';
 
 @Component({
   selector: 'app-message',
@@ -11,16 +16,71 @@ export class MessageComponent implements OnInit {
 
   // private property to store messages
   private _messages : Message[];
-  constructor(private _router: Router) {
+  private _idChannel = '5dd1584560157f15c01bd92d';
+  private _users : UserBack[];
+  private _userIds : string[];
+
+  constructor(private _router: Router,
+              private _loginService: LoginService,
+              private cookieService: CookieService,
+              private _messagesService: MessagesService,
+  ) {
     this._messages = {} as Message[];
+    this._users = [] as UserBack[]
+    this._userIds = [] as string[];
+
   }
 
   ngOnInit() {
+    this._loginService.verify().subscribe(user => {
+    //If the user if verified, we get his data
+    // console.log(user);
+    this.cookieService.set('id_user', user['userId']);
+
+    interval(5000).subscribe(_ => this.refresh());
+    this.refresh();
+
+    });
   }
+  private refresh() {
+
+    console.log(this._userIds);
+    this._messagesService.get(this._idChannel).subscribe(data => {
+      console.log(data);
+      this.messages = data;
+
+    });
+  }
+  // private refresh() {
+  //
+  //   console.log(this._userIds);
+  //   this._messagesService.get(this._idChannel).subscribe(data => {
+  //     // console.log(data);
+  //     this.messages = data;
+  //     this.messages.map((_: Message) => {
+  //
+  //       // console.log(`AYY ${_.idUser}`);
+  //       if (this._userIds.indexOf(_.idUser ) !== -1) {
+  //         // if (this._userIds.find(__ => __ === _.idUser )) {
+  //       //   if (this._userIds.find(_.idUser )) {
+  //         console.log(`AYY ${_.idUser}`);
+  //       } else {
+  //         console.log(`NO ${_.idUser}`);
+  //         this._messagesService.getUserData(_.idUser).subscribe(tmp => {
+  //           // console.log(tmp);
+  //           this._users = this._users.concat(tmp);
+  //           // this._userIds = this._userIds.concat(_.idUser);
+  //           this._userIds.push(_.idUser);
+  //         });
+  //       }
+  //     });
+  // });
+  // }
   /**
    * Returns private property _message
    */
   get messages(): Message[] {
+    // console.log(this._users)
     return this._messages;
   }
 
@@ -31,4 +91,24 @@ export class MessageComponent implements OnInit {
   set messages(messages: Message[]) {
     this._messages = messages;
   }
+  // /**
+  //  * Returns private property _message
+  //  */
+  // get users(): UserBack[] {
+  //   return this._users;
+  // }
+  //
+  // /**
+  //  * Sets private property _message
+  //  */
+  // @Input()
+  // set users(users: UserBack[]) {
+  //   this._users = users;
+  // }
+  // @Input()
+  // findUserDatas(message: Message) {
+  //   const i = this._userIds.indexOf(message.idUser);
+  //   console.log(this._userIds[i]);
+  //   return this._users[i];
+  // }
 }

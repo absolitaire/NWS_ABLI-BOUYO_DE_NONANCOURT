@@ -22,6 +22,7 @@ import { CreateMessageDto } from './dto/create-message.dto';
 import { MessageEntity } from './entities/message.entity';
 import { FindMessagesQuery } from './validators/find-messages-query';
 import { IdChannelParams } from './validators/idchannel-params';
+import { RichMessageEntity } from './entities/richmessage.entity';
 
 @ApiUseTags('back/channel')
 @Controller('channel')
@@ -107,6 +108,24 @@ export class ChannelController {
   @Get('/messages')
   findMessagesFromChannel(@Query() query: FindMessagesQuery): Observable<MessageEntity[] | void> {
     return from(this._channelService.findMessagesOnChannel(query));
+  }
+  /**
+   * Handler to answer to GET /channel/message route
+   *
+   * @query {FindMessageParams} params list of route params to take channel id
+   *
+   * @returns Observable<ChannelEntity>
+   */
+  @ApiOkResponse({ description: 'Returns the channel for the given "id"', type: ChannelEntity })
+  @ApiNotFoundResponse({ description: 'Channel with the given "id" doesn\'t exist in the database' })
+  @ApiBadRequestResponse({ description: 'Parameter provided is not good' })
+  @ApiUnprocessableEntityResponse({ description: 'The request can\'t be performed in the database' })
+  @ApiImplicitQuery({ name: 'idChannel', description: 'Unique identifier of the channel in the database', type: String })
+  @ApiImplicitQuery({ name: 'threshold', description: 'Max number of messages to retrieve. -1 to retrieve every message.', type: Number })
+  @ApiImplicitQuery({ name: 'startingAt', description: 'Retrieve messages starting with the N-th message', type: Number })
+  @Get('/richmessages')
+  findPopulatedMessagesFromChannel(@Query() query: FindMessagesQuery): Observable<RichMessageEntity[] | void> {
+    return from(this._channelService.findPopulatedMessagesOnChannel(query));
   }
   /**
    * Handler to answer to POST /channel route
