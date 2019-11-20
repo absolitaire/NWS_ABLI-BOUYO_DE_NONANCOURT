@@ -6,6 +6,7 @@ import {LoginService} from '../services/login.service';
 import {MessagesService} from '../services/messages.service';
 import {interval, Observable} from 'rxjs';
 import {UserBack} from '../interfaces/user-back';
+import {Channel} from '../interfaces/channel';
 
 @Component({
   selector: 'app-message',
@@ -14,11 +15,13 @@ import {UserBack} from '../interfaces/user-back';
 })
 export class MessageComponent implements OnInit {
 
+
   // private property to store messages
   private _messages : Message[];
   private _idChannel = '5dd1584560157f15c01bd92d';
   private _users : UserBack[];
   private _userIds : string[];
+  private _text: string;
 
   constructor(private _router: Router,
               private _loginService: LoginService,
@@ -111,4 +114,19 @@ export class MessageComponent implements OnInit {
   //   console.log(this._userIds[i]);
   //   return this._users[i];
   // }
+
+
+  @Input()
+  set text(value: any) {
+    this._text = value;
+  }
+  get text(): any {
+    return this._text;
+  }
+
+  send(text: string) {
+    this._messagesService.send(text, this._idChannel);
+    this.refresh();
+    this.text = '';
+  }
 }

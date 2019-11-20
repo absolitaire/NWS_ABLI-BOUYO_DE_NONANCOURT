@@ -1,6 +1,7 @@
 .example-container {
   position: fixed;
   height: 100vh;
+  width: 100%;
 }
 
 .example-container > mat-sidenav {

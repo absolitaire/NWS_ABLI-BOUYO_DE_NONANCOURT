@@ -1,11 +1,4 @@
-(Les messages s'affichent ci-dessous)
 <section *ngFor="let message of _messages">
-aaa
-<!--  <section *ngGet="let user of findUserDatas(message)" ></section>-->
-<!--  <section *ngFor="let user of _users">-->
-<!--    {{user._id}}-->
-<!--    <section *ngIf="user._id === message.idUser">-->
-<!--  {{user._id}}-->
 <mat-card class="mat-whiteframe-2dp">
   <mat-card-title-group>
 
@@ -22,5 +15,17 @@ aaa
   </mat-card-title-group>
 </mat-card>
 </section>
-<!--</section>-->
-<!--</section>-->
+<mat-card class="mat-end">
+  <mat-form-field>
+    <mat-label>Type your text here...</mat-label>
+    <textarea matInput
+              cdkTextareaAutosize
+              #autosize="cdkTextareaAutosize"
+              cdkAutosizeMaxRows="1" [(ngModel)]="text" ></textarea>
+    <!--[(ngModel)]="idChannel"  -->
+  </mat-form-field>
+  <button mat-flat-button color="accent" (click)="send(text)">Send</button>
+</mat-card>
+
+<!--(click)="join(idChannel)"-->
+
