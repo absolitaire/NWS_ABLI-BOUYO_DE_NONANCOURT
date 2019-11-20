@@ -149,10 +149,6 @@
 /*    margin-right: 5px;*/
 /*  }*/
 /*}*/
-.example-container {
-  position: relative;
-  height: 100vh;
-}
 
 .example-container > mat-sidenav {
   border-top: #303030 dashed 1px;
@@ -160,7 +156,6 @@
   text-align: center;
   padding-right: 20px;
   padding-left: 20px;
-
   max-width: 200px;
 }
 
@@ -176,10 +171,29 @@
 }
 
 .mat-end {
-  height: 100px;
+  height: 50px;
 }
 
 mat-form-field {
   height: 50px;
-  width: 95%;
+  width: 85%;
+  margin-right: 2%;
+}
+
+.send-button{
+  width: 10%;
+}
+
+.message-group {
+  margin: 5px;
+}
+
+
+.message-group img{
+  border-radius: 45px;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top : 0;
+  left : 0;
 }

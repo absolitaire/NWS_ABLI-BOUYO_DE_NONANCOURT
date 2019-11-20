@@ -39,7 +39,7 @@ export class MessageComponent implements OnInit {
     this._loginService.verify().subscribe(user => {
     this.cookieService.set('id_user', user['userId']);
 
-    interval(5000).subscribe(_ => this.refresh());
+    //interval(5000).subscribe(_ => this.refresh());
     this.refresh();
 
     });

@@ -13,6 +13,10 @@
   width: 230px;
 }
 
+.example-container > mat-sidenav-content {
+  max-height: 100vh;
+}
+
 .button-group {
   position: absolute;
   bottom: 80px;
