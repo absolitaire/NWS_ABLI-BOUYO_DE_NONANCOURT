@@ -4,6 +4,10 @@ import { UserDto } from '../dto/user.dto';
 
 @Exclude()
 export class RichMessageEntity {
+  @ApiModelProperty({ description: 'Unique identifier in the database', example: '5763cd4dc378a38ecd387737' })
+  @Expose()
+  @Type(() => String)
+  idMessage: string;
 
   @ApiModelProperty({ description: 'Content', example: 'This is a funny message.' })
   @Expose()
@@ -33,7 +37,8 @@ export class RichMessageEntity {
     Object.assign(this, partial);
   }
 
-  fillData(content: string, date: number, login: string, picture: string){
+  fillData(id: string, content: string, date: number, login: string, picture: string){
+    this.idMessage = id;
     this.content = content;
     this.date = date;
     this.login = login;

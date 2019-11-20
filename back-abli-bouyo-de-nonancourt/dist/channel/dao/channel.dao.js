@@ -92,7 +92,7 @@ let ChannelDao = class ChannelDao {
                 if (query.threshold == -1 || (nb < query.threshold && i + 1 >= query.startingAt)) {
                     tmp = new richmessage_entity_1.RichMessageEntity(message);
                     const pop = await message.populate('idUser').execPopulate();
-                    tmp.fillData(pop.get('content'), pop.get('date'), pop.get('idUser.login'), pop.get('idUser.picture'));
+                    tmp.fillData(pop.get('_id'), pop.get('content'), pop.get('date'), pop.get('idUser.login'), pop.get('idUser.picture'));
                     res = res.concat(tmp);
                     this._logger.log(`AYYYYY2222 ${i} ${tmp} ${pop}`);
                     nb++;
@@ -129,6 +129,10 @@ let ChannelDao = class ChannelDao {
     }
     tryToDeleteChannel(id) {
         return rxjs_1.from(this._channelModel.findOneAndDelete({ _id: id, usersSubscribed: { $size: 0 } }))
+            .pipe(operators_1.map((doc) => !!doc ? doc.toJSON() : undefined));
+    }
+    deleteMessage(id) {
+        return rxjs_1.from(this._messageModel.findOneAndDelete({ _id: id }))
             .pipe(operators_1.map((doc) => !!doc ? doc.toJSON() : undefined));
     }
     existsWithId(id) {

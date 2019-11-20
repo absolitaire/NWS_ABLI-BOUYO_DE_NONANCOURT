@@ -269,4 +269,16 @@ export class ChannelService {
       ));
   }
 
+  eraseMessage(id: string): Observable<MessageEntity> {
+    return this._channelDao.deleteMessage(id)
+      .pipe(
+        catchError(e => throwError(new NotFoundException(e.message))),
+        flatMap(_ =>
+          !!_ ?
+            of(undefined) :
+            throwError(new NotFoundException(`Message not found`)),
+        ),
+      );
+
+  }
 }

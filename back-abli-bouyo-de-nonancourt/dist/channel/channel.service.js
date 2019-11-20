@@ -54,14 +54,6 @@ let ChannelService = class ChannelService {
             rxjs_1.throwError(new common_1.ConflictException(`A channel with the id '${channel.idChannel}' already exists`, e.message)) :
             rxjs_1.throwError(new common_1.UnprocessableEntityException(e.message))), operators_1.map(_ => new channel_entity_1.ChannelEntity(_)));
     }
-    _addChannel(channel) {
-        return rxjs_1.of(channel).pipe(operators_1.map(_ => Object.assign(_, {
-            idChannel: cryptoRandomString({ length: 5, type: 'url-safe' }),
-        }, Object.assign({}, _))));
-    }
-    _randomChannelId() {
-        return '';
-    }
     delete(id) {
         return this._channelDao.findChannelByIdAndRemove(id)
             .pipe(operators_1.catchError(e => rxjs_1.throwError(new common_1.NotFoundException(e.message))), operators_1.flatMap(_ => !!_ ?
@@ -103,6 +95,17 @@ let ChannelService = class ChannelService {
             .pipe(operators_1.catchError(e => rxjs_1.throwError(new common_1.NotFoundException(e.message))), operators_1.flatMap(_ => !!_ ?
             this.writeIntoChannel(message) :
             rxjs_1.throwError(new common_1.NotFoundException(`User with id '${message.idUser}' doesn't exist`))));
+    }
+    _addChannel(channel) {
+        return rxjs_1.of(channel).pipe(operators_1.map(_ => Object.assign(_, {
+            idChannel: cryptoRandomString({ length: 5, type: 'url-safe' }),
+        }, Object.assign({}, _))));
+    }
+    eraseMessage(id) {
+        return this._channelDao.deleteMessage(id)
+            .pipe(operators_1.catchError(e => rxjs_1.throwError(new common_1.NotFoundException(e.message))), operators_1.flatMap(_ => !!_ ?
+            rxjs_1.of(undefined) :
+            rxjs_1.throwError(new common_1.NotFoundException(`Message not found`))));
     }
 };
 ChannelService = __decorate([

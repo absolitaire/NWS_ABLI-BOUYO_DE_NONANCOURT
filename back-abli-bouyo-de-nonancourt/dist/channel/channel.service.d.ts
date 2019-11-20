@@ -21,8 +21,6 @@ export declare class ChannelService {
     findPopulatedMessagesOnChannel(query: FindMessagesDto): Promise<RichMessageEntity[] | void>;
     findSubscribedChannelsOfUser(id: string): Observable<ChannelEntity[] | void>;
     create(channel: CreateChannelDto): Observable<ChannelEntity>;
-    private _addChannel;
-    private _randomChannelId;
     delete(id: string): Observable<void>;
     tryToSubscribe(sub: SubscriptionDto): Observable<ChannelEntity>;
     subscribe(sub: SubscriptionDto): Observable<ChannelEntity>;
@@ -30,4 +28,6 @@ export declare class ChannelService {
     unsubscribe(sub: SubscriptionDto): Observable<ChannelEntity>;
     writeIntoChannel(message: CreateMessageDto): Observable<ChannelEntity>;
     tryToWriteIntoChannel(message: CreateMessageDto): Observable<ChannelEntity>;
+    private _addChannel;
+    eraseMessage(id: string): Observable<MessageEntity>;
 }
