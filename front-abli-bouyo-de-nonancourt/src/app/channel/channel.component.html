@@ -3,7 +3,7 @@
     <p>Channels</p>
 
     <div *ngFor="let channel of channels; let i=index" class="channel-block">
-      <button mat-flat-button (click)="join(5)">{{channel.name}}</button>
+      <button mat-flat-button (click)="switch(channel._id)">{{channel.name}}</button>
     </div>
 
     <div class="button-group">
@@ -18,10 +18,9 @@
       <button mat-flat-button color="accent" (click)="join(idChannel)">Join a channel</button>
     </div>
   </mat-sidenav>
-  <mat-sidenav position="end">Join a channel</mat-sidenav>
   <mat-sidenav-content>
     <section>
-      <app-message [messages]="_messages" ></app-message>
+      <app-message [messages]="_messages" [idChannelCourant]="_idChannel"></app-message>
     </section>
   </mat-sidenav-content>
 </mat-sidenav-container>

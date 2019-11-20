@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {CookieService} from "ngx-cookie-service";
 import {LoginService} from "../shared/services/login.service";
 import {Router} from "@angular/router";
@@ -19,17 +19,20 @@ export class ChannelComponent implements OnInit {
   events: string[] = [];
   opened: boolean;
   channels: Channel[];
+  //private idCurrentChannel: string;
   private _dialogStatus: string;
   private _channelDialog: MatDialogRef<DialogComponent>;
   private _messages: Message[];
+  private _idChannel: string;
   idChannel: any;
 
   constructor( private cookieService: CookieService, private _loginService: LoginService,
                private _channelsService: ChannelsService, private router: Router,
-               private _dialog: MatDialog, private _http: HttpClient) {
+               private _dialog: MatDialog, private _http: HttpClient){
     this.channels = [];
     this._dialogStatus = 'inactive';
     this._messages = [];
+    this._idChannel = '';
   }
 
   ngOnInit() {
@@ -37,7 +40,9 @@ export class ChannelComponent implements OnInit {
       //If the user if verified, we get his data
       this.cookieService.set('id_user', user['userId']);
       this._channelsService.get().subscribe(data => {
+
         this.channels = data;
+        console.log(this.channels);
       });
     });
   }
@@ -72,5 +77,25 @@ export class ChannelComponent implements OnInit {
           this.updateChannels();
       });
     })
+  }
+
+  switch(id: string){
+    this._idChannel = id;
+  }
+
+  /**
+   * Returns private property _message
+   */
+  get idChannelCourant(): string {
+    // console.log(this._users)
+    return this._idChannel;
+  }
+
+  /**
+   * Sets private property _message
+   */
+  @Input()
+  set idChannelCourant(id: string) {
+    this._idChannel = id;
   }
 }

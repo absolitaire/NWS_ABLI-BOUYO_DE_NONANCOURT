@@ -16,7 +16,7 @@ export class MessageComponent implements OnInit {
 
   // private property to store messages
   private _messages : Message[];
-  private _idChannel = '5dd1584560157f15c01bd92d';
+  private _idChannel = '';
   private _users : UserBack[];
   private _userIds : string[];
 
@@ -26,15 +26,14 @@ export class MessageComponent implements OnInit {
               private _messagesService: MessagesService,
   ) {
     this._messages = {} as Message[];
-    this._users = [] as UserBack[]
+    this._users = [] as UserBack[];
     this._userIds = [] as string[];
+    this._idChannel = '' as string;
 
   }
 
   ngOnInit() {
     this._loginService.verify().subscribe(user => {
-    //If the user if verified, we get his data
-    // console.log(user);
     this.cookieService.set('id_user', user['userId']);
 
     interval(5000).subscribe(_ => this.refresh());
@@ -51,6 +50,7 @@ export class MessageComponent implements OnInit {
 
     });
   }
+
   // private refresh() {
   //
   //   console.log(this._userIds);
@@ -90,6 +90,23 @@ export class MessageComponent implements OnInit {
   @Input()
   set messages(messages: Message[]) {
     this._messages = messages;
+  }
+
+  /**
+   * Returns private property _message
+   */
+  get idChannelCourant(): string {
+     console.log(this._idChannel);
+    return this._idChannel;
+  }
+
+  /**
+   * Sets private property _message
+   */
+  @Input()
+  set idChannelCourant(id: string) {
+    this._idChannel = id;
+    this.refresh();
   }
   // /**
   //  * Returns private property _message
